@@ -1,0 +1,23 @@
+{
+  "name": "Feiya Studio",
+  "short_name": "Feiya",
+  "description": "CatRodis. ArtCodex. sxstx Calculator.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8F5F1",
+  "theme_color": "#B87C85",
+  "icons": [
+    {
+      "src": "/assets/icons/feiya-studio-icon.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/feiya-studio-icon-transparent.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

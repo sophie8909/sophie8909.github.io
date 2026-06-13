@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Feiya Studio">
+  <rect width="1200" height="630" fill="#F8F5F1"/>
+  <path d="M80 90h1040v450H80z" fill="none" stroke="#D8D0C8" stroke-width="2"/>
+  <path d="M240 170h190v190H240z" fill="none" stroke="#B87C85" stroke-width="8"/>
+  <circle cx="820" cy="250" r="110" fill="none" stroke="#B79974" stroke-width="8"/>
+  <path d="M770 430h180l-90 90z" fill="none" stroke="#8A7177" stroke-width="8"/>
+  <path d="M430 265h280" stroke="#D8D0C8" stroke-width="3"/>
+  <path d="M820 360l40 70" stroke="#D8D0C8" stroke-width="3"/>
+  <text x="120" y="500" fill="#2D2926" font-family="Noto Serif TC, Georgia, serif" font-size="82" font-weight="900" letter-spacing="8">FEIYA STUDIO</text>
+  <text x="125" y="555" fill="#7D746D" font-family="Noto Sans TC, Arial, sans-serif" font-size="30" font-weight="500">CatRodis / ArtCodex / sxstx Calculator</text>
+</svg>

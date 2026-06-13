@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Feiya Studio",
+    "description": "CatRodis. ArtCodex. sxstx Calculator.",
+    "projectsTitle": "FEIYA | Projects",
+    "projectsDescription": "CatRodis. ArtCodex. sxstx Calculator.",
+    "aboutTitle": "Feiya Studio",
+    "aboutDescription": "CatRodis. ArtCodex. sxstx Calculator."
+  },
+  "language": {
+    "label": "Välj språk",
+    "mobileLabel": "Språk"
+  },
+  "nav": {
+    "skip": "Hoppa till huvudinnehåll",
+    "label": "Huvudnavigering",
+    "openMenu": "Öppna navigeringsmenyn",
+    "closeMenu": "Stäng navigeringsmenyn",
+    "menuShort": "Meny",
+    "closeShort": "Stäng",
+    "catrodis": "CatRodis",
+    "artcodex": "ArtCodex",
+    "sxstx": "sxstx Calculator",
+    "github": "GitHub"
+  },
+  "hero": {
+    "subtitle": "Låt fantasin bli till världar."
+  },
+  "featured": {
+    "eyebrow": "Main Exhibition Hall",
+    "label": "01"
+  },
+  "projects": {
+    "actions": {
+      "github": {
+        "label": "GitHub",
+        "aria": "Öppna {{project}} på GitHub"
+      },
+      "openTool": {
+        "label": "Open Tool",
+        "aria": "Öppna {{project}}"
+      },
+      "comingSoon": {
+        "label": "COMING SOON",
+        "aria": "{{project}} kommer snart"
+      }
+    },
+    "artcodex": {
+      "title": "ARTCODEX",
+      "subtitle": "Image Prompt System",
+      "description": "Förvandlar idéer till\nbildgenereringsprompter."
+    },
+    "sxstx": {
+      "title": "SXSTX CALCULATOR",
+      "subtitle": "Character Progression Tool",
+      "description": "Beräkningsverktyg\nför Wand & Sword."
+    },
+    "catrodis": {
+      "title": "CATRODIS",
+      "subtitle": "A World Rebuilt By Cats",
+      "description": "En post-mänsklig civilisation\nåteruppbyggd av katter."
+    }
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "heading": "CATRODIS / ARTCODEX / SXSTX CALCULATOR"
+  },
+  "aboutPage": {
+    "eyebrow": "Feiya Studio",
+    "heading": "Feiya Studio"
+  },
+  "footer": {
+    "copyright": "© 2026 Feiya Studio"
+  }
+}

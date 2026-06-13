@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Feiya Studio",
+    "description": "CatRodis. ArtCodex. sxstx Calculator.",
+    "projectsTitle": "FEIYA | Projects",
+    "projectsDescription": "CatRodis. ArtCodex. sxstx Calculator.",
+    "aboutTitle": "Feiya Studio",
+    "aboutDescription": "CatRodis. ArtCodex. sxstx Calculator."
+  },
+  "language": {
+    "label": "Choose language",
+    "mobileLabel": "Language"
+  },
+  "nav": {
+    "skip": "Skip to main content",
+    "label": "Main navigation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "menuShort": "Menu",
+    "closeShort": "Close",
+    "catrodis": "CatRodis",
+    "artcodex": "ArtCodex",
+    "sxstx": "sxstx Calculator",
+    "github": "GitHub"
+  },
+  "hero": {
+    "subtitle": "Turning imagination into worlds."
+  },
+  "featured": {
+    "eyebrow": "Main Exhibition Hall",
+    "label": "01"
+  },
+  "projects": {
+    "actions": {
+      "github": {
+        "label": "GitHub",
+        "aria": "Open {{project}} on GitHub"
+      },
+      "openTool": {
+        "label": "Open Tool",
+        "aria": "Open {{project}}"
+      },
+      "comingSoon": {
+        "label": "COMING SOON",
+        "aria": "{{project}} is coming soon"
+      }
+    },
+    "artcodex": {
+      "title": "ARTCODEX",
+      "subtitle": "Image Prompt System",
+      "description": "Transform ideas into\nimage-generation prompts."
+    },
+    "sxstx": {
+      "title": "SXSTX CALCULATOR",
+      "subtitle": "Character Progression Tool",
+      "description": "Calculation tools\nfor Wand & Sword."
+    },
+    "catrodis": {
+      "title": "CATRODIS",
+      "subtitle": "A World Rebuilt By Cats",
+      "description": "A post-human civilization\nrebuilt by cats."
+    }
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "heading": "CATRODIS / ARTCODEX / SXSTX CALCULATOR"
+  },
+  "aboutPage": {
+    "eyebrow": "Feiya Studio",
+    "heading": "Feiya Studio"
+  },
+  "footer": {
+    "copyright": "© 2026 Feiya Studio"
+  }
+}

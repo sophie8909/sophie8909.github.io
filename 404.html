@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Feiya Studio</title>
+    <script>
+      const target = `${window.location.origin}/?route=${encodeURIComponent(
+        window.location.pathname
+      )}${window.location.search}${window.location.hash}`;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <a href="/">Feiya Studio</a>
+  </body>
+</html>

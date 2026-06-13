@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Feiya Studio",
+    "description": "CatRodis。ArtCodex。sxstx Calculator。",
+    "projectsTitle": "FEIYA | Projects",
+    "projectsDescription": "CatRodis。ArtCodex。sxstx Calculator。",
+    "aboutTitle": "Feiya Studio",
+    "aboutDescription": "CatRodis。ArtCodex。sxstx Calculator。"
+  },
+  "language": {
+    "label": "選擇語言",
+    "mobileLabel": "語言"
+  },
+  "nav": {
+    "skip": "跳至主要內容",
+    "label": "主導覽",
+    "openMenu": "開啟導覽選單",
+    "closeMenu": "關閉導覽選單",
+    "menuShort": "選單",
+    "closeShort": "關閉",
+    "catrodis": "CatRodis",
+    "artcodex": "ArtCodex",
+    "sxstx": "sxstx Calculator",
+    "github": "GitHub"
+  },
+  "hero": {
+    "subtitle": "讓想像成為世界。"
+  },
+  "featured": {
+    "eyebrow": "Main Exhibition Hall",
+    "label": "01"
+  },
+  "projects": {
+    "actions": {
+      "github": {
+        "label": "GitHub",
+        "aria": "在 GitHub 開啟 {{project}}"
+      },
+      "openTool": {
+        "label": "Open Tool",
+        "aria": "開啟 {{project}}"
+      },
+      "comingSoon": {
+        "label": "COMING SOON",
+        "aria": "{{project}} 即將推出"
+      }
+    },
+    "artcodex": {
+      "title": "ARTCODEX",
+      "subtitle": "Image Prompt System",
+      "description": "將想法轉化為\n圖像生成提示詞。"
+    },
+    "sxstx": {
+      "title": "杖劍傳說素材計算機",
+      "subtitle": "Character Progression Tool",
+      "description": "杖劍傳說的\n素材計算機。"
+    },
+    "catrodis": {
+      "title": "CATRODIS",
+      "subtitle": "A World Rebuilt By Cats",
+      "description": "由貓重建的\n後人類文明。"
+    }
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "heading": "CATRODIS / ARTCODEX / SXSTX CALCULATOR"
+  },
+  "aboutPage": {
+    "eyebrow": "Feiya Studio",
+    "heading": "Feiya Studio"
+  },
+  "footer": {
+    "copyright": "© 2026 Feiya Studio"
+  }
+}
