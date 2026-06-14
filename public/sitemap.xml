@@ -26,15 +26,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/projects" />
   </url>
   <url>
-    <loc>https://feiyastudio.com/artcodex</loc>
+    <loc>https://feiyastudio.com/ArtCodex</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://feiyastudio.com/artcodex?lang=zh-TW" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/artcodex?lang=zh-CN" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/artcodex?lang=en" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://feiyastudio.com/artcodex?lang=sv" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/artcodex" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://feiyastudio.com/ArtCodex?lang=zh-TW" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/ArtCodex?lang=zh-CN" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/ArtCodex?lang=en" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://feiyastudio.com/ArtCodex?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/ArtCodex" />
   </url>
   <url>
     <loc>https://feiyastudio.com/about</loc>
