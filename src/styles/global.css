@@ -445,7 +445,9 @@ a {
 }
 
 .action-link:disabled,
-.action-link:disabled:hover {
+.action-link:disabled:hover,
+.action-link[aria-disabled="true"],
+.action-link[aria-disabled="true"]:hover {
   border-color: var(--primary);
   color: var(--muted);
   cursor: not-allowed;
@@ -456,6 +458,13 @@ a {
 .action-link-primary {
   border-color: var(--primary);
   background: var(--surface);
+}
+
+.action-link-note {
+  margin-left: 0.5rem;
+  color: var(--secondary);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
 }
 
 .geometric-navigation {
@@ -768,6 +777,80 @@ a {
   width: 1px;
 }
 
+.artcodex-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.artcodex-panel {
+  position: relative;
+  min-height: 280px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    rgba(239, 231, 221, 0.3);
+  background-size: 28px 28px;
+  overflow: hidden;
+}
+
+.artcodex-panel-copy {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: grid;
+  gap: 0.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--primary);
+}
+
+.artcodex-panel-copy strong {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.artcodex-panel-copy span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.artcodex-workflow-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.artcodex-info-card {
+  min-height: 170px;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(248, 245, 241, 0.72);
+}
+
+.artcodex-info-card h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.artcodex-info-card p,
+.artcodex-policy-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.artcodex-policy-copy {
+  max-width: 680px;
+}
+
 .blueprint-map {
   position: absolute;
   inset: 1.4rem;
@@ -916,6 +999,14 @@ a {
 
   .project-section {
     grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
+  }
+
+  .artcodex-hero {
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  }
+
+  .artcodex-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-section-reverse {

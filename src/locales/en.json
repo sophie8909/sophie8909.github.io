@@ -4,6 +4,8 @@
     "description": "CatRodis. ArtCodex. sxstx Calculator.",
     "projectsTitle": "FEIYA | Projects",
     "projectsDescription": "CatRodis. ArtCodex. sxstx Calculator.",
+    "artcodexTitle": "ArtCodex | Feiya Studio",
+    "artcodexDescription": "ArtCodex is a prompt-generation tool for creator workflows.",
     "aboutTitle": "Feiya Studio",
     "aboutDescription": "CatRodis. ArtCodex. sxstx Calculator."
   },
@@ -35,6 +37,10 @@
       "github": {
         "label": "GitHub",
         "aria": "Open {{project}} on GitHub"
+      },
+      "artcodex": {
+        "label": "ArtCodex",
+        "aria": "Open ArtCodex"
       },
       "openTool": {
         "label": "Open Tool",

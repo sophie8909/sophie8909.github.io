@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import i18n, { supportedLanguages } from './i18n/config';
 import { useRoute } from './hooks/useRoute';
 import { AboutPage } from './pages/AboutPage';
+import { ArtCodexPage } from './pages/ArtCodexPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
 
@@ -13,6 +14,7 @@ const siteUrl = 'https://feiyastudio.com';
 const routeMetaKeys = {
   '/': { title: 'meta.title', description: 'meta.description' },
   '/projects': { title: 'meta.projectsTitle', description: 'meta.projectsDescription' },
+  '/artcodex': { title: 'meta.artcodexTitle', description: 'meta.artcodexDescription' },
   '/about': { title: 'meta.aboutTitle', description: 'meta.aboutDescription' }
 } as const;
 
@@ -85,6 +87,7 @@ function App() {
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
+        {route === '/artcodex' ? <ArtCodexPage /> : null}
         {route === '/about' ? <AboutPage /> : null}
       </main>
       <Footer />

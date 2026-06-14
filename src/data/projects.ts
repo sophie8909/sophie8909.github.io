@@ -1,6 +1,7 @@
 export type ProjectId = 'artcodex' | 'sxstx' | 'catrodis';
 export type ProjectActionId =
   | 'github'
+  | 'artcodex'
   | 'openTool'
   | 'comingSoon';
 
@@ -21,6 +22,8 @@ export const studioLinks = {
   buyMeCoffee: 'https://www.buymeacoffee.com/feiyastudio'
 };
 
+export const artcodexUrl = 'https://feiyastudio.com/artcodex';
+
 export const featuredProject: Project = {
   id: 'catrodis',
   shape: 'diamond',
@@ -39,7 +42,8 @@ export const supportingProjects: Project[] = [
     anchor: 'artcodex',
     actions: [
       {
-        id: 'comingSoon'
+        id: 'artcodex',
+        href: artcodexUrl
       }
     ]
   },

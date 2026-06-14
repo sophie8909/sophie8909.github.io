@@ -4,6 +4,8 @@
     "description": "CatRodis。ArtCodex。sxstx Calculator。",
     "projectsTitle": "FEIYA | Projects",
     "projectsDescription": "CatRodis。ArtCodex。sxstx Calculator。",
+    "artcodexTitle": "ArtCodex | Feiya Studio",
+    "artcodexDescription": "ArtCodex 是为创作流程设计的提示词生成工具。",
     "aboutTitle": "Feiya Studio",
     "aboutDescription": "CatRodis。ArtCodex。sxstx Calculator。"
   },
@@ -35,6 +37,10 @@
       "github": {
         "label": "GitHub",
         "aria": "在 GitHub 打开 {{project}}"
+      },
+      "artcodex": {
+        "label": "ArtCodex",
+        "aria": "打开 ArtCodex"
       },
       "openTool": {
         "label": "Open Tool",
