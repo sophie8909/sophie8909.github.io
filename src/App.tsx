@@ -14,7 +14,7 @@ const siteUrl = 'https://feiyastudio.com';
 const routeMetaKeys = {
   '/': { title: 'meta.title', description: 'meta.description' },
   '/projects': { title: 'meta.projectsTitle', description: 'meta.projectsDescription' },
-  '/artcodex': { title: 'meta.artcodexTitle', description: 'meta.artcodexDescription' },
+  '/ArtCodex': { title: 'meta.artcodexTitle', description: 'meta.artcodexDescription' },
   '/about': { title: 'meta.aboutTitle', description: 'meta.aboutDescription' }
 } as const;
 
@@ -87,7 +87,7 @@ function App() {
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
-        {route === '/artcodex' ? <ArtCodexPage /> : null}
+        {route === '/ArtCodex' ? <ArtCodexPage /> : null}
         {route === '/about' ? <AboutPage /> : null}
       </main>
       <Footer />

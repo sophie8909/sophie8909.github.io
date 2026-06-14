@@ -22,7 +22,7 @@ export const studioLinks = {
   buyMeCoffee: 'https://www.buymeacoffee.com/feiyastudio'
 };
 
-export const artcodexUrl = 'https://feiyastudio.com/artcodex';
+export const artcodexUrl = 'https://feiyastudio.com/ArtCodex';
 
 export const featuredProject: Project = {
   id: 'catrodis',

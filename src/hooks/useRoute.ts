@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export type AppRoute = '/' | '/projects' | '/artcodex' | '/about';
+export type AppRoute = '/' | '/projects' | '/ArtCodex' | '/about';
 
-const routeSet = new Set<AppRoute>(['/', '/projects', '/artcodex', '/about']);
+const routeSet = new Set<AppRoute>(['/', '/projects', '/ArtCodex', '/about']);
 
 const normalizeRoute = (pathname: string): AppRoute => {
   const withoutTrailingSlash =
