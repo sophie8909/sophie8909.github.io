@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { artcodexUrl, studioLinks } from '../data/projects';
+import { studioLinks } from '../data/projects';
 import type { AppRoute } from '../hooks/useRoute';
 import { LanguageSelector } from './LanguageSelector';
 
@@ -9,9 +9,9 @@ interface HeaderProps {
   onNavigate: (route: AppRoute) => void;
 }
 
-const navItems: Array<{ anchor: string; labelKey: string; href?: string }> = [
+const navItems: Array<{ anchor: string; labelKey: string }> = [
   { anchor: 'catrodis', labelKey: 'nav.catrodis' },
-  { anchor: 'artcodex', labelKey: 'nav.artcodex', href: artcodexUrl },
+  { anchor: 'artcodex', labelKey: 'nav.artcodex' },
   { anchor: 'sxstx-calculator', labelKey: 'nav.sxstx' }
 ];
 
@@ -71,22 +71,16 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
 
         <div className={`nav-content ${menuOpen ? 'nav-content-open' : ''}`} id="primary-navigation">
           <div className="nav-links">
-            {navItems.map((item) =>
-              item.href ? (
-                <a className="nav-link" href={item.href} key={item.anchor} onClick={() => setMenuOpen(false)}>
-                  {t(item.labelKey)}
-                </a>
-              ) : (
-                <button
-                  className="nav-link"
-                  type="button"
-                  key={item.anchor}
-                  onClick={() => scrollToAnchor(item.anchor)}
-                >
-                  {t(item.labelKey)}
-                </button>
-              )
-            )}
+            {navItems.map((item) => (
+              <button
+                className="nav-link"
+                type="button"
+                key={item.anchor}
+                onClick={() => scrollToAnchor(item.anchor)}
+              >
+                {t(item.labelKey)}
+              </button>
+            ))}
             <a className="nav-link nav-link-external" href={studioLinks.github} target="_blank" rel="noreferrer">
               {t('nav.github')}
             </a>
