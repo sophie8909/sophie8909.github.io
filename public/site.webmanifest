@@ -8,18 +8,6 @@
   "theme_color": "#B87C85",
   "icons": [
     {
-      "src": "/favicon.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
       "src": "/assets/icons/feiya-studio-icon.png",
       "sizes": "1254x1254",
       "type": "image/png",
