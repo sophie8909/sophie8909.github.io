@@ -4,8 +4,6 @@ import { Header } from './components/Header';
 import { SEO } from './components/SEO';
 import { useRoute } from './hooks/useRoute';
 import { AboutPage } from './pages/AboutPage';
-import { ArtCodexPage } from './pages/ArtCodexPage';
-import { CalculatorPage } from './pages/CalculatorPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
 
@@ -24,8 +22,6 @@ function App() {
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
-        {route === '/ArtCodex' ? <ArtCodexPage /> : null}
-        {route === '/calculator' ? <CalculatorPage /> : null}
         {route === '/about' ? <AboutPage /> : null}
       </main>
       <Footer />

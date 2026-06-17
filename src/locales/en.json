@@ -21,49 +21,17 @@
     "menuShort": "Menu",
     "closeShort": "Close",
     "catrodis": "CatRodis",
-    "artcodex": "ArtCodex",
-    "sxstx": "sxstx Calculator",
-    "github": "GitHub"
+    "creations": "Creations"
   },
   "hero": {
     "subtitle": "Turning imagination into worlds."
   },
-  "featured": {
-    "eyebrow": "Main Exhibition Hall",
-    "label": "01"
-  },
   "projects": {
     "actions": {
-      "github": {
-        "label": "GitHub",
-        "aria": "Open {{project}} on GitHub"
-      },
-      "artcodex": {
-        "label": "ArtCodex",
-        "aria": "Open ArtCodex"
-      },
-      "openTool": {
-        "label": "Open Tool",
-        "aria": "Open {{project}}"
-      },
-      "calculator": {
-        "label": "Calculator",
-        "aria": "Open {{project}} calculator page"
-      },
       "comingSoon": {
         "label": "COMING SOON",
         "aria": "{{project}} is coming soon"
       }
-    },
-    "artcodex": {
-      "title": "ARTCODEX",
-      "subtitle": "Image Prompt System",
-      "description": "Transform ideas into\nimage-generation prompts."
-    },
-    "sxstx": {
-      "title": "SXSTX CALCULATOR",
-      "subtitle": "Character Progression Tool",
-      "description": "Calculation tools\nfor Wand & Sword."
     },
     "catrodis": {
       "title": "CATRODIS",
@@ -81,5 +49,13 @@
   },
   "footer": {
     "copyright": "© 2026 Feiya Studio"
+  },
+  "creations": {
+    "eyebrow": "Creations",
+    "heading": "Creator tools and production systems",
+    "linksLabel": "Studio links",
+    "buyMeCoffee": "Buy Me a Coffee",
+    "openAria": "Open {{title}}",
+    "comingSoonAria": "{{title}} is coming soon"
   }
 }

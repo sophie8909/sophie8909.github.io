@@ -348,7 +348,7 @@ a {
 
 .hero-inner,
 .geometric-navigation,
-.seo-overview,
+.creations-heading,
 .project-section,
 .featured-project,
 .supporting-project,
@@ -473,11 +473,22 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
-.seo-overview {
-  display: grid;
-  gap: 2rem;
-  padding: 4.5rem 0;
+.creations-section {
   border-bottom: 1px solid var(--line);
+}
+
+.creations-heading {
+  padding: 4rem 0 1rem;
+}
+
+.creations-heading h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
 }
 
 .section-heading {
@@ -589,10 +600,6 @@ a {
   gap: 1.25rem;
   padding: 1.25rem 0;
   border-top: 1px solid var(--line);
-}
-
-.supporting-project:last-of-type {
-  border-bottom: 1px solid var(--line);
 }
 
 .tool-copy {
@@ -1046,12 +1053,6 @@ a {
     align-items: center;
   }
 
-  .seo-copy-columns {
-    columns: 2;
-    column-gap: 2rem;
-    max-width: none;
-  }
-
   .artcodex-workflow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1097,15 +1098,15 @@ a {
     min-height: 360px;
   }
 
-  .supporting-project-sxstx {
+  .supporting-project-sxstx-calculator {
     grid-template-columns: minmax(280px, 0.78fr) minmax(0, 0.72fr);
   }
 
-  .supporting-project-sxstx .tool-copy {
+  .supporting-project-sxstx-calculator .tool-copy {
     order: 2;
   }
 
-  .supporting-project-sxstx .tool-visual {
+  .supporting-project-sxstx-calculator .tool-visual {
     order: 1;
   }
 

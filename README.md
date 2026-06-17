@@ -65,6 +65,10 @@ Preview the production build:
 npm run preview
 ```
 
+## Updating Homepage Creations
+
+To add or edit homepage creations, update `src/data/creations.json`. Each item supports `id`, localized `title`, localized `subtitle`, localized `description`, and a `buttons` array. Each button supports localized `label`, `href`, and `clickable`. Items and buttons render in the order they appear in the arrays.
+
 ## Languages
 
 The site supports:

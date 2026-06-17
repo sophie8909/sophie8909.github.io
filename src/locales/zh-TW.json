@@ -21,45 +21,17 @@
     "menuShort": "選單",
     "closeShort": "關閉",
     "catrodis": "CatRodis",
-    "artcodex": "ArtCodex",
-    "sxstx": "sxstx Calculator",
-    "github": "GitHub"
+    "creations": "Creations"
   },
   "hero": {
     "subtitle": "讓想像成為世界。"
   },
-  "featured": {
-    "eyebrow": "Main Exhibition Hall",
-    "label": "01"
-  },
   "projects": {
     "actions": {
-      "github": {
-        "label": "GitHub",
-        "aria": "在 GitHub 開啟 {{project}}"
-      },
-      "artcodex": {
-        "label": "ArtCodex",
-        "aria": "開啟 ArtCodex"
-      },
-      "openTool": {
-        "label": "Open Tool",
-        "aria": "開啟 {{project}}"
-      },
       "comingSoon": {
         "label": "COMING SOON",
         "aria": "{{project}} 即將推出"
       }
-    },
-    "artcodex": {
-      "title": "ARTCODEX",
-      "subtitle": "Image Prompt System",
-      "description": "將想法轉化為\n圖像生成提示詞。"
-    },
-    "sxstx": {
-      "title": "杖劍傳說素材計算機",
-      "subtitle": "Character Progression Tool",
-      "description": "杖劍傳說的\n素材計算機。"
     },
     "catrodis": {
       "title": "CATRODIS",
@@ -77,5 +49,13 @@
   },
   "footer": {
     "copyright": "© 2026 Feiya Studio"
+  },
+  "creations": {
+    "eyebrow": "Creations",
+    "heading": "創作工具與製作系統",
+    "linksLabel": "工作室連結",
+    "buyMeCoffee": "Buy Me a Coffee",
+    "openAria": "開啟 {{title}}",
+    "comingSoonAria": "{{title}} 即將推出"
   }
 }

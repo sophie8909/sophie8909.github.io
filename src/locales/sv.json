@@ -21,45 +21,17 @@
     "menuShort": "Meny",
     "closeShort": "Stäng",
     "catrodis": "CatRodis",
-    "artcodex": "ArtCodex",
-    "sxstx": "sxstx Calculator",
-    "github": "GitHub"
+    "creations": "Kreationer"
   },
   "hero": {
     "subtitle": "Låt fantasin bli till världar."
   },
-  "featured": {
-    "eyebrow": "Main Exhibition Hall",
-    "label": "01"
-  },
   "projects": {
     "actions": {
-      "github": {
-        "label": "GitHub",
-        "aria": "Öppna {{project}} på GitHub"
-      },
-      "artcodex": {
-        "label": "ArtCodex",
-        "aria": "Öppna ArtCodex"
-      },
-      "openTool": {
-        "label": "Open Tool",
-        "aria": "Öppna {{project}}"
-      },
       "comingSoon": {
         "label": "COMING SOON",
         "aria": "{{project}} kommer snart"
       }
-    },
-    "artcodex": {
-      "title": "ARTCODEX",
-      "subtitle": "Image Prompt System",
-      "description": "Förvandlar idéer till\nbildgenereringsprompter."
-    },
-    "sxstx": {
-      "title": "SXSTX CALCULATOR",
-      "subtitle": "Character Progression Tool",
-      "description": "Beräkningsverktyg\nför Wand & Sword."
     },
     "catrodis": {
       "title": "CATRODIS",
@@ -77,5 +49,13 @@
   },
   "footer": {
     "copyright": "© 2026 Feiya Studio"
+  },
+  "creations": {
+    "eyebrow": "Creations",
+    "heading": "Kreativa verktyg och produktionssystem",
+    "linksLabel": "Studiolänkar",
+    "buyMeCoffee": "Buy Me a Coffee",
+    "openAria": "Öppna {{title}}",
+    "comingSoonAria": "{{title}} kommer snart"
   }
 }

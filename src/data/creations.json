@@ -1,0 +1,101 @@
+[
+  {
+    "id": "artcodex",
+    "title": {
+      "zh-TW": "ARTCODEX",
+      "zh-CN": "ARTCODEX",
+      "en": "ARTCODEX",
+      "sv": "ARTCODEX"
+    },
+    "subtitle": {
+      "zh-TW": "AI 提示詞生成工具",
+      "zh-CN": "AI 提示词生成工具",
+      "en": "AI PROMPT GENERATION TOOL",
+      "sv": "AI-VERKTYG FÖR PROMPTGENERERING"
+    },
+    "description": {
+      "zh-TW": "為圖像生成流程\n建立結構化提示詞、風格\n與創作素材。",
+      "zh-CN": "为图像生成流程\n建立结构化提示词、风格\n与创作素材。",
+      "en": "Generate structured prompts,\nstyles, and creative assets\nfor image generation workflows.",
+      "sv": "Skapa strukturerade prompter,\nstilar och kreativa resurser\nför bildgenereringsflöden."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "Chrome WEB STORE",
+          "zh-CN": "Chrome WEB STORE",
+          "en": "Chrome WEB STORE",
+          "sv": "Chrome WEB STORE"
+        },
+        "href": "https://chromewebstore.google.com/detail/gjedcnifgceilkkbodfdhbcdhbmhnoei?utm_source=item-share-cb",
+        "clickable": true
+      }
+    ]
+  },
+  {
+    "id": "sxstx-calculator",
+    "title": {
+      "zh-TW": "杖劍傳說素材計算機",
+      "zh-CN": "杖剑传说素材计算机",
+      "en": "SXSTX CALCULATOR",
+      "sv": "SXSTX CALCULATOR"
+    },
+    "subtitle": {
+      "zh-TW": "角色養成工具",
+      "zh-CN": "角色养成工具",
+      "en": "CHARACTER PROGRESSION TOOL",
+      "sv": "VERKTYG FÖR KARAKTÄRSUTVECKLING"
+    },
+    "description": {
+      "zh-TW": "杖劍傳說的\n素材計算工具。",
+      "zh-CN": "杖剑传说的\n素材计算工具。",
+      "en": "Calculation tools\nfor 杖剑传说.",
+      "sv": "Beräkningsverktyg\nför 杖剑传说."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "開啟",
+          "zh-CN": "打开",
+          "en": "OPEN",
+          "sv": "ÖPPNA"
+        },
+        "href": "https://sophie8909.github.io/sxstx_calculator/",
+        "clickable": true
+      }
+    ]
+  },
+  {
+    "id": "codex-orchestrator",
+    "title": {
+      "zh-TW": "CODEX ORCHESTRATOR",
+      "zh-CN": "CODEX ORCHESTRATOR",
+      "en": "CODEX ORCHESTRATOR",
+      "sv": "CODEX ORCHESTRATOR"
+    },
+    "subtitle": {
+      "zh-TW": "CODEX 任務自動化",
+      "zh-CN": "CODEX 任务自动化",
+      "en": "TASK AUTOMATION FOR CODEX",
+      "sv": "UPPGIFTSAUTOMATION FÖR CODEX"
+    },
+    "description": {
+      "zh-TW": "管理 OpenAI Codex 的\n任務佇列、相依關係\n與長時間工作流程。",
+      "zh-CN": "管理 OpenAI Codex 的\n任务队列、依赖关系\n与长时间工作流。",
+      "en": "Manage task queues,\ndependencies, and long-running\nworkflows for OpenAI Codex.",
+      "sv": "Hantera uppgiftsköer,\nberoenden och långvariga\narbetsflöden för OpenAI Codex."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "即將推出",
+          "zh-CN": "即将推出",
+          "en": "COMING SOON",
+          "sv": "KOMMER SNART"
+        },
+        "href": null,
+        "clickable": false
+      }
+    ]
+  }
+]

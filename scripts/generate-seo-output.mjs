@@ -49,21 +49,6 @@ const buildStructuredData = (route, meta) => {
     });
   }
 
-  if (meta.schemas.includes('SoftwareApplication')) {
-    const isCalculator = route === '/calculator';
-    graph.push({
-      '@type': 'SoftwareApplication',
-      name: isCalculator ? '杖劍傳說素材計算機' : 'ArtCodex',
-      applicationCategory: isCalculator ? 'UtilitiesApplication' : 'DesignApplication',
-      operatingSystem: 'Web',
-      url: canonicalUrl(route),
-      description: meta.description,
-      publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
-      }
-    });
-  }
-
   return {
     '@context': 'https://schema.org',
     '@graph': graph

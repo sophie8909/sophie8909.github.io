@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { studioLinks } from '../data/projects';
 import type { AppRoute } from '../hooks/useRoute';
 import { LanguageSelector } from './LanguageSelector';
 
@@ -11,8 +10,7 @@ interface HeaderProps {
 
 const navItems: Array<{ anchor: string; labelKey: string }> = [
   { anchor: 'catrodis', labelKey: 'nav.catrodis' },
-  { anchor: 'artcodex', labelKey: 'nav.artcodex' },
-  { anchor: 'sxstx-calculator', labelKey: 'nav.sxstx' }
+  { anchor: 'creations', labelKey: 'nav.creations' }
 ];
 
 export const Header = ({ route, onNavigate }: HeaderProps) => {
@@ -81,9 +79,6 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
                 {t(item.labelKey)}
               </button>
             ))}
-            <a className="nav-link nav-link-external" href={studioLinks.github} target="_blank" rel="noreferrer">
-              {t('nav.github')}
-            </a>
           </div>
           <LanguageSelector />
         </div>

@@ -1,7 +1,7 @@
 import seoData from './seoData.json';
 import type { AppRoute } from '../hooks/useRoute';
 
-type SchemaType = 'Organization' | 'WebSite' | 'SoftwareApplication';
+type SchemaType = 'Organization' | 'WebSite';
 
 interface RouteSeo {
   title: string;
@@ -25,7 +25,6 @@ export const getLocalizedUrl = (route: AppRoute, language: string) => {
 
 export const buildStructuredData = (route: AppRoute) => {
   const meta = routeSeo[route];
-  const canonicalUrl = getCanonicalUrl(route);
   const graph: Array<Record<string, unknown>> = [];
 
   if (meta.schemas.includes('Organization')) {
@@ -49,21 +48,6 @@ export const buildStructuredData = (route: AppRoute) => {
         '@id': `${seoData.siteUrl}/#organization`
       },
       inLanguage: seoData.languages
-    });
-  }
-
-  if (meta.schemas.includes('SoftwareApplication')) {
-    const isCalculator = route === '/calculator';
-    graph.push({
-      '@type': 'SoftwareApplication',
-      name: isCalculator ? '杖劍傳說素材計算機' : 'ArtCodex',
-      applicationCategory: isCalculator ? 'UtilitiesApplication' : 'DesignApplication',
-      operatingSystem: 'Web',
-      url: canonicalUrl,
-      description: meta.description,
-      publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
-      }
     });
   }
 

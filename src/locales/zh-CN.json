@@ -21,53 +21,17 @@
     "menuShort": "菜单",
     "closeShort": "关闭",
     "catrodis": "CatRodis",
-    "artcodex": "ArtCodex",
-    "sxstx": "sxstx Calculator",
-    "github": "GitHub"
+    "creations": "Creations"
   },
   "hero": {
     "subtitle": "让想象成为世界。"
   },
-  "featured": {
-    "eyebrow": "Main Exhibition Hall",
-    "label": "01"
-  },
   "projects": {
     "actions": {
-      "github": {
-        "label": "GitHub",
-        "aria": "在 GitHub 打开 {{project}}"
-      },
-      "artcodex": {
-        "label": "ArtCodex",
-        "aria": "打开 ArtCodex"
-      },
-      "openTool": {
-        "label": "Open Tool",
-        "aria": "打开 {{project}}"
-      },
-      "exploreWorld": {
-        "label": "Explore World",
-        "aria": "探索 {{project}}"
-      },
-      "developmentLog": {
-        "label": "Development Log",
-        "aria": "打开 {{project}} 开发记录"
-      },
       "comingSoon": {
         "label": "COMING SOON",
         "aria": "{{project}} 即将推出"
       }
-    },
-    "artcodex": {
-      "title": "ARTCODEX",
-      "subtitle": "Image Prompt System",
-      "description": "将想法转化为\n图像生成提示词。"
-    },
-    "sxstx": {
-      "title": "杖剑传说素材计算机",
-      "subtitle": "Character Progression Tool",
-      "description": "杖剑传说的\n素材计算机。"
     },
     "catrodis": {
       "title": "CATRODIS",
@@ -85,5 +49,13 @@
   },
   "footer": {
     "copyright": "© 2026 Feiya Studio"
+  },
+  "creations": {
+    "eyebrow": "Creations",
+    "heading": "创作工具与制作系统",
+    "linksLabel": "工作室链接",
+    "buyMeCoffee": "Buy Me a Coffee",
+    "openAria": "打开 {{title}}",
+    "comingSoonAria": "{{title}} 即将推出"
   }
 }
