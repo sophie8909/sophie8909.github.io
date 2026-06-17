@@ -3,6 +3,7 @@ export type ProjectActionId =
   | 'github'
   | 'artcodex'
   | 'openTool'
+  | 'calculator'
   | 'comingSoon';
 
 export interface ProjectAction {
@@ -23,6 +24,7 @@ export const studioLinks = {
 };
 
 export const artcodexUrl = 'https://feiyastudio.com/ArtCodex';
+export const calculatorUrl = 'https://sophie8909.github.io/sxstx_calculator/';
 
 export const featuredProject: Project = {
   id: 'catrodis',
@@ -43,7 +45,7 @@ export const supportingProjects: Project[] = [
     actions: [
       {
         id: 'artcodex',
-        href: artcodexUrl
+        href: '/ArtCodex'
       }
     ]
   },
@@ -53,8 +55,8 @@ export const supportingProjects: Project[] = [
     anchor: 'sxstx-calculator',
     actions: [
       {
-        id: 'openTool',
-        href: 'https://sophie8909.github.io/sxstx_calculator/'
+        id: 'calculator',
+        href: '/calculator'
       },
       {
         id: 'github',

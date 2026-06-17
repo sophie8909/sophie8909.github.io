@@ -348,6 +348,7 @@ a {
 
 .hero-inner,
 .geometric-navigation,
+.seo-overview,
 .project-section,
 .featured-project,
 .supporting-project,
@@ -469,6 +470,13 @@ a {
 
 .geometric-navigation {
   padding: 5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.seo-overview {
+  display: grid;
+  gap: 2rem;
+  padding: 4.5rem 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -795,6 +803,18 @@ a {
   overflow: hidden;
 }
 
+.calculator-panel {
+  position: relative;
+  min-height: 280px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    rgba(239, 231, 221, 0.3);
+  background-size: 28px 28px;
+  overflow: hidden;
+}
+
 .artcodex-panel-copy {
   position: absolute;
   right: 1.25rem;
@@ -849,6 +869,20 @@ a {
 
 .artcodex-policy-copy {
   max-width: 680px;
+}
+
+.seo-copy {
+  max-width: 760px;
+}
+
+.seo-copy p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.seo-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .blueprint-map {
@@ -1003,6 +1037,19 @@ a {
 
   .artcodex-hero {
     grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  }
+
+  .calculator-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .seo-copy-columns {
+    columns: 2;
+    column-gap: 2rem;
+    max-width: none;
   }
 
   .artcodex-workflow-grid {

@@ -46,6 +46,10 @@
         "label": "Open Tool",
         "aria": "Open {{project}}"
       },
+      "calculator": {
+        "label": "Calculator",
+        "aria": "Open {{project}} calculator page"
+      },
       "comingSoon": {
         "label": "COMING SOON",
         "aria": "{{project}} is coming soon"

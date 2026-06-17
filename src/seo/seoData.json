@@ -1,0 +1,54 @@
+{
+  "siteUrl": "https://feiyastudio.com",
+  "siteName": "Feiya Studio",
+  "defaultImage": "https://feiyastudio.com/og-image.svg",
+  "languages": ["zh-TW", "zh-CN", "en", "sv"],
+  "organization": {
+    "name": "Feiya Studio",
+    "url": "https://feiyastudio.com",
+    "logo": "https://feiyastudio.com/assets/icons/feiya-studio-icon.png",
+    "sameAs": ["https://github.com/sophie8909"]
+  },
+  "routes": {
+    "/": {
+      "title": "Feiya Studio | CatRodis, ArtCodex, and Calculator Tools",
+      "description": "Feiya Studio creates character worlds, creator workflow tools, and game progression calculators including CatRodis, ArtCodex, and Wand & Sword calculator utilities.",
+      "lastmod": "2026-06-17",
+      "changefreq": "monthly",
+      "priority": "1.0",
+      "schemas": ["Organization", "WebSite"]
+    },
+    "/projects": {
+      "title": "Projects | Feiya Studio",
+      "description": "Explore Feiya Studio projects including CatRodis, ArtCodex, and progression calculator tools for creators and players.",
+      "lastmod": "2026-06-17",
+      "changefreq": "monthly",
+      "priority": "0.9",
+      "schemas": ["WebSite"]
+    },
+    "/ArtCodex": {
+      "title": "ArtCodex Prompt Workflow Tool | Feiya Studio",
+      "description": "ArtCodex is a local-first Chrome extension and GPT workflow for organizing project references, styles, categories, and image-generation prompts.",
+      "lastmod": "2026-06-17",
+      "changefreq": "monthly",
+      "priority": "0.9",
+      "schemas": ["SoftwareApplication"]
+    },
+    "/calculator": {
+      "title": "杖劍傳說素材計算機 | Feiya Studio",
+      "description": "Feiya Studio provides a 杖劍傳說素材計算機 for planning 角色養成, 技能材料, and 裝備養成 requirements with a focused calculator workflow.",
+      "lastmod": "2026-06-17",
+      "changefreq": "monthly",
+      "priority": "0.9",
+      "schemas": ["SoftwareApplication"]
+    },
+    "/about": {
+      "title": "About Feiya Studio",
+      "description": "Learn about Feiya Studio, an independent studio building CatRodis, ArtCodex, and practical calculator tools for creative and game workflows.",
+      "lastmod": "2026-06-17",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "schemas": ["Organization"]
+    }
+  }
+}

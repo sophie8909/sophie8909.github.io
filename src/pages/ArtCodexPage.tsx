@@ -42,6 +42,9 @@ export const ArtCodexPage = () => (
           <a className="action-link" href={artcodexGptUrl} rel="noreferrer" target="_blank">
             Open GPT
           </a>
+          <a className="action-link" href="/">
+            Feiya Studio
+          </a>
           <a className="action-link" href="#artcodex-privacy">
             Privacy Policy
           </a>
@@ -66,6 +69,11 @@ export const ArtCodexPage = () => (
         <p className="project-description">
           Organize reusable project context before generating. ArtCodex keeps visual rules, category records,
           style direction, and output settings close to the prompt workflow.
+        </p>
+        <p className="project-description">
+          The extension is built for creators who reuse characters, locations, props, style notes, and approved
+          prompt patterns across many image-generation sessions. Instead of rebuilding context from scratch,
+          ArtCodex keeps those records available as structured project material.
         </p>
       </div>
 

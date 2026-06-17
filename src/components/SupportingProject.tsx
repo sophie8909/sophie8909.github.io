@@ -35,13 +35,15 @@ export const SupportingProject = ({ project, index }: SupportingProjectProps) =>
               );
             }
 
+            const isExternal = /^https?:\/\//.test(action.href);
+
             return (
               <a
                 className={className}
                 href={action.href}
                 key={action.id}
-                rel="noreferrer"
-                target="_blank"
+                rel={isExternal ? 'noreferrer' : undefined}
+                target={isExternal ? '_blank' : undefined}
                 aria-label={ariaLabel}
               >
                 {t(`projects.actions.${action.id}.label`)}
