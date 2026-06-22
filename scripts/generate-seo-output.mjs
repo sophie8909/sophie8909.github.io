@@ -10,6 +10,7 @@ const distIndexPath = join(distPath, 'index.html');
 
 const seoData = JSON.parse(await readFile(seoDataPath, 'utf8'));
 const routeEntries = Object.entries(seoData.routes);
+const sitemapEntries = routeEntries.concat(Object.entries(seoData.sitemapOnlyRoutes ?? {}));
 
 const escapeXml = (value) =>
   String(value)
@@ -144,25 +145,36 @@ const renderHead = (html, route, meta) => {
   );
 };
 
+const renderSitemapAlternates = (route, meta) => {
+  if (meta.alternates === false) {
+    return '';
+  }
+
+  return `${seoData.languages
+    .map(
+      (language) =>
+        `    <xhtml:link rel="alternate" hreflang="${language}" href="${localizedUrl(route, language)}" />`
+    )
+    .join('\n')}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${canonicalUrl(route)}" />`;
+};
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
-${routeEntries
-  .map(([route, meta]) => `  <url>
+${sitemapEntries
+  .map(([route, meta]) => {
+    const alternates = renderSitemapAlternates(route, meta);
+
+    return `  <url>
     <loc>${canonicalUrl(route)}</loc>
     <lastmod>${meta.lastmod}</lastmod>
     <changefreq>${meta.changefreq}</changefreq>
     <priority>${meta.priority}</priority>
-${seoData.languages
-  .map(
-    (language) =>
-      `    <xhtml:link rel="alternate" hreflang="${language}" href="${localizedUrl(route, language)}" />`
-  )
-  .join('\n')}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${canonicalUrl(route)}" />
-  </url>`)
+${alternates ? `${alternates}\n` : ''}  </url>`;
+  })
   .join('\n')}
 </urlset>
 `;

@@ -12,6 +12,29 @@ export const HomePage = () => {
     <>
       <Hero />
       <FeaturedProject />
+      <section
+        className="calculator-seo-section"
+        id="sxstx-calculator"
+        aria-labelledby="sxstx-calculator-title"
+      >
+        <div className="calculator-seo-inner">
+          <div className="section-kicker">
+            <span className="section-number">02</span>
+            <p className="eyebrow">Calculator</p>
+          </div>
+          <div className="calculator-seo-copy">
+            <h2 id="sxstx-calculator-title">杖劍傳說計算機 / SXSTX Calculator</h2>
+            <p>
+              Use the 杖劍傳說計算機 / SXSTX Calculator to estimate character
+              progression materials, skill upgrades, equipment costs, relics, pets,
+              and owned-material gaps before setting upgrade goals.
+            </p>
+            <a className="action-link action-link-primary" href="/sxstx_calculator/">
+              杖劍傳說計算機 / SXSTX Calculator
+            </a>
+          </div>
+        </div>
+      </section>
       <section className="creations-section" id="creations" aria-labelledby="creations-title">
         <div className="creations-heading">
           <h2 id="creations-title">{t('creations.eyebrow')}</h2>

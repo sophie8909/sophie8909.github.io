@@ -48,5 +48,19 @@
         "Organization"
       ]
     }
+  },
+  "sitemapOnlyRoutes": {
+    "/sxstx_calculator/": {
+      "lastmod": "2026-06-22",
+      "changefreq": "weekly",
+      "priority": "0.9",
+      "alternates": false
+    },
+    "/ArtCodex/": {
+      "lastmod": "2026-06-22",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "alternates": false
+    }
   }
 }
