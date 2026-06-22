@@ -35,30 +35,30 @@
   {
     "id": "sxstx-calculator",
     "title": {
-      "zh-TW": "杖劍傳說素材計算機",
-      "zh-CN": "杖剑传说素材计算机",
+      "zh-TW": "杖劍傳說計算機 / SXSTX Calculator",
+      "zh-CN": "杖剑传说计算机 / SXSTX Calculator",
       "en": "SXSTX CALCULATOR",
       "sv": "SXSTX CALCULATOR"
     },
     "subtitle": {
-      "zh-TW": "角色養成工具",
-      "zh-CN": "角色养成工具",
-      "en": "CHARACTER PROGRESSION TOOL",
-      "sv": "VERKTYG FÖR KARAKTÄRSUTVECKLING"
+      "zh-TW": "素材需求與角色養成估算",
+      "zh-CN": "素材需求与角色养成估算",
+      "en": "MATERIAL AND PROGRESSION CALCULATOR",
+      "sv": "MATERIAL- OCH UTVECKLINGSKALKYLATOR"
     },
     "description": {
-      "zh-TW": "杖劍傳說的\n素材計算工具。",
-      "zh-CN": "杖剑传说的\n素材计算工具。",
-      "en": "Calculation tools\nfor 杖剑传说.",
-      "sv": "Beräkningsverktyg\nför 杖剑传说."
+      "zh-TW": "估算角色養成、技能升級、裝備、寵物、遺物與持有素材缺口。",
+      "zh-CN": "估算角色养成、技能升级、装备、宠物、遗物与持有素材缺口。",
+      "en": "Estimate character, skill, equipment, pet, relic, and owned-material gaps.",
+      "sv": "Beräkna materialgap för karaktär, färdighet, utrustning, husdjur och reliker."
     },
     "buttons": [
       {
         "label": {
-          "zh-TW": "開啟",
-          "zh-CN": "打开",
-          "en": "OPEN",
-          "sv": "ÖPPNA"
+          "zh-TW": "開啟計算機",
+          "zh-CN": "打开计算机",
+          "en": "OPEN CALCULATOR",
+          "sv": "ÖPPNA KALKYLATOR"
         },
         "href": "/sxstx_calculator/",
         "clickable": true
