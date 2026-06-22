@@ -4,8 +4,10 @@ import { Header } from './components/Header';
 import { SEO } from './components/SEO';
 import { useRoute } from './hooks/useRoute';
 import { AboutPage } from './pages/AboutPage';
+import { BeichenPage } from './pages/BeichenPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { XingQuePage } from './pages/XingQuePage';
 
 function App() {
   const { route, navigate } = useRoute();
@@ -22,6 +24,8 @@ function App() {
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
+        {route === '/xingque' ? <XingQuePage /> : null}
+        {route === '/xingque/beichen' ? <BeichenPage /> : null}
         {route === '/about' ? <AboutPage /> : null}
       </main>
       <Footer />

@@ -8,9 +8,13 @@ interface HeaderProps {
   onNavigate: (route: AppRoute) => void;
 }
 
-const navItems: Array<{ anchor: string; labelKey: string }> = [
-  { anchor: 'catrodis', labelKey: 'nav.catrodis' },
-  { anchor: 'creations', labelKey: 'nav.creations' }
+const navItems: Array<
+  | { type: 'anchor'; anchor: string; labelKey: string }
+  | { type: 'route'; route: AppRoute; labelKey: string }
+> = [
+  { type: 'anchor', anchor: 'catrodis', labelKey: 'nav.catrodis' },
+  { type: 'route', route: '/xingque', labelKey: 'nav.xingque' },
+  { type: 'anchor', anchor: 'creations', labelKey: 'nav.creations' }
 ];
 
 export const Header = ({ route, onNavigate }: HeaderProps) => {
@@ -73,8 +77,13 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
               <button
                 className="nav-link"
                 type="button"
-                key={item.anchor}
-                onClick={() => scrollToAnchor(item.anchor)}
+                key={item.labelKey}
+                aria-current={
+                  item.type === 'route' && route.startsWith(item.route) ? 'page' : undefined
+                }
+                onClick={() =>
+                  item.type === 'route' ? navigate(item.route) : scrollToAnchor(item.anchor)
+                }
               >
                 {t(item.labelKey)}
               </button>

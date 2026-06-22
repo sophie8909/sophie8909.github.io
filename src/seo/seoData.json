@@ -38,6 +38,26 @@
         "WebSite"
       ]
     },
+    "/xingque": {
+      "title": "星闕 XingQue | Feiya Studio",
+      "description": "XingQue is a Feiya Studio ecosystem for quiet branch-based tools, beginning with Beichen language-learning tools.",
+      "lastmod": "2026-06-22",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "schemas": [
+        "WebSite"
+      ]
+    },
+    "/xingque/beichen": {
+      "title": "XingQue · Beichen | Feiya Studio",
+      "description": "Beichen is the XingQue language-learning branch, beginning with Rilu for quiet daily diary writing practice.",
+      "lastmod": "2026-06-22",
+      "changefreq": "monthly",
+      "priority": "0.8",
+      "schemas": [
+        "WebSite"
+      ]
+    },
     "/about": {
       "title": "About Feiya Studio",
       "description": "Learn about Feiya Studio, an independent studio building CatRodis, ArtCodex, and practical calculator tools for creative and game workflows.",
