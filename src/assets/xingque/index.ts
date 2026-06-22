@@ -8,8 +8,8 @@ import latticeSong from './lattice-song.svg';
 import latticeSquare from './lattice-square.svg';
 import moonGateWindow from './moon-gate-window.svg';
 import sealBeichen from './seal-beichen.svg';
-import sealXingque from './seal-xingque.svg';
 import xingqueStarChart from './xingque-star-chart.svg';
+import xingqueWordmark from '../../../xingque.png';
 
 export const xingqueAssets = {
   armillarySphere,
@@ -22,6 +22,6 @@ export const xingqueAssets = {
   latticeSquare,
   moonGateWindow,
   sealBeichen,
-  sealXingque,
-  xingqueStarChart
+  xingqueStarChart,
+  xingqueWordmark
 };

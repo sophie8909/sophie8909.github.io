@@ -26,9 +26,4 @@
     <circle cx="118" cy="270" r="6" />
     <circle cx="402" cy="270" r="6" />
   </g>
-  <g fill="#b87c85" font-family="Georgia, Times New Roman, serif" font-size="20" opacity="0.62">
-    <text x="70" y="78">equator ring</text>
-    <text x="322" y="104">meridian</text>
-    <text x="326" y="526">observatory stand</text>
-  </g>
 </svg>

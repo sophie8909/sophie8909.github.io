@@ -1712,7 +1712,7 @@ a {
 .detail-medallion,
 .feature-medallion,
 .future-lattice,
-.xingque-seal,
+.xingque-wordmark,
 .beichen-seal,
 .branch-seal,
 .rilu-seal,
@@ -1728,7 +1728,7 @@ a {
 .detail-medallion,
 .feature-medallion,
 .future-lattice,
-.xingque-seal,
+.xingque-wordmark,
 .beichen-seal,
 .branch-seal,
 .rilu-seal,
@@ -1767,21 +1767,22 @@ a {
   padding: 3rem 0;
 }
 
-.xingque-seal {
-  width: 76px;
-  margin-bottom: 1rem;
-  opacity: 0.74;
-}
-
 .hero-xingque h1 {
-  font-size: clamp(4.5rem, 11vw, 8.8rem);
+  margin-top: 0;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   text-transform: none;
   text-shadow: 0 18px 42px rgba(248, 245, 241, 0.92);
 }
 
+.xingque-wordmark {
+  width: min(72vw, 520px);
+  filter: drop-shadow(0 18px 42px rgba(248, 245, 241, 0.92));
+}
+
 .hero-xingque .hero-subtitle {
   color: var(--primary);
+  text-transform: none;
 }
 
 .xingque-hero-right {
@@ -2428,8 +2429,8 @@ a {
 }
 
 @media (min-width: 920px) {
-  .hero-xingque h1 {
-    font-size: clamp(6.8rem, 9vw, 8.8rem);
+  .xingque-wordmark {
+    width: min(34vw, 520px);
   }
 
   .armillary-asset {

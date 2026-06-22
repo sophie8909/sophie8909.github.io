@@ -53,14 +53,6 @@
     <circle cx="632" cy="304" r="4" />
     <circle cx="694" cy="342" r="3.4" />
   </g>
-  <g fill="#b87c85" font-family="Georgia, Times New Roman, serif" font-size="28" opacity="0.6">
-    <text x="374" y="132">Bei Chen</text>
-    <text x="610" y="278">Zi Wei</text>
-    <text x="158" y="476">Dou</text>
-    <text x="928" y="314">Shen</text>
-    <text x="576" y="604">Niu</text>
-    <text x="430" y="284">Lou</text>
-  </g>
   <g fill="#b79974" opacity="0.48">
     <circle cx="120" cy="178" r="2.5" />
     <circle cx="256" cy="282" r="2.2" />
@@ -71,9 +63,5 @@
     <circle cx="866" cy="650" r="2.5" />
     <circle cx="338" cy="628" r="2.2" />
     <circle cx="126" cy="574" r="2.4" />
-  </g>
-  <g fill="#2d2926" font-family="Georgia, Times New Roman, serif" font-size="18" opacity="0.44">
-    <text x="92" y="112">XingQue archive chart</text>
-    <text x="930" y="660">late Qing study copy</text>
   </g>
 </svg>

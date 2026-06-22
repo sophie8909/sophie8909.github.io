@@ -23,8 +23,4 @@
     <circle cx="170" cy="102" r="6" />
     <circle cx="628" cy="78" r="6" />
   </g>
-  <g fill="#b87c85" font-family="Georgia, Times New Roman, serif" font-size="20" opacity="0.55">
-    <text x="112" y="214">brass tube</text>
-    <text x="506" y="196">adjusting hinge</text>
-  </g>
 </svg>

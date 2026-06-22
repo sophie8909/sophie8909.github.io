@@ -47,14 +47,14 @@ export const XingQuePage = () => {
           </div>
 
           <div className="hero-inner xingque-hero-copy">
-            <img
-              className="xingque-seal"
-              src={xingqueAssets.sealXingque}
-              alt=""
-              aria-hidden="true"
-            />
-            <h1 id="xingque-title">{xingqueTitle}</h1>
-            <p className="hero-subtitle">Celestial Archive</p>
+            <h1 id="xingque-title">
+              <img
+                className="xingque-wordmark"
+                src={xingqueAssets.xingqueWordmark}
+                alt={xingqueTitle}
+              />
+            </h1>
+            <p className="hero-subtitle">xingque</p>
           </div>
 
           <div className="xingque-hero-right" aria-hidden="true">
