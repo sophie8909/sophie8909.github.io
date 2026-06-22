@@ -43,16 +43,25 @@ const upsertJsonLd = (route: AppRoute) => {
   element.textContent = JSON.stringify(buildStructuredData(route));
 };
 
+const getLocalizedTitle = (route: AppRoute, language: string, title: string) => {
+  if (route === '/xingque' && language.startsWith('zh')) {
+    return '星闕 | Feiya Studio';
+  }
+
+  return title;
+};
+
 export const SEO = ({ route }: SEOProps) => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
     const meta = routeSeo[route];
+    const title = getLocalizedTitle(route, i18n.language, meta.title);
     const canonicalUrl = getCanonicalUrl(route);
     const localizedUrl = getLocalizedUrl(route, i18n.language);
 
     document.documentElement.lang = i18n.language;
-    document.title = meta.title;
+    document.title = title;
 
     upsertMeta('meta[name="description"]', {
       name: 'description',
@@ -60,12 +69,12 @@ export const SEO = ({ route }: SEOProps) => {
     });
     upsertMeta('meta[property="og:type"]', { property: 'og:type', content: 'website' });
     upsertMeta('meta[property="og:site_name"]', { property: 'og:site_name', content: siteSeo.siteName });
-    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: meta.title });
+    upsertMeta('meta[property="og:title"]', { property: 'og:title', content: title });
     upsertMeta('meta[property="og:description"]', { property: 'og:description', content: meta.description });
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: localizedUrl });
     upsertMeta('meta[property="og:image"]', { property: 'og:image', content: siteSeo.defaultImage });
     upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });
-    upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: meta.title });
+    upsertMeta('meta[name="twitter:title"]', { name: 'twitter:title', content: title });
     upsertMeta('meta[name="twitter:description"]', { name: 'twitter:description', content: meta.description });
     upsertMeta('meta[name="twitter:image"]', { name: 'twitter:image', content: siteSeo.defaultImage });
 

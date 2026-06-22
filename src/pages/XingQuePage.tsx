@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { xingqueAssets } from '../assets/xingque';
 
 const branchDetails = [
@@ -16,6 +17,9 @@ const branchDetails = [
 ];
 
 export const XingQuePage = () => {
+  const { i18n } = useTranslation();
+  const xingqueTitle = i18n.language.startsWith('zh') ? '星闕' : 'XingQue';
+
   return (
     <div className="xingque-page">
       <section className="hero hero-xingque" aria-labelledby="xingque-title">
@@ -49,7 +53,7 @@ export const XingQuePage = () => {
               alt=""
               aria-hidden="true"
             />
-            <h1 id="xingque-title">XingQue</h1>
+            <h1 id="xingque-title">{xingqueTitle}</h1>
             <p className="hero-subtitle">Celestial Archive</p>
           </div>
 
