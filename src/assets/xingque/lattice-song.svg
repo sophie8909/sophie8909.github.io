@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title desc">
+  <title id="title">Song-Style Geometric Lattice</title>
+  <desc id="desc">A scholarly Song-style lattice built from linked key-pattern strokes.</desc>
+  <rect x="18" y="18" width="224" height="224" fill="none" stroke="#b87c85" stroke-width="3" />
+  <g fill="none" stroke="#b87c85" stroke-width="2.5" stroke-linecap="square" opacity="0.7">
+    <path d="M52 18 V70 H104 V122 H156 V174 H208 V242" />
+    <path d="M18 52 H70 V104 H122 V156 H174 V208 H242" />
+    <path d="M208 18 V70 H156 V122 H104 V174 H52 V242" />
+    <path d="M18 208 H70 V156 H122 V104 H174 V52 H242" />
+    <rect x="90" y="90" width="80" height="80" />
+  </g>
+</svg>

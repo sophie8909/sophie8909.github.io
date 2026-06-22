@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title desc">
+  <title id="title">Moon Gate Lattice</title>
+  <desc id="desc">A moon-gate shaped lattice ornament.</desc>
+  <path d="M38 236 V130 C38 80 80 38 130 38 C180 38 222 80 222 130 V236" fill="none" stroke="#b87c85" stroke-width="4" />
+  <path d="M62 236 V132 C62 94 92 64 130 64 C168 64 198 94 198 132 V236" fill="none" stroke="#b87c85" stroke-width="2.5" opacity="0.72" />
+  <g fill="none" stroke="#b87c85" stroke-width="2" opacity="0.62">
+    <path d="M38 166 H222 M38 202 H222" />
+    <path d="M82 236 V94 M130 236 V64 M178 236 V94" />
+    <path d="M82 130 C110 112 150 112 178 130" />
+    <path d="M82 166 C110 148 150 148 178 166" />
+  </g>
+</svg>

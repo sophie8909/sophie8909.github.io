@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Beichen Branch Academy</title>
+  <desc id="desc">A Northern-Star inspired academy illustration with books, astronomy, archive, and study themes.</desc>
+  <defs>
+    <filter id="wash" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="24" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.16" />
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="multiply" />
+    </filter>
+  </defs>
+  <rect width="900" height="620" fill="#f8f5f1" opacity="0" />
+  <g filter="url(#wash)">
+    <path d="M94 472 C202 418 306 410 410 448 C516 490 644 496 806 430 L806 552 L94 552 Z" fill="#d69e8e" opacity="0.18" />
+    <g fill="none" stroke="#b87c85" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M166 300 H734" stroke-width="5" />
+      <path d="M204 258 H696 L746 300 H154 Z" stroke-width="4" />
+      <path d="M260 204 H640 L696 258 H204 Z" stroke-width="4" />
+      <path d="M300 156 H600 L640 204 H260 Z" stroke-width="4" />
+      <path d="M342 118 H558 L600 156 H300 Z" stroke-width="4" />
+      <path d="M222 300 V514 M678 300 V514 M316 300 V514 M450 300 V514 M584 300 V514" stroke-width="4" />
+      <path d="M178 514 H724" stroke-width="5" />
+      <path d="M242 354 H394 V470 H242 Z" stroke-width="3" />
+      <path d="M506 354 H658 V470 H506 Z" stroke-width="3" />
+      <path d="M374 344 H526 V514 H374 Z" stroke-width="3" />
+      <path d="M398 382 H502 M398 420 H502 M398 458 H502" stroke-width="2" opacity="0.62" />
+      <path d="M258 392 H378 M258 432 H378 M522 392 H642 M522 432 H642" stroke-width="2" opacity="0.56" />
+      <path d="M120 536 H782" stroke-width="3" opacity="0.56" />
+    </g>
+    <g fill="none" stroke="#b87c85" stroke-linecap="round" stroke-linejoin="round" opacity="0.72">
+      <path d="M96 210 C140 176 196 176 240 212" stroke-width="3" />
+      <path d="M112 232 C154 204 204 204 252 236" stroke-width="2.5" />
+      <path d="M654 118 C700 88 758 92 802 126" stroke-width="3" />
+      <path d="M680 142 C716 122 762 124 792 150" stroke-width="2.5" />
+    </g>
+    <g fill="none" stroke="#2d2926" stroke-linecap="round" stroke-linejoin="round" opacity="0.54">
+      <path d="M674 184 L706 152 L748 168 L782 132 L818 176" stroke-width="2" />
+      <path d="M706 152 L720 204 M782 132 L792 198" stroke-width="1.6" />
+    </g>
+    <g fill="#b87c85" opacity="0.82">
+      <circle cx="674" cy="184" r="4" />
+      <circle cx="706" cy="152" r="5" />
+      <circle cx="748" cy="168" r="4" />
+      <circle cx="782" cy="132" r="5" />
+      <circle cx="818" cy="176" r="4" />
+      <circle cx="720" cy="204" r="3" />
+      <circle cx="792" cy="198" r="3" />
+    </g>
+    <g fill="none" stroke="#b87c85" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M108 420 H210" stroke-width="3" />
+      <path d="M124 386 H190 V420 H124 Z" stroke-width="3" />
+      <path d="M138 364 H204 V420 H138 Z" stroke-width="3" />
+      <path d="M706 390 L820 370" stroke-width="4" />
+      <path d="M718 374 L832 354 L844 386 L730 406 Z" stroke-width="3" />
+      <path d="M778 398 L742 520 M778 398 L826 518" stroke-width="3" />
+    </g>
+  </g>
+</svg>

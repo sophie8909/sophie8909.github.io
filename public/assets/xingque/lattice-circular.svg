@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">Circular Window Lattice</title>
+  <desc id="desc">A circular lattice panel for XingQue archive corners.</desc>
+  <circle cx="110" cy="110" r="94" fill="none" stroke="#b87c85" stroke-width="3" />
+  <circle cx="110" cy="110" r="58" fill="none" stroke="#b87c85" stroke-width="2" opacity="0.7" />
+  <g fill="none" stroke="#b87c85" stroke-width="2" opacity="0.64">
+    <path d="M110 16 V204 M16 110 H204" />
+    <path d="M44 44 L176 176 M176 44 L44 176" />
+    <path d="M76 28 C94 58 126 58 144 28" />
+    <path d="M76 192 C94 162 126 162 144 192" />
+    <path d="M28 76 C58 94 58 126 28 144" />
+    <path d="M192 76 C162 94 162 126 192 144" />
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Beichen Seal</title>
+  <desc id="desc">A small seal-like stamp reading Beichen.</desc>
+  <rect x="18" y="18" width="144" height="144" rx="5" fill="#b87c85" opacity="0.82" />
+  <rect x="34" y="34" width="112" height="112" rx="2" fill="none" stroke="#f8f5f1" stroke-width="5" opacity="0.86" />
+  <g fill="#f8f5f1" font-family="Georgia, Times New Roman, serif" text-anchor="middle">
+    <text x="90" y="76" font-size="28" font-weight="700" letter-spacing="1">BEI</text>
+    <text x="90" y="116" font-size="29" font-weight="700" letter-spacing="1">CHEN</text>
+  </g>
+  <circle cx="90" cy="134" r="8" fill="none" stroke="#f8f5f1" stroke-width="3" opacity="0.6" />
+</svg>

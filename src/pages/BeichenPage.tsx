@@ -1,3 +1,5 @@
+import { xingqueAssets } from '../assets/xingque';
+
 const riluFeatures = [
   'Multilingual diary writing',
   'CEFR level control',
@@ -14,17 +16,15 @@ export const BeichenPage = () => {
   return (
     <div className="beichen-page">
       <section className="beichen-hero" aria-labelledby="beichen-title">
-        <div className="beichen-hero-ornament" aria-hidden="true">
-          <span className="archive-line archive-line-a" />
-          <span className="archive-line archive-line-b" />
-          <span className="archive-star archive-star-a" />
-          <span className="archive-star archive-star-b" />
-          <span className="archive-mountain archive-mountain-a" />
-          <span className="archive-medallion" />
-        </div>
+        <img
+          className="beichen-chart-background"
+          src={xingqueAssets.xingqueStarChart}
+          alt=""
+          aria-hidden="true"
+        />
         <div className="beichen-hero-copy">
           <p className="eyebrow">XingQue Branch</p>
-          <h1 id="beichen-title">XingQue · Beichen</h1>
+          <h1 id="beichen-title">XingQue Beichen</h1>
           <p className="beichen-subtitle">Daily language tools for quiet, sustainable learning.</p>
           <p className="beichen-description">
             Beichen is the language-learning branch of XingQue, built for small, repeatable
@@ -39,10 +39,27 @@ export const BeichenPage = () => {
             </button>
           </div>
         </div>
+        <div className="beichen-hero-visual" aria-hidden="true">
+          <img
+            className="beichen-academy-asset"
+            src={xingqueAssets.beichenAcademy}
+            alt=""
+            width="900"
+            height="620"
+          />
+          <img className="beichen-seal" src={xingqueAssets.sealBeichen} alt="" />
+          <img className="beichen-lattice" src={xingqueAssets.latticeMoonGate} alt="" />
+        </div>
       </section>
 
       <section className="beichen-section rilu-section" id="rilu" aria-labelledby="rilu-title">
         <div className="section-kicker">
+          <img
+            className="section-medallion"
+            src={xingqueAssets.constellationMedallion}
+            alt=""
+            aria-hidden="true"
+          />
           <span className="section-number">01</span>
           <p className="eyebrow">First Tool</p>
         </div>
@@ -56,6 +73,7 @@ export const BeichenPage = () => {
             </p>
           </div>
           <div className="rilu-highlight" aria-label="Rilu always returns three versions">
+            <img className="rilu-seal" src={xingqueAssets.sealBeichen} alt="" aria-hidden="true" />
             <p>Always returns exactly three diary-ready versions:</p>
             <ol>
               <li>Minimal</li>
@@ -68,6 +86,12 @@ export const BeichenPage = () => {
 
       <section className="beichen-section" aria-labelledby="beichen-features-title">
         <div className="section-kicker">
+          <img
+            className="section-medallion"
+            src={xingqueAssets.constellationMedallion}
+            alt=""
+            aria-hidden="true"
+          />
           <span className="section-number">02</span>
           <p className="eyebrow">Features</p>
         </div>
@@ -75,7 +99,12 @@ export const BeichenPage = () => {
         <div className="feature-card-grid">
           {riluFeatures.map((feature) => (
             <article className="beichen-feature-card" key={feature}>
-              <span aria-hidden="true" />
+              <img
+                className="feature-medallion"
+                src={xingqueAssets.constellationMedallion}
+                alt=""
+                aria-hidden="true"
+              />
               <h3>{feature}</h3>
             </article>
           ))}
@@ -84,6 +113,12 @@ export const BeichenPage = () => {
 
       <section className="beichen-section privacy-section" aria-labelledby="beichen-privacy-title">
         <div className="section-kicker">
+          <img
+            className="section-medallion"
+            src={xingqueAssets.constellationMedallion}
+            alt=""
+            aria-hidden="true"
+          />
           <span className="section-number">03</span>
           <p className="eyebrow">Privacy</p>
         </div>
@@ -98,6 +133,12 @@ export const BeichenPage = () => {
 
       <section className="beichen-section" aria-labelledby="beichen-future-title">
         <div className="section-kicker">
+          <img
+            className="section-medallion"
+            src={xingqueAssets.constellationMedallion}
+            alt=""
+            aria-hidden="true"
+          />
           <span className="section-number">04</span>
           <p className="eyebrow">Later</p>
         </div>
@@ -105,6 +146,12 @@ export const BeichenPage = () => {
         <div className="future-tool-list">
           {futureTools.map((tool) => (
             <article className="future-tool-card" key={tool}>
+              <img
+                className="future-lattice"
+                src={xingqueAssets.latticeCircular}
+                alt=""
+                aria-hidden="true"
+              />
               <h3>{tool}</h3>
             </article>
           ))}

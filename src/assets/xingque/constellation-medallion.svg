@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">Constellation Medallion</title>
+  <desc id="desc">A small decorative medallion with connected stars for section dividers.</desc>
+  <circle cx="90" cy="90" r="76" fill="#f8f5f1" stroke="#b87c85" stroke-width="3" />
+  <circle cx="90" cy="90" r="58" fill="none" stroke="#b79974" stroke-width="1.5" opacity="0.55" />
+  <g fill="none" stroke="#2d2926" stroke-width="2" stroke-linecap="round" opacity="0.58">
+    <path d="M52 104 L78 70 L108 82 L128 52 L138 118 L96 134 L64 122 Z" />
+  </g>
+  <g fill="#b87c85">
+    <circle cx="52" cy="104" r="4" />
+    <circle cx="78" cy="70" r="5" />
+    <circle cx="108" cy="82" r="4" />
+    <circle cx="128" cy="52" r="5" />
+    <circle cx="138" cy="118" r="4" />
+    <circle cx="96" cy="134" r="4" />
+    <circle cx="64" cy="122" r="3.5" />
+  </g>
+  <path d="M90 18 V36 M90 144 V162 M18 90 H36 M144 90 H162" stroke="#b87c85" stroke-width="2" opacity="0.58" />
+</svg>

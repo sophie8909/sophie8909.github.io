@@ -1645,6 +1645,420 @@ a {
   color: var(--muted);
 }
 
+.xingque-page,
+.beichen-page {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(248, 245, 241, 0.96), rgba(239, 231, 221, 0.34)),
+    var(--background);
+  isolation: isolate;
+}
+
+.hero-xingque {
+  min-height: min(780px, calc(100svh - 72px));
+  background:
+    linear-gradient(90deg, rgba(248, 245, 241, 0.94), rgba(248, 245, 241, 0.76)),
+    var(--background);
+}
+
+.xingque-chart-background,
+.beichen-chart-background,
+.xingque-section-chart {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.xingque-chart-background {
+  inset: -8%;
+  z-index: -2;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  opacity: 0.13;
+}
+
+.xingque-hero-layout {
+  position: relative;
+  display: grid;
+  gap: 1.4rem;
+  align-items: center;
+  width: min(1180px, calc(100vw - 2rem));
+  min-height: inherit;
+  margin: 0 auto;
+  padding: 4.5rem 0;
+}
+
+.xingque-hero-left,
+.xingque-hero-right,
+.beichen-hero-visual,
+.branch-academy-panel {
+  position: relative;
+}
+
+.xingque-hero-left,
+.xingque-hero-right {
+  min-height: 300px;
+}
+
+.moon-gate-asset,
+.armillary-asset,
+.telescope-asset,
+.beichen-academy-asset,
+.branch-academy,
+.hero-lattice,
+.section-medallion,
+.detail-medallion,
+.feature-medallion,
+.future-lattice,
+.xingque-seal,
+.beichen-seal,
+.branch-seal,
+.rilu-seal,
+.beichen-lattice {
+  display: block;
+}
+
+.moon-gate-asset,
+.armillary-asset,
+.telescope-asset,
+.hero-lattice,
+.section-medallion,
+.detail-medallion,
+.feature-medallion,
+.future-lattice,
+.xingque-seal,
+.beichen-seal,
+.branch-seal,
+.rilu-seal,
+.beichen-lattice,
+.branch-symbol img {
+  height: auto;
+}
+
+.moon-gate-asset {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  opacity: 0.96;
+  filter: drop-shadow(0 22px 38px rgba(45, 41, 38, 0.08));
+}
+
+.hero-lattice {
+  position: absolute;
+  width: 120px;
+  opacity: 0.34;
+}
+
+.hero-lattice-square {
+  top: 0;
+  left: 0;
+}
+
+.hero-lattice-song {
+  right: 0;
+  bottom: 6%;
+}
+
+.xingque-hero-copy {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  padding: 3rem 0;
+}
+
+.xingque-seal {
+  width: 76px;
+  margin-bottom: 1rem;
+  opacity: 0.74;
+}
+
+.hero-xingque h1 {
+  font-size: clamp(4.5rem, 11vw, 8.8rem);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-shadow: 0 18px 42px rgba(248, 245, 241, 0.92);
+}
+
+.hero-xingque .hero-subtitle {
+  color: var(--primary);
+}
+
+.xingque-hero-right {
+  display: grid;
+  align-content: center;
+  gap: 1.25rem;
+}
+
+.armillary-asset {
+  width: min(62vw, 280px);
+  justify-self: center;
+  opacity: 0.72;
+}
+
+.telescope-asset {
+  width: min(70vw, 360px);
+  justify-self: end;
+  opacity: 0.48;
+}
+
+.xingque-branches {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.xingque-branches::before {
+  top: 2rem;
+  right: -1.5rem;
+  width: 180px;
+  height: 180px;
+  border: 0;
+  background: url("../assets/xingque/lattice-moon-gate.svg") center / contain no-repeat;
+  opacity: 0.16;
+}
+
+.xingque-section-chart {
+  top: 1rem;
+  right: -18%;
+  z-index: -1;
+  width: min(860px, 92vw);
+  opacity: 0.08;
+}
+
+.section-medallion {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  opacity: 0.76;
+}
+
+.branch-card {
+  background:
+    linear-gradient(135deg, rgba(250, 247, 243, 0.96), rgba(239, 231, 221, 0.62)),
+    var(--background);
+  background-size: auto;
+}
+
+.branch-card::before,
+.branch-card::after {
+  width: 138px;
+  height: 138px;
+  border: 0;
+  background: url("../assets/xingque/lattice-square.svg") center / contain no-repeat;
+  opacity: 0.22;
+}
+
+.branch-card::after {
+  background-image: url("../assets/xingque/lattice-song.svg");
+  transform: rotate(180deg);
+}
+
+.branch-card summary {
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  padding: 1.2rem;
+}
+
+.branch-symbol {
+  border: 0;
+  background: transparent;
+}
+
+.branch-symbol img {
+  width: 58px;
+  height: 58px;
+}
+
+.branch-symbol::after {
+  display: none;
+}
+
+.branch-title {
+  font-size: clamp(1.35rem, 5vw, 1.85rem);
+}
+
+.branch-card-body {
+  padding: 0 1.2rem 1.4rem;
+}
+
+.branch-card-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.branch-academy-panel {
+  min-height: 270px;
+  border: 1px solid rgba(184, 124, 133, 0.2);
+  background:
+    linear-gradient(180deg, rgba(248, 245, 241, 0.88), rgba(239, 231, 221, 0.42)),
+    var(--background);
+  overflow: hidden;
+}
+
+.branch-academy {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
+}
+
+.branch-seal {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 70px;
+  opacity: 0.58;
+}
+
+.branch-card-copy {
+  min-width: 0;
+}
+
+.detail-medallion {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.8rem;
+  opacity: 0.62;
+}
+
+.branch-detail-grid div {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.42)),
+    var(--background);
+  overflow: hidden;
+}
+
+.branch-detail-grid div::after {
+  position: absolute;
+  right: -22px;
+  bottom: -22px;
+  width: 96px;
+  height: 96px;
+  background: url("../assets/xingque/lattice-circular.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0.14;
+}
+
+.beichen-hero {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background:
+    linear-gradient(90deg, rgba(248, 245, 241, 0.94), rgba(248, 245, 241, 0.72)),
+    var(--background);
+  isolation: isolate;
+}
+
+.beichen-chart-background {
+  inset: -10% -16% auto auto;
+  z-index: -2;
+  width: min(920px, 120vw);
+  opacity: 0.12;
+}
+
+.beichen-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.beichen-hero-visual {
+  min-height: 360px;
+}
+
+.beichen-academy-asset {
+  width: 100%;
+  height: min(440px, 62vw);
+  object-fit: contain;
+  opacity: 0.78;
+  filter: drop-shadow(0 22px 34px rgba(45, 41, 38, 0.08));
+}
+
+.beichen-seal {
+  position: absolute;
+  right: 8%;
+  bottom: 9%;
+  width: 74px;
+  opacity: 0.58;
+}
+
+.beichen-lattice {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  width: 132px;
+  opacity: 0.18;
+}
+
+.rilu-highlight {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(250, 247, 243, 0.92), rgba(239, 231, 221, 0.46)),
+    var(--background);
+  background-size: auto;
+  overflow: hidden;
+}
+
+.rilu-seal {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 64px;
+  opacity: 0.22;
+}
+
+.beichen-feature-card,
+.future-tool-card {
+  background:
+    linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.4)),
+    var(--background);
+}
+
+.beichen-feature-card::after,
+.future-tool-card::after {
+  display: none;
+}
+
+.feature-medallion {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1.2rem;
+  opacity: 0.62;
+}
+
+.future-tool-card {
+  min-height: 142px;
+}
+
+.future-lattice {
+  position: absolute;
+  right: -28px;
+  bottom: -28px;
+  width: 104px;
+  opacity: 0.16;
+}
+
+.privacy-section {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(248, 245, 241, 0.88), rgba(239, 231, 221, 0.36)),
+    var(--background);
+  overflow: hidden;
+}
+
+.privacy-section::after {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  width: min(620px, 86vw);
+  height: 360px;
+  background: url("../assets/xingque/xingque-star-chart.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0.07;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
 .page-shell {
   padding: 2rem 0 0;
 }
@@ -1953,5 +2367,76 @@ a {
 
   .hero h1 {
     font-size: 8.8rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .xingque-hero-copy {
+    order: 1;
+  }
+
+  .xingque-hero-left {
+    order: 2;
+  }
+
+  .xingque-hero-right {
+    order: 3;
+    min-height: 220px;
+  }
+
+  .moon-gate-asset {
+    width: min(86vw, 340px);
+  }
+
+  .armillary-asset {
+    width: min(56vw, 220px);
+  }
+
+  .telescope-asset {
+    justify-self: center;
+    width: min(74vw, 300px);
+  }
+
+  .beichen-hero-visual {
+    min-height: 280px;
+  }
+
+  .beichen-academy-asset {
+    height: 280px;
+  }
+}
+
+@media (min-width: 700px) {
+  .xingque-hero-layout {
+    grid-template-columns: minmax(220px, 0.82fr) minmax(260px, 0.74fr) minmax(220px, 0.82fr);
+    gap: 1.8rem;
+  }
+
+  .branch-card-layout {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .branch-academy-panel,
+  .branch-academy {
+    min-height: 430px;
+  }
+
+  .beichen-hero {
+    grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.78fr);
+  }
+}
+
+@media (min-width: 920px) {
+  .hero-xingque h1 {
+    font-size: clamp(6.8rem, 9vw, 8.8rem);
+  }
+
+  .armillary-asset {
+    width: min(22vw, 290px);
+  }
+
+  .telescope-asset {
+    width: min(30vw, 380px);
   }
 }

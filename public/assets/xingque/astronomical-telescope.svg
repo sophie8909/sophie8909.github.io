@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" role="img" aria-labelledby="title desc">
+  <title id="title">Astronomical Telescope</title>
+  <desc id="desc">A historical astronomical telescope with tripod and museum sketch details.</desc>
+  <g fill="none" stroke="#b87c85" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M116 124 L548 62" stroke-width="8" />
+    <path d="M174 106 L604 44" stroke-width="34" opacity="0.14" />
+    <path d="M170 102 L604 40 L628 78 L194 142 Z" stroke-width="4" />
+    <path d="M106 112 L170 102 L194 142 L126 154 Z" stroke-width="4" />
+    <path d="M604 40 L680 30 L706 68 L628 78 Z" stroke-width="4" />
+    <path d="M278 92 L304 132" stroke-width="3" />
+    <path d="M412 72 L438 112" stroke-width="3" />
+    <path d="M478 96 L398 220" stroke-width="4" />
+    <path d="M398 220 L308 330" stroke-width="4" />
+    <path d="M398 220 L500 334" stroke-width="4" />
+    <path d="M398 220 L390 342" stroke-width="4" />
+    <path d="M338 226 H458" stroke-width="4" />
+    <path d="M326 330 H520" stroke-width="3" opacity="0.68" />
+    <path d="M88 164 C170 194 276 194 356 164" stroke-width="2" opacity="0.34" />
+    <path d="M532 34 C586 18 646 16 710 28" stroke-width="2" opacity="0.4" />
+  </g>
+  <g fill="#f8f5f1" stroke="#b87c85" stroke-width="3">
+    <circle cx="398" cy="220" r="13" />
+    <circle cx="170" cy="102" r="6" />
+    <circle cx="628" cy="78" r="6" />
+  </g>
+  <g fill="#b87c85" font-family="Georgia, Times New Roman, serif" font-size="20" opacity="0.55">
+    <text x="112" y="214">brass tube</text>
+    <text x="506" y="196">adjusting hinge</text>
+  </g>
+</svg>

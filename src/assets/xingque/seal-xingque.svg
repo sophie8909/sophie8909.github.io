@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="title desc">
+  <title id="title">XingQue Seal</title>
+  <desc id="desc">A small seal-like stamp reading XingQue.</desc>
+  <rect x="18" y="18" width="144" height="144" rx="5" fill="#b87c85" opacity="0.86" />
+  <rect x="32" y="32" width="116" height="116" rx="3" fill="none" stroke="#f8f5f1" stroke-width="5" opacity="0.84" />
+  <g fill="#f8f5f1" font-family="Georgia, Times New Roman, serif" text-anchor="middle">
+    <text x="90" y="78" font-size="32" font-weight="700" letter-spacing="2">XING</text>
+    <text x="90" y="116" font-size="31" font-weight="700" letter-spacing="1">QUE</text>
+  </g>
+  <path d="M40 138 C68 128 102 154 140 134" fill="none" stroke="#f8f5f1" stroke-width="3" opacity="0.52" />
+</svg>
