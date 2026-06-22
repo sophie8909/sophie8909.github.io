@@ -3,6 +3,7 @@ export const XingQuePage = () => {
     <div className="xingque-page">
       <section className="hero hero-xingque" aria-labelledby="xingque-title">
         <div className="hero-grid xingque-ornament" aria-hidden="true">
+          <span className="moon-gate-frame" />
           <span className="lattice-frame" />
           <span className="lattice-frame lattice-frame-offset" />
           <span className="star-point star-point-a" />
@@ -10,6 +11,9 @@ export const XingQuePage = () => {
           <span className="star-point star-point-c" />
           <span className="orbit-line orbit-line-a" />
           <span className="orbit-line orbit-line-b" />
+          <span className="orbit-line orbit-line-c" />
+          <span className="astro-instrument astro-armillary" />
+          <span className="astro-instrument astro-telescope" />
         </div>
 
         <div className="hero-inner">

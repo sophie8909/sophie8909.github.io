@@ -19,6 +19,8 @@ export const BeichenPage = () => {
           <span className="archive-line archive-line-b" />
           <span className="archive-star archive-star-a" />
           <span className="archive-star archive-star-b" />
+          <span className="archive-mountain archive-mountain-a" />
+          <span className="archive-medallion" />
         </div>
         <div className="beichen-hero-copy">
           <p className="eyebrow">XingQue Branch</p>
