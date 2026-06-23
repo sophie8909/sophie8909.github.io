@@ -1366,7 +1366,11 @@ a {
 
 .branch-detail-grid h3,
 .beichen-feature-card h3,
-.future-tool-card h3 {
+.beichen-feature-card h4,
+.future-tool-card h3,
+.future-tool-card h4,
+.branch-content-heading h3,
+.branch-privacy-note h3 {
   margin: 0;
   font-family: var(--serif);
   font-size: 1.2rem;
@@ -1916,6 +1920,19 @@ a {
   min-width: 0;
 }
 
+.branch-card-copy > p,
+.branch-content-block p,
+.branch-privacy-note p,
+.beichen-feature-card p,
+.future-tool-card p {
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.branch-card-copy > p {
+  max-width: 680px;
+}
+
 .detail-medallion {
   width: 40px;
   height: 40px;
@@ -1940,6 +1957,115 @@ a {
   background: url("../assets/xingque/lattice-circular.svg") center / contain no-repeat;
   content: "";
   opacity: 0.14;
+}
+
+.branch-content-block {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1.4rem;
+  border: 1px solid rgba(184, 124, 133, 0.22);
+  background:
+    linear-gradient(135deg, rgba(250, 247, 243, 0.92), rgba(239, 231, 221, 0.4)),
+    var(--background);
+  overflow: hidden;
+}
+
+.branch-content-block::after {
+  position: absolute;
+  right: -56px;
+  bottom: -56px;
+  width: 220px;
+  height: 220px;
+  background: url("../assets/xingque/lattice-circular.svg") center / contain no-repeat;
+  content: "";
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.branch-content-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.branch-content-heading .eyebrow {
+  color: var(--primary);
+}
+
+.branch-content-heading h3 {
+  margin-top: 0.4rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.04;
+}
+
+.branch-content-subtitle {
+  margin: 0.8rem 0 0;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.branch-rilu-intro {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.branch-rilu-intro > p {
+  max-width: 640px;
+  margin: 0;
+}
+
+.rilu-output-list {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 1rem 1rem 1rem 2.4rem;
+  border: 1px solid rgba(184, 124, 133, 0.2);
+  background: rgba(248, 245, 241, 0.58);
+  color: var(--text);
+  font-family: var(--serif);
+  font-weight: 900;
+}
+
+.branch-feature-grid,
+.branch-future-block .future-tool-list {
+  position: relative;
+  z-index: 1;
+}
+
+.beichen-feature-card p,
+.future-tool-card p {
+  margin: 0.75rem 0 0;
+}
+
+.branch-privacy-note {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.1rem;
+  border-top: 1px solid rgba(184, 124, 133, 0.24);
+  border-bottom: 1px solid rgba(184, 124, 133, 0.24);
+  background:
+    linear-gradient(90deg, rgba(248, 245, 241, 0.84), rgba(239, 231, 221, 0.28)),
+    var(--background);
+}
+
+.branch-privacy-note .section-medallion {
+  width: 42px;
+  height: 42px;
+  opacity: 0.62;
+}
+
+.branch-privacy-note p {
+  max-width: 780px;
+  margin: 0.6rem 0 0;
 }
 
 .beichen-hero {
@@ -2144,6 +2270,11 @@ a {
 
   .future-tool-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .branch-rilu-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.52fr);
+    align-items: start;
   }
 
   .project-section-reverse {
@@ -2431,6 +2562,10 @@ a {
 @media (min-width: 920px) {
   .xingque-wordmark {
     width: min(34vw, 520px);
+  }
+
+  .branch-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .armillary-asset {
