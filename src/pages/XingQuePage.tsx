@@ -70,7 +70,7 @@ export const XingQuePage = () => {
         </div>
       </section>
 
-      <section className="xingque-branches" aria-labelledby="xingque-branches-title">
+      <section className="xingque-branches" aria-label={content.xingque.eyebrow}>
         <img
           className="xingque-section-chart"
           src={xingqueAssets.xingqueStarChart}
@@ -92,7 +92,19 @@ export const XingQuePage = () => {
           <p className="eyebrow">{content.xingque.eyebrow}</p>
         </div>
         <div className="section-heading">
-          <h2 id="xingque-branches-title">{content.xingque.heading}</h2>
+          <div className="beichen-branch-intro">
+            <div className="beichen-branch-intro-visual" aria-hidden="true">
+              <img
+                src={xingqueAssets.beichenLogo}
+                alt=""
+                width="1254"
+                height="829"
+              />
+            </div>
+            <div className="beichen-branch-intro-copy">
+              <LocalizedParagraphs paragraphs={content.beichen.body} />
+            </div>
+          </div>
         </div>
 
         <div className="branch-card-grid">
