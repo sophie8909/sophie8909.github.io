@@ -8,8 +8,6 @@ type RiluFeature = {
 };
 
 type RiluAccessOption = {
-  title: string;
-  copy: string;
   status: string;
   recommended?: string;
 };
@@ -43,8 +41,6 @@ export type XingQueContent = {
     expandCta: string;
     featuresHeading: string;
     features: RiluFeature[];
-    accessHeading: string;
-    accessNote: string;
     access: RiluAccessOption[];
   };
   privacy: {
@@ -116,18 +112,12 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           copy: 'Come back to small records without turning practice into a heavy session.'
         }
       ],
-      accessHeading: 'Ways to use Rilu',
-      accessNote: 'Desktop users are encouraged to use the Chrome extension for a smoother workflow.',
       access: [
         {
-          title: 'Chrome Web Store extension',
-          copy: 'Recommended for desktop use. It keeps the writing flow closer to the browser and makes repeated practice smoother.',
           status: 'Chrome Web Store',
           recommended: 'Recommended for desktop'
         },
         {
-          title: 'Web version',
-          copy: 'A lighter browser-based version for quick access when an extension is not available.',
           status: 'Web version'
         }
       ]
@@ -202,18 +192,12 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           copy: '以小記錄反覆回來，不使修習成為重負。'
         }
       ],
-      accessHeading: '日錄的使用方式',
-      accessNote: '電腦用戶建議使用 Chrome 插件，流程會更順暢。',
       access: [
         {
-          title: 'Chrome Web Store 插件',
-          copy: '推薦電腦用戶使用。插件能讓書寫流程更貼近瀏覽器中的日常操作，反覆練習也更順。',
           status: 'Chrome Web Store',
           recommended: '電腦用戶推薦'
         },
         {
-          title: '網頁版',
-          copy: '適合快速打開使用，或在無法安裝插件的環境中練習。',
           status: '網頁版'
         }
       ]
@@ -288,18 +272,12 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           copy: '以小记录反复回来，不使修习成为重负。'
         }
       ],
-      accessHeading: '日录的使用方式',
-      accessNote: '电脑用户建议使用 Chrome 插件，流程会更顺畅。',
       access: [
         {
-          title: 'Chrome Web Store 插件',
-          copy: '推荐电脑用户使用。插件能让书写流程更贴近浏览器中的日常操作，反复练习也更顺。',
           status: 'Chrome Web Store',
           recommended: '电脑用户推荐'
         },
         {
-          title: '网页版',
-          copy: '适合快速打开使用，或在无法安装插件的环境中练习。',
           status: '网页版'
         }
       ]

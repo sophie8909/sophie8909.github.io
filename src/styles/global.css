@@ -2168,90 +2168,37 @@ a {
   padding: 0.35rem 0 0.25rem;
 }
 
-.rilu-access-panel {
-  position: relative;
-  z-index: 1;
-  padding: 1rem;
-  border: 1px solid rgba(184, 124, 133, 0.22);
-  background:
-    linear-gradient(135deg, rgba(248, 245, 241, 0.86), rgba(239, 231, 221, 0.36)),
-    var(--background);
-}
-
-.rilu-access-panel h3,
-.rilu-access-panel h4 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.rilu-access-panel > p {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  line-height: 1.68;
-}
-
-.rilu-access-grid {
-  display: grid;
-  gap: 1rem;
+.rilu-access-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
   margin-top: 1rem;
 }
 
-.rilu-access-card {
-  position: relative;
-  display: grid;
-  gap: 0.7rem;
-  align-content: start;
-  min-height: 150px;
-  padding: 1rem;
-  border: 1px solid rgba(184, 124, 133, 0.22);
-  background:
-    linear-gradient(135deg, rgba(250, 247, 243, 0.9), rgba(239, 231, 221, 0.34)),
-    var(--background);
-  overflow: hidden;
+.rilu-access-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(184, 124, 133, 0.32);
+  background: rgba(250, 247, 243, 0.72);
+  color: var(--primary);
+  cursor: default;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 1;
+  text-transform: uppercase;
 }
 
-.rilu-access-card::after {
-  position: absolute;
-  right: -28px;
-  bottom: -28px;
-  width: 96px;
-  height: 96px;
-  background: url("../assets/xingque/lattice-circular.svg") center / contain no-repeat;
-  content: "";
-  opacity: 0.11;
-  pointer-events: none;
-}
-
-.rilu-access-card h3,
-.rilu-access-card h5 {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 900;
-}
-
-.rilu-access-card p {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.68;
-}
-
-.rilu-access-card .action-link {
-  position: relative;
-  z-index: 1;
-  justify-self: start;
-  margin-top: 0.15rem;
+.rilu-access-button:disabled {
+  color: var(--primary);
+  opacity: 1;
 }
 
 .rilu-access-recommendation {
-  position: relative;
-  z-index: 1;
   color: var(--primary);
   font-size: 0.72rem;
   font-weight: 800;
@@ -2485,10 +2432,6 @@ a {
   }
 
   .feature-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .rilu-access-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

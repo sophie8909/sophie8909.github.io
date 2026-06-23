@@ -67,25 +67,20 @@ export const BeichenPage = () => {
             <p className="beichen-subtitle">{content.rilu.short}</p>
             <LocalizedParagraphs paragraphs={content.rilu.body} />
           </div>
-          <div className="rilu-side-stack">
-            <div className="rilu-access-panel">
-              <h3>{content.rilu.accessHeading}</h3>
-              <p>{content.rilu.accessNote}</p>
-            </div>
-          </div>
         </div>
-        <div className="rilu-access-grid">
+        <div className="rilu-access-actions">
           {content.rilu.access.map((option) => (
-            <article className="rilu-access-card" key={option.title}>
+            <button
+              className="rilu-access-button"
+              type="button"
+              disabled
+              key={option.status}
+            >
               {option.recommended ? (
                 <span className="rilu-access-recommendation">{option.recommended}</span>
               ) : null}
-              <h3>{option.title}</h3>
-              <p>{option.copy}</p>
-              <button className="action-link" type="button" disabled>
-                {option.status}
-              </button>
-            </article>
+              <span>{option.status}</span>
+            </button>
           ))}
         </div>
 

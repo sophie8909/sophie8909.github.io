@@ -129,25 +129,22 @@ export const XingQuePage = () => {
 
               <div className="inline-rilu-body">
                 <div className="branch-rilu-intro">
-                  <div className="rilu-access-panel">
-                    <h4>{content.rilu.accessHeading}</h4>
-                    <p>{content.rilu.accessNote}</p>
-                    <div className="rilu-access-grid">
-                      {content.rilu.access.map((option) => (
-                        <article className="rilu-access-card" key={option.title}>
-                          {option.recommended ? (
-                            <span className="rilu-access-recommendation">
-                              {option.recommended}
-                            </span>
-                          ) : null}
-                          <h5>{option.title}</h5>
-                          <p>{option.copy}</p>
-                          <button className="action-link" type="button" disabled>
-                            {option.status}
-                          </button>
-                        </article>
-                      ))}
-                    </div>
+                  <div className="rilu-access-actions">
+                    {content.rilu.access.map((option) => (
+                      <button
+                        className="rilu-access-button"
+                        type="button"
+                        disabled
+                        key={option.status}
+                      >
+                        {option.recommended ? (
+                          <span className="rilu-access-recommendation">
+                            {option.recommended}
+                          </span>
+                        ) : null}
+                        <span>{option.status}</span>
+                      </button>
+                    ))}
                   </div>
                 </div>
 
