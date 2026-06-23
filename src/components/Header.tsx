@@ -13,8 +13,8 @@ const navItems: Array<
   | { type: 'route'; route: AppRoute; labelKey: string }
 > = [
   { type: 'anchor', anchor: 'catrodis', labelKey: 'nav.catrodis' },
-  { type: 'route', route: '/xingque', labelKey: 'nav.xingque' },
-  { type: 'anchor', anchor: 'creations', labelKey: 'nav.creations' }
+  { type: 'anchor', anchor: 'creations', labelKey: 'nav.creations' },
+  { type: 'route', route: '/xingque', labelKey: 'nav.xingque' }
 ];
 
 export const Header = ({ route, onNavigate }: HeaderProps) => {
