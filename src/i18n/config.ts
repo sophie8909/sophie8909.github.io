@@ -1,15 +1,13 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import en from '../locales/en.json';
-import sv from '../locales/sv.json';
 import zhCN from '../locales/zh-CN.json';
 import zhTW from '../locales/zh-TW.json';
 
 export const supportedLanguages = [
   { code: 'zh-TW', label: '繁體中文', shortLabel: '繁中' },
   { code: 'zh-CN', label: '简体中文', shortLabel: '简中' },
-  { code: 'en', label: 'English', shortLabel: 'EN' },
-  { code: 'sv', label: 'Svenska', shortLabel: 'SV' }
+  { code: 'en', label: 'English', shortLabel: 'EN' }
 ] as const;
 
 export type LanguageCode = (typeof supportedLanguages)[number]['code'];
@@ -17,8 +15,7 @@ export type LanguageCode = (typeof supportedLanguages)[number]['code'];
 const resources = {
   'zh-TW': { translation: zhTW },
   'zh-CN': { translation: zhCN },
-  en: { translation: en },
-  sv: { translation: sv }
+  en: { translation: en }
 };
 
 const isLanguageCode = (value: string | null): value is LanguageCode =>
@@ -45,10 +42,6 @@ const getInitialLanguage = (): LanguageCode => {
 
   if (browserLanguage.startsWith('zh')) {
     return 'zh-CN';
-  }
-
-  if (browserLanguage.startsWith('sv')) {
-    return 'sv';
   }
 
   return 'en';

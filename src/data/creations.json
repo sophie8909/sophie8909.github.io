@@ -4,28 +4,24 @@
     "title": {
       "zh-TW": "ARTCODEX",
       "zh-CN": "ARTCODEX",
-      "en": "ARTCODEX",
-      "sv": "ARTCODEX"
+      "en": "ARTCODEX"
     },
     "subtitle": {
       "zh-TW": "AI 提示詞生成工具",
       "zh-CN": "AI 提示词生成工具",
-      "en": "AI PROMPT GENERATION TOOL",
-      "sv": "AI-VERKTYG FÖR PROMPTGENERERING"
+      "en": "AI PROMPT GENERATION TOOL"
     },
     "description": {
       "zh-TW": "為圖像生成流程\n建立結構化提示詞、風格\n與創作素材。",
       "zh-CN": "为图像生成流程\n建立结构化提示词、风格\n与创作素材。",
-      "en": "Generate structured prompts,\nstyles, and creative assets\nfor image generation workflows.",
-      "sv": "Skapa strukturerade prompter,\nstilar och kreativa resurser\nför bildgenereringsflöden."
+      "en": "Generate structured prompts,\nstyles, and creative assets\nfor image generation workflows."
     },
     "buttons": [
       {
         "label": {
           "zh-TW": "Chrome WEB STORE",
           "zh-CN": "Chrome WEB STORE",
-          "en": "Chrome WEB STORE",
-          "sv": "Chrome WEB STORE"
+          "en": "Chrome WEB STORE"
         },
         "href": "https://chromewebstore.google.com/detail/gjedcnifgceilkkbodfdhbcdhbmhnoei?utm_source=item-share-cb",
         "clickable": true
@@ -37,28 +33,24 @@
     "title": {
       "zh-TW": "杖劍傳說計算機 / SXSTX Calculator",
       "zh-CN": "杖剑传说计算机 / SXSTX Calculator",
-      "en": "SXSTX CALCULATOR",
-      "sv": "SXSTX CALCULATOR"
+      "en": "SXSTX CALCULATOR"
     },
     "subtitle": {
       "zh-TW": "素材需求與角色養成估算",
       "zh-CN": "素材需求与角色养成估算",
-      "en": "MATERIAL AND PROGRESSION CALCULATOR",
-      "sv": "MATERIAL- OCH UTVECKLINGSKALKYLATOR"
+      "en": "MATERIAL AND PROGRESSION CALCULATOR"
     },
     "description": {
       "zh-TW": "估算角色養成、技能升級、裝備、寵物、遺物與持有素材缺口。",
       "zh-CN": "估算角色养成、技能升级、装备、宠物、遗物与持有素材缺口。",
-      "en": "Estimate character, skill, equipment, pet, relic, and owned-material gaps.",
-      "sv": "Beräkna materialgap för karaktär, färdighet, utrustning, husdjur och reliker."
+      "en": "Estimate character, skill, equipment, pet, relic, and owned-material gaps."
     },
     "buttons": [
       {
         "label": {
           "zh-TW": "開啟計算機",
           "zh-CN": "打开计算机",
-          "en": "OPEN CALCULATOR",
-          "sv": "ÖPPNA KALKYLATOR"
+          "en": "OPEN CALCULATOR"
         },
         "href": "/sxstx_calculator/",
         "clickable": true
@@ -70,28 +62,24 @@
     "title": {
       "zh-TW": "CODEX ORCHESTRATOR",
       "zh-CN": "CODEX ORCHESTRATOR",
-      "en": "CODEX ORCHESTRATOR",
-      "sv": "CODEX ORCHESTRATOR"
+      "en": "CODEX ORCHESTRATOR"
     },
     "subtitle": {
       "zh-TW": "CODEX 任務自動化",
       "zh-CN": "CODEX 任务自动化",
-      "en": "TASK AUTOMATION FOR CODEX",
-      "sv": "UPPGIFTSAUTOMATION FÖR CODEX"
+      "en": "TASK AUTOMATION FOR CODEX"
     },
     "description": {
       "zh-TW": "管理 OpenAI Codex 的\n任務佇列、相依關係\n與長時間工作流程。",
       "zh-CN": "管理 OpenAI Codex 的\n任务队列、依赖关系\n与长时间工作流。",
-      "en": "Manage task queues,\ndependencies, and long-running\nworkflows for OpenAI Codex.",
-      "sv": "Hantera uppgiftsköer,\nberoenden och långvariga\narbetsflöden för OpenAI Codex."
+      "en": "Manage task queues,\ndependencies, and long-running\nworkflows for OpenAI Codex."
     },
     "buttons": [
       {
         "label": {
           "zh-TW": "即將推出",
           "zh-CN": "即将推出",
-          "en": "COMING SOON",
-          "sv": "KOMMER SNART"
+          "en": "COMING SOON"
         },
         "href": null,
         "clickable": false

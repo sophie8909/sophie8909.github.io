@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { getXingQueContent } from '../data/xingqueContent';
 
 type FooterProps = {
   route: string;
@@ -7,8 +8,9 @@ type FooterProps = {
 const chongxiLicenseUrl = 'https://xiaoxue.iis.sinica.edu.tw/chongxi/copyright.htm';
 
 export const Footer = ({ route }: FooterProps) => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const showXingQueAttribution = route === '/xingque' || route === '/xingque/beichen';
+  const content = getXingQueContent(i18n.language);
 
   return (
     <footer className="site-footer">
@@ -16,11 +18,11 @@ export const Footer = ({ route }: FooterProps) => {
         <p className="footer-brand">Feiya Studio</p>
         {showXingQueAttribution ? (
           <p className="footer-attribution">
-            XingQue logo typeface: Chongxi Seal Script by Wang Hsin-Yi. Licensed under{' '}
+            {content.license.textBeforeLink}
             <a href={chongxiLicenseUrl} rel="noreferrer" target="_blank">
-              CC BY-ND 3.0 TW or later
+              {content.license.linkLabel}
             </a>
-            . <span lang="zh-Hant">星闕 logo 字體：王心怡書寫之「崇羲篆體」。</span>
+            {content.license.textAfterLink}
           </p>
         ) : null}
       </div>
