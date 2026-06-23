@@ -122,8 +122,6 @@ export const XingQuePage = () => {
             <div className="branch-card-body">
               <div className="branch-card-layout">
                 <div className="branch-card-copy">
-                  <p className="eyebrow">{content.rilu.eyebrow}</p>
-                  <h3>{content.rilu.title}</h3>
                   <p className="branch-content-subtitle">{content.rilu.short}</p>
                   <LocalizedParagraphs paragraphs={content.rilu.body} />
                 </div>
