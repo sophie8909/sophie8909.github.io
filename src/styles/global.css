@@ -2317,6 +2317,19 @@ a {
   letter-spacing: 0.12em;
 }
 
+.footer-attribution {
+  max-width: 620px;
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.footer-attribution a {
+  color: var(--text);
+  text-decoration-color: rgba(184, 124, 133, 0.42);
+  text-underline-offset: 0.26em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -28,7 +28,7 @@ function App() {
         {route === '/xingque/beichen' ? <BeichenPage /> : null}
         {route === '/about' ? <AboutPage /> : null}
       </main>
-      <Footer />
+      <Footer route={route} />
     </div>
   );
 }
