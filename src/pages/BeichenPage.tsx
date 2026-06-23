@@ -67,15 +67,40 @@ export const BeichenPage = () => {
             <p className="beichen-subtitle">{content.rilu.short}</p>
             <LocalizedParagraphs paragraphs={content.rilu.body} />
           </div>
-          <div className="rilu-highlight" aria-label={content.rilu.outputsLabel}>
-            <img className="rilu-seal" src={xingqueAssets.sealBeichen} alt="" aria-hidden="true" />
-            <p>{content.rilu.outputsLabel}</p>
-            <ol>
-              {content.rilu.outputs.map((output) => (
-                <li key={output}>{output}</li>
-              ))}
-            </ol>
+          <div className="rilu-side-stack">
+            <div className="rilu-highlight" aria-label={content.rilu.outputsLabel}>
+              <img
+                className="rilu-seal"
+                src={xingqueAssets.sealBeichen}
+                alt=""
+                aria-hidden="true"
+              />
+              <p>{content.rilu.outputsLabel}</p>
+              <ol>
+                {content.rilu.outputs.map((output) => (
+                  <li key={output}>{output}</li>
+                ))}
+              </ol>
+            </div>
+            <div className="rilu-access-panel">
+              <h3>{content.rilu.accessHeading}</h3>
+              <p>{content.rilu.accessNote}</p>
+            </div>
           </div>
+        </div>
+        <div className="rilu-access-grid">
+          {content.rilu.access.map((option) => (
+            <article className="rilu-access-card" key={option.title}>
+              {option.recommended ? (
+                <span className="rilu-access-recommendation">{option.recommended}</span>
+              ) : null}
+              <h3>{option.title}</h3>
+              <p>{option.copy}</p>
+              <button className="action-link" type="button" disabled>
+                {option.status}
+              </button>
+            </article>
+          ))}
         </div>
       </section>
 

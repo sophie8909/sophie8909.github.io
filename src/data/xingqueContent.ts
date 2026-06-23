@@ -12,6 +12,13 @@ type RiluFeature = {
   copy: string;
 };
 
+type RiluAccessOption = {
+  title: string;
+  copy: string;
+  status: string;
+  recommended?: string;
+};
+
 export type XingQueContent = {
   nav: {
     xingque: string;
@@ -40,10 +47,14 @@ export type XingQueContent = {
     title: string;
     short: string;
     body: ParagraphBlock;
+    expandCta: string;
     outputsLabel: string;
     outputs: string[];
     featuresHeading: string;
     features: RiluFeature[];
+    accessHeading: string;
+    accessNote: string;
+    access: RiluAccessOption[];
   };
   offices: {
     eyebrow: string;
@@ -92,7 +103,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         'Beichen, the Northern Star, stands at the center of the heavens.',
         'The Beichen Academy is entrusted with the study of languages:\ngathering words,\nordering passages,\nand through steady practice over time,\nturning unfamiliar tongues into familiar companions.'
       ],
-      cta: 'Explore Beichen'
+      cta: 'Open Rilu'
     },
     rilu: {
       eyebrow: 'First Office',
@@ -102,6 +113,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         'Rilu is the first office established within Beichen.',
         'It helps thoughts, fragments, emotions, and unfinished sentences find their place in the language being learned.'
       ],
+      expandCta: 'Expand Rilu',
       outputsLabel: 'Rilu keeps the practice small:',
       outputs: ['Minimal', 'Natural', 'Emotional'],
       featuresHeading: 'Practice pieces',
@@ -121,6 +133,21 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         {
           title: 'Returning',
           copy: 'Come back to small records without turning practice into a heavy session.'
+        }
+      ],
+      accessHeading: 'Ways to use Rilu',
+      accessNote: 'Desktop users are encouraged to use the Chrome extension for a smoother workflow.',
+      access: [
+        {
+          title: 'Chrome Web Store extension',
+          copy: 'Recommended for desktop use. It keeps the writing flow closer to the browser and makes repeated practice smoother.',
+          status: 'Chrome Web Store',
+          recommended: 'Recommended for desktop'
+        },
+        {
+          title: 'Web version',
+          copy: 'A lighter browser-based version for quick access when an extension is not available.',
+          status: 'Web version'
         }
       ]
     },
@@ -178,7 +205,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '北辰者，天之樞也。',
         '北辰院司掌諸語之學，\n收詞句、理篇章，\n以日積月累之功，\n使陌生之語漸成可親之語。'
       ],
-      cta: '進入北辰'
+      cta: '展開日錄'
     },
     rilu: {
       eyebrow: '首設之司',
@@ -191,6 +218,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '或數語，\n或片言，',
         '終成一頁。'
       ],
+      expandCta: '展開日錄',
       outputsLabel: '日錄所求者小而可久：',
       outputs: ['極簡', '自然', '含情'],
       featuresHeading: '修習之事',
@@ -210,6 +238,21 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         {
           title: '復返',
           copy: '以小記錄反覆回來，不使修習成為重負。'
+        }
+      ],
+      accessHeading: '日錄的使用方式',
+      accessNote: '電腦用戶建議使用 Chrome 插件，流程會更順暢。',
+      access: [
+        {
+          title: 'Chrome Web Store 插件',
+          copy: '推薦電腦用戶使用。插件能讓書寫流程更貼近瀏覽器中的日常操作，反覆練習也更順。',
+          status: 'Chrome Web Store',
+          recommended: '電腦用戶推薦'
+        },
+        {
+          title: '網頁版',
+          copy: '適合快速打開使用，或在無法安裝插件的環境中練習。',
+          status: '網頁版'
         }
       ]
     },
@@ -267,7 +310,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '北辰者，天之枢也。',
         '北辰院司掌诸语之学，\n收词句、理篇章，\n以日积月累之功，\n使陌生之语渐成可亲之语。'
       ],
-      cta: '进入北辰'
+      cta: '展开日录'
     },
     rilu: {
       eyebrow: '首设之司',
@@ -280,6 +323,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '或数语，\n或片言，',
         '终成一页。'
       ],
+      expandCta: '展开日录',
       outputsLabel: '日录所求者小而可久：',
       outputs: ['极简', '自然', '含情'],
       featuresHeading: '修习之事',
@@ -299,6 +343,21 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         {
           title: '复返',
           copy: '以小记录反复回来，不使修习成为重负。'
+        }
+      ],
+      accessHeading: '日录的使用方式',
+      accessNote: '电脑用户建议使用 Chrome 插件，流程会更顺畅。',
+      access: [
+        {
+          title: 'Chrome Web Store 插件',
+          copy: '推荐电脑用户使用。插件能让书写流程更贴近浏览器中的日常操作，反复练习也更顺。',
+          status: 'Chrome Web Store',
+          recommended: '电脑用户推荐'
+        },
+        {
+          title: '网页版',
+          copy: '适合快速打开使用，或在无法安装插件的环境中练习。',
+          status: '网页版'
         }
       ]
     },

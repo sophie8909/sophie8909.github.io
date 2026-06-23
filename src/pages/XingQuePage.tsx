@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { xingqueAssets } from '../assets/xingque';
 import { LocalizedParagraphs } from '../components/LocalizedParagraphs';
@@ -6,6 +7,7 @@ import { getXingQueContent } from '../data/xingqueContent';
 export const XingQuePage = () => {
   const { i18n } = useTranslation();
   const content = getXingQueContent(i18n.language);
+  const [isRiluOpen, setIsRiluOpen] = useState(false);
 
   return (
     <div className="xingque-page">
@@ -128,54 +130,90 @@ export const XingQuePage = () => {
                   </h3>
                   <LocalizedParagraphs paragraphs={content.beichen.body} />
                   <div className="project-actions">
-                    <a className="action-link action-link-primary" href="/xingque/beichen">
+                    <button
+                      className="action-link action-link-primary"
+                      type="button"
+                      onClick={() => setIsRiluOpen(true)}
+                    >
                       {content.beichen.cta}
-                    </a>
+                    </button>
                     <button className="action-link" type="button" disabled>
                       {content.nav.comingSoon}
                     </button>
                   </div>
                 </div>
               </div>
+
+              <details
+                className="branch-inline-rilu"
+                id="rilu"
+                open={isRiluOpen}
+                onToggle={(event) => setIsRiluOpen(event.currentTarget.open)}
+              >
+                <summary>
+                  <span>
+                    <span className="eyebrow">{content.rilu.eyebrow}</span>
+                    <span className="inline-rilu-title">{content.rilu.title}</span>
+                  </span>
+                  <span className="inline-rilu-action">{content.rilu.expandCta}</span>
+                </summary>
+
+                <div className="inline-rilu-body">
+                  <div className="branch-content-heading">
+                    <p className="branch-content-subtitle">{content.rilu.short}</p>
+                    <LocalizedParagraphs paragraphs={content.rilu.body} />
+                  </div>
+
+                  <div className="branch-rilu-intro">
+                    <div className="rilu-output-list" aria-label={content.rilu.outputsLabel}>
+                      <p>{content.rilu.outputsLabel}</p>
+                      <ol>
+                        {content.rilu.outputs.map((output) => (
+                          <li key={output}>{output}</li>
+                        ))}
+                      </ol>
+                    </div>
+                    <div className="rilu-access-panel">
+                      <h4>{content.rilu.accessHeading}</h4>
+                      <p>{content.rilu.accessNote}</p>
+                      <div className="rilu-access-grid">
+                        {content.rilu.access.map((option) => (
+                          <article className="rilu-access-card" key={option.title}>
+                            {option.recommended ? (
+                              <span className="rilu-access-recommendation">
+                                {option.recommended}
+                              </span>
+                            ) : null}
+                            <h5>{option.title}</h5>
+                            <p>{option.copy}</p>
+                            <button className="action-link" type="button" disabled>
+                              {option.status}
+                            </button>
+                          </article>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="feature-card-grid branch-feature-grid">
+                    {content.rilu.features.map((feature) => (
+                      <article className="beichen-feature-card" key={feature.title}>
+                        <img
+                          className="feature-medallion"
+                          src={xingqueAssets.constellationMedallion}
+                          alt=""
+                          aria-hidden="true"
+                        />
+                        <h4>{feature.title}</h4>
+                        <p>{feature.copy}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </details>
             </div>
           </details>
         </div>
-
-        <section
-          className="branch-content-block branch-rilu-block"
-          aria-labelledby="rilu-branch-title"
-        >
-          <div className="branch-content-heading">
-            <p className="eyebrow">{content.rilu.eyebrow}</p>
-            <h3 id="rilu-branch-title">{content.rilu.title}</h3>
-            <p className="branch-content-subtitle">{content.rilu.short}</p>
-          </div>
-          <div className="branch-rilu-intro">
-            <LocalizedParagraphs paragraphs={content.rilu.body} />
-            <div className="rilu-output-list" aria-label={content.rilu.outputsLabel}>
-              <p>{content.rilu.outputsLabel}</p>
-              <ol>
-                {content.rilu.outputs.map((output) => (
-                  <li key={output}>{output}</li>
-                ))}
-              </ol>
-            </div>
-          </div>
-          <div className="feature-card-grid branch-feature-grid">
-            {content.rilu.features.map((feature) => (
-              <article className="beichen-feature-card" key={feature.title}>
-                <img
-                  className="feature-medallion"
-                  src={xingqueAssets.constellationMedallion}
-                  alt=""
-                  aria-hidden="true"
-                />
-                <h4>{feature.title}</h4>
-                <p>{feature.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
 
         <section
           className="branch-content-block branch-future-block"
