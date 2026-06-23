@@ -102,6 +102,28 @@ export const BeichenPage = () => {
             </article>
           ))}
         </div>
+
+        <aside
+          className="branch-privacy-note rilu-privacy-note"
+          aria-labelledby="beichen-rilu-privacy-title"
+        >
+          <img
+            className="section-medallion"
+            src={xingqueAssets.constellationMedallion}
+            alt=""
+            aria-hidden="true"
+          />
+          <div>
+            <h3 id="beichen-rilu-privacy-title">{content.privacy.title}</h3>
+            <p>{content.privacy.body}</p>
+          </div>
+        </aside>
+
+        <blockquote className="beichen-footer-quote rilu-footer-quote">
+          {content.quote.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </blockquote>
       </section>
 
       <section className="beichen-section" aria-labelledby="beichen-features-title">
@@ -132,23 +154,6 @@ export const BeichenPage = () => {
         </div>
       </section>
 
-      <section className="beichen-section privacy-section" aria-labelledby="beichen-privacy-title">
-        <div className="section-kicker">
-          <img
-            className="section-medallion"
-            src={xingqueAssets.constellationMedallion}
-            alt=""
-            aria-hidden="true"
-          />
-          <span className="section-number">03</span>
-          <p className="eyebrow">{content.privacy.title}</p>
-        </div>
-        <div className="beichen-section-copy">
-          <h2 id="beichen-privacy-title">{content.privacy.title}</h2>
-          <p>{content.privacy.body}</p>
-        </div>
-      </section>
-
       <section className="beichen-section" aria-labelledby="beichen-future-title">
         <div className="section-kicker">
           <img
@@ -157,7 +162,7 @@ export const BeichenPage = () => {
             alt=""
             aria-hidden="true"
           />
-          <span className="section-number">04</span>
+          <span className="section-number">03</span>
           <p className="eyebrow">{content.offices.eyebrow}</p>
         </div>
         <div className="beichen-section-copy">
@@ -181,11 +186,6 @@ export const BeichenPage = () => {
       </section>
 
       <section className="beichen-page-footer" aria-label="Beichen footer links">
-        <blockquote className="beichen-footer-quote">
-          {content.quote.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </blockquote>
         <div className="beichen-footer-links">
           <a href="/xingque">{content.nav.xingque}</a>
           <a href="/xingque/beichen">{content.nav.beichen}</a>

@@ -209,6 +209,28 @@ export const XingQuePage = () => {
                       </article>
                     ))}
                   </div>
+
+                  <aside
+                    className="branch-privacy-note rilu-privacy-note"
+                    aria-labelledby="rilu-privacy-title"
+                  >
+                    <img
+                      className="section-medallion"
+                      src={xingqueAssets.constellationMedallion}
+                      alt=""
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <h3 id="rilu-privacy-title">{content.privacy.title}</h3>
+                      <p>{content.privacy.body}</p>
+                    </div>
+                  </aside>
+
+                  <blockquote className="beichen-footer-quote rilu-footer-quote">
+                    {content.quote.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </blockquote>
                 </div>
               </details>
             </div>
@@ -240,24 +262,6 @@ export const XingQuePage = () => {
           </div>
         </section>
 
-        <aside className="branch-privacy-note" aria-labelledby="rilu-privacy-title">
-          <img
-            className="section-medallion"
-            src={xingqueAssets.constellationMedallion}
-            alt=""
-            aria-hidden="true"
-          />
-          <div>
-            <h3 id="rilu-privacy-title">{content.privacy.title}</h3>
-            <p>{content.privacy.body}</p>
-          </div>
-        </aside>
-
-        <blockquote className="beichen-footer-quote">
-          {content.quote.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
-        </blockquote>
       </section>
     </div>
   );
