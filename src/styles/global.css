@@ -1425,6 +1425,52 @@ a {
   font-size: 1.05rem;
 }
 
+.bilingual-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+.bilingual-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+  white-space: pre-line;
+}
+
+.bilingual-copy-english,
+.bilingual-copy-chinese {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.bilingual-copy-chinese {
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(184, 124, 133, 0.18);
+}
+
+.bilingual-copy-chinese p {
+  color: var(--secondary);
+  font-family: var(--serif);
+  letter-spacing: 0.04em;
+}
+
+.section-bilingual-copy {
+  margin-top: 1rem;
+}
+
+.beichen-subtitle.bilingual-copy,
+.branch-content-subtitle.bilingual-copy {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.beichen-subtitle.bilingual-copy p,
+.branch-content-subtitle.bilingual-copy p {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
 .beichen-hero-ornament {
   position: absolute;
   inset: 0;
@@ -1614,8 +1660,7 @@ a {
 }
 
 .beichen-page-footer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
   padding: 2rem 0 3rem;
   color: var(--muted);
@@ -1623,6 +1668,36 @@ a {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.beichen-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.beichen-footer-quote {
+  display: grid;
+  gap: 0.2rem;
+  max-width: 520px;
+  margin: 2.4rem 0 0;
+  padding: 1.1rem 0 0;
+  border-top: 1px solid rgba(184, 124, 133, 0.24);
+  color: var(--secondary);
+  font-family: var(--serif);
+  font-size: 0.98rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-transform: none;
+}
+
+.beichen-page-footer .beichen-footer-quote {
+  margin-top: 0;
+}
+
+.beichen-footer-quote p {
+  margin: 0;
 }
 
 .beichen-page-footer a {
@@ -1920,11 +1995,11 @@ a {
   min-width: 0;
 }
 
-.branch-card-copy > p,
 .branch-content-block p,
 .branch-privacy-note p,
 .beichen-feature-card p,
-.future-tool-card p {
+.future-tool-card p,
+.branch-card-copy .bilingual-copy p {
   color: var(--muted);
   line-height: 1.72;
 }
@@ -1940,7 +2015,7 @@ a {
   opacity: 0.62;
 }
 
-.branch-detail-grid div {
+.branch-detail-grid > div {
   position: relative;
   background:
     linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.42)),
@@ -1948,7 +2023,7 @@ a {
   overflow: hidden;
 }
 
-.branch-detail-grid div::after {
+.branch-detail-grid > div::after {
   position: absolute;
   right: -22px;
   bottom: -22px;
@@ -1998,6 +2073,16 @@ a {
   line-height: 1.04;
 }
 
+.branch-content-heading h3 span,
+.beichen-section h2 span {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--secondary);
+  font-family: var(--serif);
+  font-size: 0.42em;
+  letter-spacing: 0.08em;
+}
+
 .branch-content-subtitle {
   margin: 0.8rem 0 0;
   color: var(--secondary);
@@ -2018,6 +2103,10 @@ a {
 .branch-rilu-intro > p {
   max-width: 640px;
   margin: 0;
+}
+
+.branch-rilu-intro > .bilingual-copy {
+  max-width: 680px;
 }
 
 .rilu-output-list {
@@ -2041,6 +2130,12 @@ a {
 .beichen-feature-card p,
 .future-tool-card p {
   margin: 0.75rem 0 0;
+}
+
+.future-tool-title-zh {
+  color: var(--secondary);
+  font-family: var(--serif);
+  letter-spacing: 0.08em;
 }
 
 .branch-privacy-note {

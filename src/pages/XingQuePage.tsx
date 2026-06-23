@@ -1,18 +1,95 @@
 import { useTranslation } from 'react-i18next';
 import { xingqueAssets } from '../assets/xingque';
 
+type BilingualBlockProps = {
+  english: string[];
+  chinese: string[];
+  className?: string;
+};
+
+const BilingualBlock = ({ english, chinese, className = '' }: BilingualBlockProps) => (
+  <div className={`bilingual-copy ${className}`.trim()}>
+    <div className="bilingual-copy-english">
+      {english.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
+    </div>
+    <div className="bilingual-copy-chinese" lang="zh-Hant">
+      {chinese.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
+    </div>
+  </div>
+);
+
+const xingqueDescription = {
+  english: [
+    'XingQue takes inspiration from the halls and offices of a traditional Chinese court.',
+    'Each academy keeps its own charge.\nEach office tends to its own duties.',
+    'Like stars scattered across the night sky,\nthey stand apart,\nyet quietly sustain the rhythms of daily life.'
+  ],
+  chinese: [
+    '星闕取意於古代宮闕與百司。',
+    '諸院各有所掌，\n諸司各有所職。',
+    '如群星分布於夜空，\n彼此獨立，\n卻共同維繫著日常。'
+  ]
+};
+
+const beichenDescription = {
+  english: [
+    'Beichen, the Northern Star, stands at the center of the heavens.',
+    'The Beichen Academy is entrusted with the study of languages:\ngathering words,\nordering passages,\nand through steady practice over time,\nturning unfamiliar tongues into familiar companions.'
+  ],
+  chinese: [
+    '北辰者，天之樞也。',
+    '北辰院司掌諸語之學，\n收詞句、理篇章，\n以日積月累之功，\n使陌生之語漸成可親之語。'
+  ]
+};
+
+const riluDescription = {
+  english: [
+    'Rilu is the first office established within Beichen.',
+    'It helps thoughts, fragments, emotions, and unfinished sentences find their place in the language being learned.'
+  ],
+  chinese: [
+    '日錄司為北辰院首設之司。',
+    '凡一日所思、\n所見、\n所感，',
+    '皆可記之。',
+    '或數語，\n或片言，',
+    '終成一頁。'
+  ]
+};
+
+const riluShortDescription = {
+  english: ['A daily language journal for small and steady practice.'],
+  chinese: ['以日日之記，\n養語言之功。']
+};
+
+const beichenOfficesDescription = {
+  english: [
+    'Rilu is the first office within Beichen.',
+    'In time, more offices may be established for reading, vocabulary, speaking practice, and review.',
+    'Each serves a different duty, yet all follow the same path of gradual learning.'
+  ],
+  chinese: [
+    '今設日錄一司。',
+    '他日或增閱文之閣，\n藏詞之庫，\n習聲之房，\n溫習之館。',
+    '皆循其職，\n各守其事。'
+  ]
+};
+
 const branchDetails = [
   {
     title: 'XingQue',
-    copy: 'The parent archive for branch-based tools with a scholarly celestial identity.'
+    copy: xingqueDescription
   },
   {
     title: 'Beichen',
-    copy: 'The northern-star language branch for repeatable reading and writing habits.'
+    copy: beichenDescription
   },
   {
     title: 'Rilu',
-    copy: 'The first Beichen tool, built around short diary writing in a target language.'
+    copy: riluShortDescription
   }
 ];
 
@@ -47,20 +124,24 @@ const riluFeatures = [
 
 const futureTools = [
   {
-    title: 'Reading',
-    copy: 'For saving short reading notes and useful sentences.'
+    title: 'Reading Office',
+    titleZh: '閱文之閣',
+    copy: 'For reading practice.'
   },
   {
-    title: 'Vocabulary',
-    copy: 'For reviewing collected words across languages.'
+    title: 'Vocabulary Archive',
+    titleZh: '藏詞之庫',
+    copy: 'For keeping words.'
   },
   {
-    title: 'Shadowing',
-    copy: 'For speaking practice built around short daily lines.'
+    title: 'Speaking Room',
+    titleZh: '習聲之房',
+    copy: 'For speaking practice.'
   },
   {
-    title: 'Review',
-    copy: 'For returning to phrases without heavy study sessions.'
+    title: 'Review Hall',
+    titleZh: '溫習之館',
+    copy: 'For returning to what has been learned.'
   }
 ];
 
@@ -148,10 +229,7 @@ export const XingQuePage = () => {
         </div>
         <div className="section-heading">
           <h2 id="xingque-branches-title">A quiet constellation of small tools.</h2>
-          <p>
-            XingQue gathers focused branches for daily creative and learning rituals.
-            Beichen is the first branch.
-          </p>
+          <BilingualBlock {...xingqueDescription} className="section-bilingual-copy" />
         </div>
 
         <div className="branch-card-grid">
@@ -178,12 +256,7 @@ export const XingQuePage = () => {
                   <img className="branch-seal" src={xingqueAssets.sealBeichen} alt="" />
                 </div>
                 <div className="branch-card-copy">
-                  <p>Language-learning tools for quiet, sustainable daily practice.</p>
-                  <p>
-                    Beichen is the language-learning branch of XingQue. It is built for small
-                    daily rituals: writing a few diary lines, collecting useful words, and
-                    returning to language without pressure.
-                  </p>
+                  <BilingualBlock {...beichenDescription} />
                   <div className="branch-detail-grid">
                     {branchDetails.map((detail) => (
                       <div key={detail.title}>
@@ -194,7 +267,7 @@ export const XingQuePage = () => {
                           aria-hidden="true"
                         />
                         <h3>{detail.title}</h3>
-                        <p>{detail.copy}</p>
+                        <BilingualBlock {...detail.copy} className="detail-bilingual-copy" />
                       </div>
                     ))}
                   </div>
@@ -219,15 +292,10 @@ export const XingQuePage = () => {
           <div className="branch-content-heading">
             <p className="eyebrow">Rilu</p>
             <h3 id="rilu-branch-title">Rilu · Daily Language Journal</h3>
-            <p className="branch-content-subtitle">
-              A ChatGPT companion for short, natural diary writing.
-            </p>
+            <BilingualBlock {...riluShortDescription} className="branch-content-subtitle" />
           </div>
           <div className="branch-rilu-intro">
-            <p>
-              Rilu helps turn fragments, keywords, emotions, or broken sentences into three
-              diary-ready versions in the language you are learning.
-            </p>
+            <BilingualBlock {...riluDescription} />
             <ol className="rilu-output-list" aria-label="Rilu output versions">
               {riluOutputs.map((output) => (
                 <li key={output}>{output}</li>
@@ -256,11 +324,11 @@ export const XingQuePage = () => {
         >
           <div className="branch-content-heading">
             <p className="eyebrow">Later</p>
-            <h3 id="future-beichen-title">Future Beichen tools</h3>
-            <p>
-              Beichen begins with Rilu, but the branch is designed to hold more small
-              language-learning tools later.
-            </p>
+            <h3 id="future-beichen-title">
+              Offices of Beichen
+              <span lang="zh-Hant">北辰院諸司</span>
+            </h3>
+            <BilingualBlock {...beichenOfficesDescription} />
           </div>
           <div className="future-tool-list">
             {futureTools.map((tool) => (
@@ -272,6 +340,9 @@ export const XingQuePage = () => {
                   aria-hidden="true"
                 />
                 <h4>{tool.title}</h4>
+                <p className="future-tool-title-zh" lang="zh-Hant">
+                  {tool.titleZh}
+                </p>
                 <p>{tool.copy}</p>
               </article>
             ))}
@@ -293,6 +364,13 @@ export const XingQuePage = () => {
             </p>
           </div>
         </aside>
+
+        <blockquote className="beichen-footer-quote">
+          <p>Not built for speed.</p>
+          <p>Built for returning.</p>
+          <p lang="zh-Hant">不求一日精進，</p>
+          <p lang="zh-Hant">但求來日仍願再來。</p>
+        </blockquote>
       </section>
     </div>
   );
