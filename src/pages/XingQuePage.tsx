@@ -43,7 +43,7 @@ export const XingQuePage = () => {
                 height="650"
               />
             </h1>
-            <p className="hero-subtitle">{content.hero.subtitle}</p>
+            <p className="hero-subtitle">xingque</p>
           </div>
 
           <div className="xingque-hero-right" aria-hidden="true">

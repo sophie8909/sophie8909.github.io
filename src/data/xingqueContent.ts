@@ -23,7 +23,6 @@ export type XingQueContent = {
   };
   hero: {
     alt: string;
-    subtitle: string;
   };
   xingque: {
     eyebrow: string;
@@ -69,8 +68,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       comingSoon: 'Coming Soon'
     },
     hero: {
-      alt: 'XingQue',
-      subtitle: 'xingque'
+      alt: 'XingQue'
     },
     xingque: {
       eyebrow: 'Beichen Academy',
@@ -153,8 +151,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       comingSoon: '尚未開放'
     },
     hero: {
-      alt: '星闕',
-      subtitle: '星闕'
+      alt: '星闕'
     },
     xingque: {
       eyebrow: '北辰院',
@@ -240,8 +237,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       comingSoon: '尚未开放'
     },
     hero: {
-      alt: '星阙',
-      subtitle: '星阙'
+      alt: '星阙'
     },
     xingque: {
       eyebrow: '北辰院',
