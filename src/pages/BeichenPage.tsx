@@ -40,10 +40,10 @@ export const BeichenPage = () => {
         <div className="beichen-hero-visual" aria-hidden="true">
           <img
             className="beichen-academy-asset"
-            src={xingqueAssets.beichenAcademy}
+            src={xingqueAssets.beichenLogo}
             alt=""
-            width="900"
-            height="620"
+            width="1254"
+            height="829"
           />
           <img className="beichen-seal" src={xingqueAssets.sealBeichen} alt="" />
           <img className="beichen-lattice" src={xingqueAssets.latticeMoonGate} alt="" />

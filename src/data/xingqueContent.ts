@@ -40,7 +40,6 @@ export type XingQueContent = {
     title: string;
     label: string;
     body: ParagraphBlock;
-    cta: string;
   };
   rilu: {
     eyebrow: string;
@@ -101,8 +100,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       body: [
         'Beichen, the Northern Star, stands at the center of the heavens.',
         'The Beichen Academy is entrusted with the study of languages:\ngathering words,\nordering passages,\nand through steady practice over time,\nturning unfamiliar tongues into familiar companions.'
-      ],
-      cta: 'Open Rilu'
+      ]
     },
     rilu: {
       eyebrow: 'First Office',
@@ -112,7 +110,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         'Rilu is the first office established within Beichen.',
         'It helps thoughts, fragments, emotions, and unfinished sentences find their place in the language being learned.'
       ],
-      expandCta: 'Expand Rilu',
+      expandCta: 'Expand',
       outputsLabel: 'Rilu keeps the practice small:',
       outputs: ['Minimal', 'Natural', 'Emotional'],
       featuresHeading: 'Practice pieces',
@@ -202,8 +200,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       body: [
         '北辰者，天之樞也。',
         '北辰院司掌諸語之學，\n收詞句、理篇章，\n以日積月累之功，\n使陌生之語漸成可親之語。'
-      ],
-      cta: '展開日錄'
+      ]
     },
     rilu: {
       eyebrow: '首設之司',
@@ -216,7 +213,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '或數語，\n或片言，',
         '終成一頁。'
       ],
-      expandCta: '展開日錄',
+      expandCta: '展開',
       outputsLabel: '日錄所求者小而可久：',
       outputs: ['極簡', '自然', '含情'],
       featuresHeading: '修習之事',
@@ -306,8 +303,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       body: [
         '北辰者，天之枢也。',
         '北辰院司掌诸语之学，\n收词句、理篇章，\n以日积月累之功，\n使陌生之语渐成可亲之语。'
-      ],
-      cta: '展开日录'
+      ]
     },
     rilu: {
       eyebrow: '首设之司',
@@ -320,7 +316,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '或数语，\n或片言，',
         '终成一页。'
       ],
-      expandCta: '展开日录',
+      expandCta: '展开',
       outputsLabel: '日录所求者小而可久：',
       outputs: ['极简', '自然', '含情'],
       featuresHeading: '修习之事',

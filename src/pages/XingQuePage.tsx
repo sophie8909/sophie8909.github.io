@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { xingqueAssets } from '../assets/xingque';
 import { LocalizedParagraphs } from '../components/LocalizedParagraphs';
@@ -7,7 +6,6 @@ import { getXingQueContent } from '../data/xingqueContent';
 export const XingQuePage = () => {
   const { i18n } = useTranslation();
   const content = getXingQueContent(i18n.language);
-  const [isRiluOpen, setIsRiluOpen] = useState(false);
 
   return (
     <div className="xingque-page">
@@ -110,10 +108,10 @@ export const XingQuePage = () => {
                 <div className="branch-academy-panel" aria-hidden="true">
                   <img
                     className="branch-academy"
-                    src={xingqueAssets.beichenAcademy}
+                    src={xingqueAssets.beichenLogo}
                     alt=""
-                    width="900"
-                    height="620"
+                    width="1254"
+                    height="829"
                   />
                   <img className="branch-seal" src={xingqueAssets.sealBeichen} alt="" />
                 </div>
@@ -130,13 +128,6 @@ export const XingQuePage = () => {
                   </h3>
                   <LocalizedParagraphs paragraphs={content.beichen.body} />
                   <div className="project-actions">
-                    <button
-                      className="action-link action-link-primary"
-                      type="button"
-                      onClick={() => setIsRiluOpen(true)}
-                    >
-                      {content.beichen.cta}
-                    </button>
                     <button className="action-link" type="button" disabled>
                       {content.nav.comingSoon}
                     </button>
@@ -147,8 +138,6 @@ export const XingQuePage = () => {
               <details
                 className="branch-inline-rilu"
                 id="rilu"
-                open={isRiluOpen}
-                onToggle={(event) => setIsRiluOpen(event.currentTarget.open)}
               >
                 <summary>
                   <span>

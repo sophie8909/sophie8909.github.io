@@ -1,6 +1,6 @@
 import armillarySphere from './armillary-sphere.svg';
 import astronomicalTelescope from './astronomical-telescope.svg';
-import beichenAcademy from './beichen-academy.svg';
+import beichenLogo from '../../../assets/xingque/beichen.png';
 import constellationMedallion from './constellation-medallion.svg';
 import latticeCircular from './lattice-circular.svg';
 import latticeMoonGate from './lattice-moon-gate.svg';
@@ -16,7 +16,7 @@ const beichenWordmark = '/assets/xingque/beichen-wordmark.png';
 export const xingqueAssets = {
   armillarySphere,
   astronomicalTelescope,
-  beichenAcademy,
+  beichenLogo,
   constellationMedallion,
   latticeCircular,
   latticeMoonGate,
