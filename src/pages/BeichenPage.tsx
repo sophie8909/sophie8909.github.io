@@ -68,20 +68,6 @@ export const BeichenPage = () => {
             <LocalizedParagraphs paragraphs={content.rilu.body} />
           </div>
           <div className="rilu-side-stack">
-            <div className="rilu-highlight" aria-label={content.rilu.outputsLabel}>
-              <img
-                className="rilu-seal"
-                src={xingqueAssets.sealBeichen}
-                alt=""
-                aria-hidden="true"
-              />
-              <p>{content.rilu.outputsLabel}</p>
-              <ol>
-                {content.rilu.outputs.map((output) => (
-                  <li key={output}>{output}</li>
-                ))}
-              </ol>
-            </div>
             <div className="rilu-access-panel">
               <h3>{content.rilu.accessHeading}</h3>
               <p>{content.rilu.accessNote}</p>

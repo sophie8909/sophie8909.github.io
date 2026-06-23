@@ -42,8 +42,6 @@ export type XingQueContent = {
     short: string;
     body: ParagraphBlock;
     expandCta: string;
-    outputsLabel: string;
-    outputs: string[];
     featuresHeading: string;
     features: RiluFeature[];
     accessHeading: string;
@@ -101,8 +99,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         'It helps thoughts, fragments, emotions, and unfinished sentences find their place in the language being learned.'
       ],
       expandCta: 'Expand',
-      outputsLabel: 'Rilu keeps the practice small:',
-      outputs: ['Minimal', 'Natural', 'Emotional'],
       featuresHeading: 'Practice pieces',
       features: [
         {
@@ -190,8 +186,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '終成一頁。'
       ],
       expandCta: '展開',
-      outputsLabel: '日錄所求者小而可久：',
-      outputs: ['極簡', '自然', '含情'],
       featuresHeading: '修習之事',
       features: [
         {
@@ -279,8 +273,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '终成一页。'
       ],
       expandCta: '展开',
-      outputsLabel: '日录所求者小而可久：',
-      outputs: ['极简', '自然', '含情'],
       featuresHeading: '修习之事',
       features: [
         {

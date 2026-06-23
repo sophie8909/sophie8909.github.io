@@ -131,14 +131,6 @@ export const XingQuePage = () => {
 
               <div className="inline-rilu-body">
                 <div className="branch-rilu-intro">
-                  <div className="rilu-output-list" aria-label={content.rilu.outputsLabel}>
-                    <p>{content.rilu.outputsLabel}</p>
-                    <ol>
-                      {content.rilu.outputs.map((output) => (
-                        <li key={output}>{output}</li>
-                      ))}
-                    </ol>
-                  </div>
                   <div className="rilu-access-panel">
                     <h4>{content.rilu.accessHeading}</h4>
                     <p>{content.rilu.accessNote}</p>

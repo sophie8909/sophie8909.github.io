@@ -1589,31 +1589,6 @@ a {
   max-width: 680px;
 }
 
-.rilu-highlight {
-  padding: 1.25rem;
-  border: 1px solid rgba(184, 124, 133, 0.38);
-  background:
-    radial-gradient(circle at 88% 14%, rgba(184, 124, 133, 0.1), transparent 22%),
-    linear-gradient(90deg, rgba(216, 208, 200, 0.2) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(216, 208, 200, 0.2) 1px, transparent 1px),
-    rgba(250, 247, 243, 0.7);
-  background-size: 30px 30px;
-}
-
-.rilu-highlight p {
-  margin-top: 0;
-}
-
-.rilu-highlight ol {
-  display: grid;
-  gap: 0.75rem;
-  margin: 1rem 0 0;
-  padding-left: 1.25rem;
-  color: var(--text);
-  font-family: var(--serif);
-  font-weight: 900;
-}
-
 .feature-card-grid {
   display: grid;
   gap: 1rem;
@@ -1796,7 +1771,6 @@ a {
 .branch-beichen-wordmark,
 .beichen-seal,
 .branch-seal,
-.rilu-seal,
 .beichen-lattice {
   display: block;
 }
@@ -1813,7 +1787,6 @@ a {
 .branch-beichen-wordmark,
 .beichen-seal,
 .branch-seal,
-.rilu-seal,
 .beichen-lattice,
 .branch-symbol img {
   height: auto;
@@ -2136,29 +2109,6 @@ a {
   max-width: 680px;
 }
 
-.rilu-output-list {
-  display: grid;
-  gap: 0.7rem;
-  margin: 0;
-  padding: 1rem;
-  border: 1px solid rgba(184, 124, 133, 0.2);
-  background: rgba(248, 245, 241, 0.58);
-  color: var(--text);
-  font-family: var(--serif);
-  font-weight: 900;
-}
-
-.rilu-output-list p {
-  margin: 0;
-}
-
-.rilu-output-list ol {
-  display: grid;
-  gap: 0.7rem;
-  margin: 0;
-  padding-left: 1.4rem;
-}
-
 .branch-inline-rilu {
   position: relative;
   z-index: 1;
@@ -2410,23 +2360,6 @@ a {
   opacity: 0.18;
 }
 
-.rilu-highlight {
-  position: relative;
-  background:
-    linear-gradient(135deg, rgba(250, 247, 243, 0.92), rgba(239, 231, 221, 0.46)),
-    var(--background);
-  background-size: auto;
-  overflow: hidden;
-}
-
-.rilu-seal {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  width: 64px;
-  opacity: 0.22;
-}
-
 .beichen-feature-card {
   background:
     linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.4)),
@@ -2562,11 +2495,6 @@ a {
 
   .rilu-access-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .branch-rilu-intro {
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.52fr);
-    align-items: start;
   }
 
   .project-section-reverse {
