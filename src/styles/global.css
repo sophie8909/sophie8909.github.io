@@ -1918,6 +1918,10 @@ a {
   padding: 1.2rem;
 }
 
+.branch-rilu-card summary {
+  grid-template-columns: 58px minmax(0, 1fr) auto auto;
+}
+
 .branch-symbol {
   border: 0;
   background: transparent;

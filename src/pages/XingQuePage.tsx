@@ -96,135 +96,96 @@ export const XingQuePage = () => {
         </div>
 
         <div className="branch-card-grid">
-          <details className="branch-card" open>
+          <details className="branch-card branch-rilu-card" id="rilu">
             <summary>
               <span className="branch-symbol" aria-hidden="true">
                 <img src={xingqueAssets.constellationMedallion} alt="" />
               </span>
               <span>
-                <span className="branch-title">{content.beichen.label}</span>
-                <span className="branch-english">BEICHEN</span>
+                <span className="branch-title">{content.rilu.title}</span>
+                <span className="branch-english">RILU</span>
               </span>
+              <span className="inline-rilu-action">{content.rilu.expandCta}</span>
             </summary>
             <div className="branch-card-body">
               <div className="branch-card-layout">
-                <div className="branch-academy-panel" aria-hidden="true">
-                  <img
-                    className="branch-academy"
-                    src={xingqueAssets.beichenLogo}
-                    alt=""
-                    width="1254"
-                    height="829"
-                  />
-                  <img className="branch-seal" src={xingqueAssets.sealBeichen} alt="" />
-                </div>
                 <div className="branch-card-copy">
-                  <p className="eyebrow">{content.beichen.eyebrow}</p>
-                  <h3>
-                    <img
-                      className="branch-beichen-wordmark"
-                      src={xingqueAssets.beichenWordmark}
-                      alt={content.beichen.title}
-                      width="1254"
-                      height="829"
-                    />
-                  </h3>
-                  <LocalizedParagraphs paragraphs={content.beichen.body} />
-                  <div className="project-actions">
-                    <button className="action-link" type="button" disabled>
-                      {content.nav.comingSoon}
-                    </button>
-                  </div>
+                  <p className="eyebrow">{content.rilu.eyebrow}</p>
+                  <h3>{content.rilu.title}</h3>
+                  <p className="branch-content-subtitle">{content.rilu.short}</p>
+                  <LocalizedParagraphs paragraphs={content.rilu.body} />
                 </div>
               </div>
 
-              <details
-                className="branch-inline-rilu"
-                id="rilu"
-              >
-                <summary>
-                  <span>
-                    <span className="eyebrow">{content.rilu.eyebrow}</span>
-                    <span className="inline-rilu-title">{content.rilu.title}</span>
-                  </span>
-                  <span className="inline-rilu-action">{content.rilu.expandCta}</span>
-                </summary>
-
-                <div className="inline-rilu-body">
-                  <div className="branch-content-heading">
-                    <p className="branch-content-subtitle">{content.rilu.short}</p>
-                    <LocalizedParagraphs paragraphs={content.rilu.body} />
+              <div className="inline-rilu-body">
+                <div className="branch-rilu-intro">
+                  <div className="rilu-output-list" aria-label={content.rilu.outputsLabel}>
+                    <p>{content.rilu.outputsLabel}</p>
+                    <ol>
+                      {content.rilu.outputs.map((output) => (
+                        <li key={output}>{output}</li>
+                      ))}
+                    </ol>
                   </div>
-
-                  <div className="branch-rilu-intro">
-                    <div className="rilu-output-list" aria-label={content.rilu.outputsLabel}>
-                      <p>{content.rilu.outputsLabel}</p>
-                      <ol>
-                        {content.rilu.outputs.map((output) => (
-                          <li key={output}>{output}</li>
-                        ))}
-                      </ol>
-                    </div>
-                    <div className="rilu-access-panel">
-                      <h4>{content.rilu.accessHeading}</h4>
-                      <p>{content.rilu.accessNote}</p>
-                      <div className="rilu-access-grid">
-                        {content.rilu.access.map((option) => (
-                          <article className="rilu-access-card" key={option.title}>
-                            {option.recommended ? (
-                              <span className="rilu-access-recommendation">
-                                {option.recommended}
-                              </span>
-                            ) : null}
-                            <h5>{option.title}</h5>
-                            <p>{option.copy}</p>
-                            <button className="action-link" type="button" disabled>
-                              {option.status}
-                            </button>
-                          </article>
-                        ))}
-                      </div>
+                  <div className="rilu-access-panel">
+                    <h4>{content.rilu.accessHeading}</h4>
+                    <p>{content.rilu.accessNote}</p>
+                    <div className="rilu-access-grid">
+                      {content.rilu.access.map((option) => (
+                        <article className="rilu-access-card" key={option.title}>
+                          {option.recommended ? (
+                            <span className="rilu-access-recommendation">
+                              {option.recommended}
+                            </span>
+                          ) : null}
+                          <h5>{option.title}</h5>
+                          <p>{option.copy}</p>
+                          <button className="action-link" type="button" disabled>
+                            {option.status}
+                          </button>
+                        </article>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="feature-card-grid branch-feature-grid">
-                    {content.rilu.features.map((feature) => (
-                      <article className="beichen-feature-card" key={feature.title}>
-                        <img
-                          className="feature-medallion"
-                          src={xingqueAssets.constellationMedallion}
-                          alt=""
-                          aria-hidden="true"
-                        />
-                        <h4>{feature.title}</h4>
-                        <p>{feature.copy}</p>
-                      </article>
-                    ))}
-                  </div>
-
-                  <aside
-                    className="branch-privacy-note rilu-privacy-note"
-                    aria-labelledby="rilu-privacy-title"
-                  >
-                    <img
-                      className="section-medallion"
-                      src={xingqueAssets.constellationMedallion}
-                      alt=""
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <h3 id="rilu-privacy-title">{content.privacy.title}</h3>
-                      <p>{content.privacy.body}</p>
-                    </div>
-                  </aside>
-
-                  <blockquote className="beichen-footer-quote rilu-footer-quote">
-                    {content.quote.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </blockquote>
                 </div>
-              </details>
+
+                <div className="feature-card-grid branch-feature-grid">
+                  {content.rilu.features.map((feature) => (
+                    <article className="beichen-feature-card" key={feature.title}>
+                      <img
+                        className="feature-medallion"
+                        src={xingqueAssets.constellationMedallion}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <h4>{feature.title}</h4>
+                      <p>{feature.copy}</p>
+                    </article>
+                  ))}
+                </div>
+
+                <aside
+                  className="branch-privacy-note rilu-privacy-note"
+                  aria-labelledby="rilu-privacy-title"
+                >
+                  <img
+                    className="section-medallion"
+                    src={xingqueAssets.constellationMedallion}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <h3 id="rilu-privacy-title">{content.privacy.title}</h3>
+                    <p>{content.privacy.body}</p>
+                  </div>
+                </aside>
+
+                <blockquote className="beichen-footer-quote rilu-footer-quote">
+                  {content.quote.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </blockquote>
+              </div>
             </div>
           </details>
         </div>

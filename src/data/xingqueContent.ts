@@ -75,7 +75,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       subtitle: 'xingque'
     },
     xingque: {
-      eyebrow: 'Branches',
+      eyebrow: 'Beichen Academy',
       heading: 'A quiet constellation of small offices.',
       body: [
         'XingQue takes inspiration from the halls and offices of a traditional Chinese court.',
@@ -161,7 +161,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       subtitle: '星闕'
     },
     xingque: {
-      eyebrow: '諸院',
+      eyebrow: '北辰院',
       heading: '群星各守其位。',
       body: [
         '星闕取意於古代宮闕與百司。',
@@ -250,7 +250,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       subtitle: '星阙'
     },
     xingque: {
-      eyebrow: '诸院',
+      eyebrow: '北辰院',
       heading: '群星各守其位。',
       body: [
         '星阙取意于古代宫阙与百司。',
