@@ -77,6 +77,10 @@ export const XingQuePage = () => {
           alt=""
           aria-hidden="true"
         />
+        <LocalizedParagraphs
+          paragraphs={content.xingque.body}
+          className="section-localized-copy xingque-branches-intro"
+        />
         <div className="section-kicker">
           <img
             className="section-medallion"
@@ -89,7 +93,6 @@ export const XingQuePage = () => {
         </div>
         <div className="section-heading">
           <h2 id="xingque-branches-title">{content.xingque.heading}</h2>
-          <LocalizedParagraphs paragraphs={content.xingque.body} className="section-localized-copy" />
         </div>
 
         <div className="branch-card-grid">
