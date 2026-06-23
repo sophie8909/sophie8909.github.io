@@ -181,6 +181,8 @@ export const XingQuePage = () => {
                 className="xingque-wordmark"
                 src={xingqueAssets.xingqueWordmark}
                 alt={xingqueTitle}
+                width="1254"
+                height="650"
               />
             </h1>
             <p className="hero-subtitle">xingque</p>

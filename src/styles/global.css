@@ -1847,11 +1847,13 @@ a {
 }
 
 .hero-xingque h1 {
+  display: inline-block;
   margin-top: 0;
-  font-size: 1rem;
+  font-size: 0;
+  line-height: 0;
   letter-spacing: 0.02em;
   text-transform: none;
-  text-shadow: 0 18px 42px rgba(248, 245, 241, 0.92);
+  text-shadow: none;
 }
 
 .xingque-wordmark {
