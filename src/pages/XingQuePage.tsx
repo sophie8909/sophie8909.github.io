@@ -242,7 +242,6 @@ export const XingQuePage = () => {
           aria-labelledby="future-beichen-title"
         >
           <div className="branch-content-heading">
-            <p className="eyebrow">{content.offices.eyebrow}</p>
             <h3 id="future-beichen-title">{content.offices.title}</h3>
             <LocalizedParagraphs paragraphs={content.offices.body} />
           </div>

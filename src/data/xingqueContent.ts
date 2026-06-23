@@ -57,7 +57,6 @@ export type XingQueContent = {
     access: RiluAccessOption[];
   };
   offices: {
-    eyebrow: string;
     title: string;
     body: ParagraphBlock;
     cards: FutureOffice[];
@@ -152,11 +151,10 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       ]
     },
     offices: {
-      eyebrow: 'Later',
       title: 'Offices of Beichen',
       body: [
         'Rilu is the first office within Beichen.',
-        'In time, more offices may be established for reading, vocabulary, speaking practice, and review.',
+        'More offices may be established for reading, vocabulary, speaking practice, and review.',
         'Each serves a different duty, yet all follow the same path of gradual learning.'
       ],
       cards: [
@@ -257,11 +255,10 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       ]
     },
     offices: {
-      eyebrow: '他日',
       title: '北辰院諸司',
       body: [
         '今設日錄一司。',
-        '他日或增閱文之閣，\n藏詞之庫，\n習聲之房，\n溫習之館。',
+        '或增閱文之閣，\n藏詞之庫，\n習聲之房，\n溫習之館。',
         '皆循其職，\n各守其事。'
       ],
       cards: [
@@ -362,11 +359,10 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
       ]
     },
     offices: {
-      eyebrow: '他日',
       title: '北辰院诸司',
       body: [
         '今设日录一司。',
-        '他日或增阅文之阁，\n藏词之库，\n习声之房，\n温习之馆。',
+        '或增阅文之阁，\n藏词之库，\n习声之房，\n温习之馆。',
         '皆循其职，\n各守其事。'
       ],
       cards: [

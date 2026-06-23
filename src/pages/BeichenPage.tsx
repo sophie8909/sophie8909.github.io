@@ -163,7 +163,6 @@ export const BeichenPage = () => {
             aria-hidden="true"
           />
           <span className="section-number">03</span>
-          <p className="eyebrow">{content.offices.eyebrow}</p>
         </div>
         <div className="beichen-section-copy">
           <h2 id="beichen-future-title">{content.offices.title}</h2>
