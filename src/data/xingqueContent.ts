@@ -2,11 +2,6 @@ import type { LanguageCode } from '../i18n/config';
 
 type ParagraphBlock = string[];
 
-type FutureOffice = {
-  title: string;
-  copy: string;
-};
-
 type RiluFeature = {
   title: string;
   copy: string;
@@ -54,11 +49,6 @@ export type XingQueContent = {
     accessHeading: string;
     accessNote: string;
     access: RiluAccessOption[];
-  };
-  offices: {
-    title: string;
-    body: ParagraphBlock;
-    cards: FutureOffice[];
   };
   privacy: {
     title: string;
@@ -146,20 +136,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           copy: 'A lighter browser-based version for quick access when an extension is not available.',
           status: 'Web version'
         }
-      ]
-    },
-    offices: {
-      title: 'Offices of Beichen',
-      body: [
-        'Rilu is the first office within Beichen.',
-        'More offices may be established for reading, vocabulary, speaking practice, and review.',
-        'Each serves a different duty, yet all follow the same path of gradual learning.'
-      ],
-      cards: [
-        { title: 'Reading Office', copy: 'For reading practice.' },
-        { title: 'Vocabulary Archive', copy: 'For keeping words.' },
-        { title: 'Speaking Room', copy: 'For speaking practice.' },
-        { title: 'Review Hall', copy: 'For returning to what has been learned.' }
       ]
     },
     privacy: {
@@ -251,20 +227,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         }
       ]
     },
-    offices: {
-      title: '北辰院諸司',
-      body: [
-        '今設日錄一司。',
-        '或增閱文之閣，\n藏詞之庫，\n習聲之房，\n溫習之館。',
-        '皆循其職，\n各守其事。'
-      ],
-      cards: [
-        { title: '閱文之閣', copy: '司掌閱文。' },
-        { title: '藏詞之庫', copy: '司掌藏詞。' },
-        { title: '習聲之房', copy: '司掌習聲。' },
-        { title: '溫習之館', copy: '司掌復返。' }
-      ]
-    },
     privacy: {
       title: '本機為先',
       body: '日錄將擷取的回覆與詞彙紀錄預設留在裝置之中。本機流程不需帳號、不需後端，也不需分析追蹤。'
@@ -352,20 +314,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           copy: '适合快速打开使用，或在无法安装插件的环境中练习。',
           status: '网页版'
         }
-      ]
-    },
-    offices: {
-      title: '北辰院诸司',
-      body: [
-        '今设日录一司。',
-        '或增阅文之阁，\n藏词之库，\n习声之房，\n温习之馆。',
-        '皆循其职，\n各守其事。'
-      ],
-      cards: [
-        { title: '阅文之阁', copy: '司掌阅文。' },
-        { title: '藏词之库', copy: '司掌藏词。' },
-        { title: '习声之房', copy: '司掌习声。' },
-        { title: '温习之馆', copy: '司掌复返。' }
       ]
     },
     privacy: {

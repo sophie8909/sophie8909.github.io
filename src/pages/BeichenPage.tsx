@@ -154,36 +154,6 @@ export const BeichenPage = () => {
         </div>
       </section>
 
-      <section className="beichen-section" aria-labelledby="beichen-future-title">
-        <div className="section-kicker">
-          <img
-            className="section-medallion"
-            src={xingqueAssets.constellationMedallion}
-            alt=""
-            aria-hidden="true"
-          />
-          <span className="section-number">03</span>
-        </div>
-        <div className="beichen-section-copy">
-          <h2 id="beichen-future-title">{content.offices.title}</h2>
-          <LocalizedParagraphs paragraphs={content.offices.body} />
-        </div>
-        <div className="future-tool-list">
-          {content.offices.cards.map((tool) => (
-            <article className="future-tool-card" key={tool.title}>
-              <img
-                className="future-lattice"
-                src={xingqueAssets.latticeCircular}
-                alt=""
-                aria-hidden="true"
-              />
-              <h3>{tool.title}</h3>
-              <p>{tool.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="beichen-page-footer" aria-label="Beichen footer links">
         <div className="beichen-footer-links">
           <a href="/xingque">{content.nav.xingque}</a>

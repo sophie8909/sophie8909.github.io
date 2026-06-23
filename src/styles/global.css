@@ -1367,8 +1367,6 @@ a {
 .branch-detail-grid h3,
 .beichen-feature-card h3,
 .beichen-feature-card h4,
-.future-tool-card h3,
-.future-tool-card h4,
 .branch-content-heading h3,
 .branch-privacy-note h3 {
   margin: 0;
@@ -1581,15 +1579,13 @@ a {
   font-weight: 900;
 }
 
-.feature-card-grid,
-.future-tool-list {
+.feature-card-grid {
   display: grid;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.beichen-feature-card,
-.future-tool-card {
+.beichen-feature-card {
   position: relative;
   min-height: 132px;
   padding: 1rem;
@@ -1599,8 +1595,7 @@ a {
   overflow: hidden;
 }
 
-.beichen-feature-card::after,
-.future-tool-card::after {
+.beichen-feature-card::after {
   position: absolute;
   right: 10px;
   bottom: 10px;
@@ -1761,7 +1756,6 @@ a {
 .section-medallion,
 .detail-medallion,
 .feature-medallion,
-.future-lattice,
 .xingque-wordmark,
 .beichen-wordmark,
 .branch-beichen-wordmark,
@@ -1779,7 +1773,6 @@ a {
 .section-medallion,
 .detail-medallion,
 .feature-medallion,
-.future-lattice,
 .xingque-wordmark,
 .beichen-wordmark,
 .branch-beichen-wordmark,
@@ -2000,7 +1993,6 @@ a {
 .branch-content-block p,
 .branch-privacy-note p,
 .beichen-feature-card p,
-.future-tool-card p,
 .branch-card-copy .localized-copy p {
   color: var(--muted);
   line-height: 1.72;
@@ -2284,14 +2276,12 @@ a {
   gap: 1rem;
 }
 
-.branch-feature-grid,
-.branch-future-block .future-tool-list {
+.branch-feature-grid {
   position: relative;
   z-index: 1;
 }
 
-.beichen-feature-card p,
-.future-tool-card p {
+.beichen-feature-card p {
   margin: 0.75rem 0 0;
 }
 
@@ -2394,15 +2384,13 @@ a {
   opacity: 0.22;
 }
 
-.beichen-feature-card,
-.future-tool-card {
+.beichen-feature-card {
   background:
     linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.4)),
     var(--background);
 }
 
-.beichen-feature-card::after,
-.future-tool-card::after {
+.beichen-feature-card::after {
   display: none;
 }
 
@@ -2411,18 +2399,6 @@ a {
   height: 42px;
   margin-bottom: 1.2rem;
   opacity: 0.62;
-}
-
-.future-tool-card {
-  min-height: 142px;
-}
-
-.future-lattice {
-  position: absolute;
-  right: -28px;
-  bottom: -28px;
-  width: 104px;
-  opacity: 0.16;
 }
 
 .privacy-section {
@@ -2543,10 +2519,6 @@ a {
 
   .rilu-access-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .future-tool-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .branch-rilu-intro {

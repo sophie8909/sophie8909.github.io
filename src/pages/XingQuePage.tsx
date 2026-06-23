@@ -226,30 +226,6 @@ export const XingQuePage = () => {
           </details>
         </div>
 
-        <section
-          className="branch-content-block branch-future-block"
-          aria-labelledby="future-beichen-title"
-        >
-          <div className="branch-content-heading">
-            <h3 id="future-beichen-title">{content.offices.title}</h3>
-            <LocalizedParagraphs paragraphs={content.offices.body} />
-          </div>
-          <div className="future-tool-list">
-            {content.offices.cards.map((tool) => (
-              <article className="future-tool-card" key={tool.title}>
-                <img
-                  className="future-lattice"
-                  src={xingqueAssets.latticeCircular}
-                  alt=""
-                  aria-hidden="true"
-                />
-                <h4>{tool.title}</h4>
-                <p>{tool.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
       </section>
     </div>
   );
