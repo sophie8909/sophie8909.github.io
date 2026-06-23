@@ -9,7 +9,8 @@ import latticeSquare from './lattice-square.svg';
 import moonGateWindow from './moon-gate-window.svg';
 import sealBeichen from './seal-beichen.svg';
 import xingqueStarChart from './xingque-star-chart.svg';
-import xingqueWordmark from '../../../xingque.png';
+
+const xingqueWordmark = '/assets/xingque/xingque-wordmark.png';
 
 export const xingqueAssets = {
   armillarySphere,
