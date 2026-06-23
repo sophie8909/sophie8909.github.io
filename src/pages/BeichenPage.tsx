@@ -18,7 +18,15 @@ export const BeichenPage = () => {
         />
         <div className="beichen-hero-copy">
           <p className="eyebrow">{content.beichen.eyebrow}</p>
-          <h1 id="beichen-title">{content.beichen.title}</h1>
+          <h1 id="beichen-title">
+            <img
+              className="beichen-wordmark"
+              src={xingqueAssets.beichenWordmark}
+              alt={content.beichen.title}
+              width="1254"
+              height="829"
+            />
+          </h1>
           <LocalizedParagraphs paragraphs={content.beichen.body} className="beichen-description" />
           <div className="project-actions">
             <a className="action-link action-link-primary" href="#rilu">

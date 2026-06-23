@@ -1763,6 +1763,8 @@ a {
 .feature-medallion,
 .future-lattice,
 .xingque-wordmark,
+.beichen-wordmark,
+.branch-beichen-wordmark,
 .beichen-seal,
 .branch-seal,
 .rilu-seal,
@@ -1779,6 +1781,8 @@ a {
 .feature-medallion,
 .future-lattice,
 .xingque-wordmark,
+.beichen-wordmark,
+.branch-beichen-wordmark,
 .beichen-seal,
 .branch-seal,
 .rilu-seal,
@@ -1829,6 +1833,12 @@ a {
 
 .xingque-wordmark {
   width: min(72vw, 520px);
+  filter: drop-shadow(0 18px 42px rgba(248, 245, 241, 0.92));
+}
+
+.beichen-wordmark {
+  width: min(72vw, 520px);
+  max-width: 100%;
   filter: drop-shadow(0 18px 42px rgba(248, 245, 241, 0.92));
 }
 
@@ -1976,6 +1986,12 @@ a {
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: 0.02em;
+}
+
+.branch-beichen-wordmark {
+  width: min(100%, 340px);
+  opacity: 0.9;
+  filter: drop-shadow(0 12px 28px rgba(45, 41, 38, 0.08));
 }
 
 .branch-content-block p,

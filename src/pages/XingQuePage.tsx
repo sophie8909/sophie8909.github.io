@@ -117,7 +117,15 @@ export const XingQuePage = () => {
                 </div>
                 <div className="branch-card-copy">
                   <p className="eyebrow">{content.beichen.eyebrow}</p>
-                  <h3>{content.beichen.title}</h3>
+                  <h3>
+                    <img
+                      className="branch-beichen-wordmark"
+                      src={xingqueAssets.beichenWordmark}
+                      alt={content.beichen.title}
+                      width="1254"
+                      height="829"
+                    />
+                  </h3>
                   <LocalizedParagraphs paragraphs={content.beichen.body} />
                   <div className="project-actions">
                     <a className="action-link action-link-primary" href="/xingque/beichen">

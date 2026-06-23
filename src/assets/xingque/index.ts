@@ -11,6 +11,7 @@ import sealBeichen from './seal-beichen.svg';
 import xingqueStarChart from './xingque-star-chart.svg';
 
 const xingqueWordmark = '/assets/xingque/xingque-wordmark.png';
+const beichenWordmark = '/assets/xingque/beichen-wordmark.png';
 
 export const xingqueAssets = {
   armillarySphere,
@@ -23,6 +24,7 @@ export const xingqueAssets = {
   latticeSquare,
   moonGateWindow,
   sealBeichen,
+  beichenWordmark,
   xingqueStarChart,
   xingqueWordmark
 };
