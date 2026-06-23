@@ -107,34 +107,6 @@ export const BeichenPage = () => {
         </blockquote>
       </section>
 
-      <section className="beichen-section" aria-labelledby="beichen-features-title">
-        <div className="section-kicker">
-          <img
-            className="section-medallion"
-            src={xingqueAssets.constellationMedallion}
-            alt=""
-            aria-hidden="true"
-          />
-          <span className="section-number">02</span>
-          <p className="eyebrow">{content.rilu.featuresHeading}</p>
-        </div>
-        <h2 id="beichen-features-title">{content.rilu.featuresHeading}</h2>
-        <div className="feature-card-grid">
-          {content.rilu.features.map((feature) => (
-            <article className="beichen-feature-card" key={feature.title}>
-              <img
-                className="feature-medallion"
-                src={xingqueAssets.constellationMedallion}
-                alt=""
-                aria-hidden="true"
-              />
-              <h3>{feature.title}</h3>
-              <p>{feature.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="beichen-page-footer" aria-label="Beichen footer links">
         <div className="beichen-footer-links">
           <a href="/xingque">{content.nav.xingque}</a>

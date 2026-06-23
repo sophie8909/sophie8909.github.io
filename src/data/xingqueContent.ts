@@ -2,11 +2,6 @@ import type { LanguageCode } from '../i18n/config';
 
 type ParagraphBlock = string[];
 
-type RiluFeature = {
-  title: string;
-  copy: string;
-};
-
 type RiluAccessOption = {
   status: string;
   recommended?: string;
@@ -39,8 +34,6 @@ export type XingQueContent = {
     short: string;
     body: ParagraphBlock;
     expandCta: string;
-    featuresHeading: string;
-    features: RiluFeature[];
     access: RiluAccessOption[];
   };
   privacy: {
@@ -93,25 +86,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         'It helps thoughts, fragments, emotions, and unfinished sentences find their place in the language being learned.'
       ],
       expandCta: 'Expand',
-      featuresHeading: 'Practice pieces',
-      features: [
-        {
-          title: 'Diary writing',
-          copy: 'Write from a thought, fragment, or unfinished sentence.'
-        },
-        {
-          title: 'Level control',
-          copy: 'Keep the line short while adjusting the writing level.'
-        },
-        {
-          title: 'Vocabulary capture',
-          copy: 'Save useful words from the language being practiced.'
-        },
-        {
-          title: 'Returning',
-          copy: 'Come back to small records without turning practice into a heavy session.'
-        }
-      ],
       access: [
         {
           status: 'Chrome Web Store',
@@ -173,25 +147,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '終成一頁。'
       ],
       expandCta: '展開',
-      featuresHeading: '修習之事',
-      features: [
-        {
-          title: '日記',
-          copy: '由一念、一句、未成之語起筆。'
-        },
-        {
-          title: '程度',
-          copy: '使語句短而可用，並依程度調整。'
-        },
-        {
-          title: '收詞',
-          copy: '留下練習語言中可再相逢的詞句。'
-        },
-        {
-          title: '復返',
-          copy: '以小記錄反覆回來，不使修習成為重負。'
-        }
-      ],
       access: [
         {
           status: 'Chrome Web Store',
@@ -253,25 +208,6 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
         '终成一页。'
       ],
       expandCta: '展开',
-      featuresHeading: '修习之事',
-      features: [
-        {
-          title: '日记',
-          copy: '由一念、一句、未成之语起笔。'
-        },
-        {
-          title: '程度',
-          copy: '使语句短而可用，并依程度调整。'
-        },
-        {
-          title: '收词',
-          copy: '留下练习语言中可再相逢的词句。'
-        },
-        {
-          title: '复返',
-          copy: '以小记录反复回来，不使修习成为重负。'
-        }
-      ],
       access: [
         {
           status: 'Chrome Web Store',

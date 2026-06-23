@@ -1365,8 +1365,6 @@ a {
 }
 
 .branch-detail-grid h3,
-.beichen-feature-card h3,
-.beichen-feature-card h4,
 .branch-content-heading h3,
 .branch-privacy-note h3 {
   margin: 0;
@@ -1584,45 +1582,6 @@ a {
   max-width: 680px;
 }
 
-.feature-card-grid {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.beichen-feature-card {
-  position: relative;
-  min-height: 132px;
-  padding: 1rem;
-  border: 1px solid rgba(184, 124, 133, 0.22);
-  background:
-    linear-gradient(135deg, rgba(248, 245, 241, 0.84), rgba(239, 231, 221, 0.34));
-  overflow: hidden;
-}
-
-.beichen-feature-card::after {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 32px;
-  height: 32px;
-  border-right: 1px solid rgba(184, 124, 133, 0.22);
-  border-bottom: 1px solid rgba(184, 124, 133, 0.22);
-  content: "";
-}
-
-.beichen-feature-card span {
-  display: block;
-  width: 34px;
-  height: 34px;
-  margin-bottom: 1.2rem;
-  border: 1px solid rgba(184, 124, 133, 0.54);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, transparent 34%, rgba(184, 124, 133, 0.16) 35% 38%, transparent 39%),
-    linear-gradient(90deg, transparent 47%, rgba(184, 124, 133, 0.34) 48% 52%, transparent 53%);
-}
-
 .privacy-section {
   background:
     linear-gradient(90deg, rgba(216, 208, 200, 0.12) 1px, transparent 1px),
@@ -1760,7 +1719,6 @@ a {
 .hero-lattice,
 .section-medallion,
 .detail-medallion,
-.feature-medallion,
 .xingque-wordmark,
 .beichen-wordmark,
 .branch-beichen-wordmark,
@@ -1776,7 +1734,6 @@ a {
 .hero-lattice,
 .section-medallion,
 .detail-medallion,
-.feature-medallion,
 .xingque-wordmark,
 .beichen-wordmark,
 .branch-beichen-wordmark,
@@ -2003,7 +1960,6 @@ a {
 
 .branch-content-block p,
 .branch-privacy-note p,
-.beichen-feature-card p,
 .branch-card-copy .localized-copy p {
   color: var(--muted);
   line-height: 1.72;
@@ -2206,20 +2162,6 @@ a {
   text-transform: uppercase;
 }
 
-.rilu-side-stack {
-  display: grid;
-  gap: 1rem;
-}
-
-.branch-feature-grid {
-  position: relative;
-  z-index: 1;
-}
-
-.beichen-feature-card p {
-  margin: 0.75rem 0 0;
-}
-
 .branch-privacy-note {
   position: relative;
   display: grid;
@@ -2300,23 +2242,6 @@ a {
   left: 0;
   width: 132px;
   opacity: 0.18;
-}
-
-.beichen-feature-card {
-  background:
-    linear-gradient(135deg, rgba(248, 245, 241, 0.9), rgba(239, 231, 221, 0.4)),
-    var(--background);
-}
-
-.beichen-feature-card::after {
-  display: none;
-}
-
-.feature-medallion {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 1.2rem;
-  opacity: 0.62;
 }
 
 .privacy-section {
@@ -2429,10 +2354,6 @@ a {
   .beichen-section-layout {
     grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
     align-items: start;
-  }
-
-  .feature-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-section-reverse {
@@ -2719,10 +2640,6 @@ a {
 @media (min-width: 920px) {
   .xingque-wordmark {
     width: min(34vw, 520px);
-  }
-
-  .branch-feature-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .armillary-asset {

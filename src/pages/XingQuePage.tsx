@@ -148,21 +148,6 @@ export const XingQuePage = () => {
                   </div>
                 </div>
 
-                <div className="feature-card-grid branch-feature-grid">
-                  {content.rilu.features.map((feature) => (
-                    <article className="beichen-feature-card" key={feature.title}>
-                      <img
-                        className="feature-medallion"
-                        src={xingqueAssets.constellationMedallion}
-                        alt=""
-                        aria-hidden="true"
-                      />
-                      <h4>{feature.title}</h4>
-                      <p>{feature.copy}</p>
-                    </article>
-                  ))}
-                </div>
-
                 <aside
                   className="branch-privacy-note rilu-privacy-note"
                   aria-labelledby="rilu-privacy-title"
