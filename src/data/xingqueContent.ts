@@ -4,6 +4,7 @@ type ParagraphBlock = string[];
 
 type RiluAccessOption = {
   status: string;
+  href?: string;
   recommended?: string;
 };
 
@@ -92,7 +93,8 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           recommended: 'Recommended for desktop'
         },
         {
-          status: 'Web version'
+          status: 'Web version',
+          href: 'https://feiyastudio.com/Beichen/'
         }
       ]
     },
@@ -153,7 +155,8 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           recommended: '電腦用戶推薦'
         },
         {
-          status: '網頁版'
+          status: '網頁版',
+          href: 'https://feiyastudio.com/Beichen/'
         }
       ]
     },
@@ -214,7 +217,8 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
           recommended: '电脑用户推荐'
         },
         {
-          status: '网页版'
+          status: '网页版',
+          href: 'https://feiyastudio.com/Beichen/'
         }
       ]
     },

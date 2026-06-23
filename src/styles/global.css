@@ -2147,6 +2147,11 @@ a {
   letter-spacing: 0.1em;
   opacity: 1;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.rilu-access-button {
+  cursor: pointer;
 }
 
 .rilu-access-button:disabled {
