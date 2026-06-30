@@ -56,34 +56,5 @@
         "clickable": true
       }
     ]
-  },
-  {
-    "id": "codex-orchestrator",
-    "title": {
-      "zh-TW": "CODEX ORCHESTRATOR",
-      "zh-CN": "CODEX ORCHESTRATOR",
-      "en": "CODEX ORCHESTRATOR"
-    },
-    "subtitle": {
-      "zh-TW": "CODEX 任務自動化",
-      "zh-CN": "CODEX 任务自动化",
-      "en": "TASK AUTOMATION FOR CODEX"
-    },
-    "description": {
-      "zh-TW": "管理 OpenAI Codex 的\n任務佇列、相依關係\n與長時間工作流程。",
-      "zh-CN": "管理 OpenAI Codex 的\n任务队列、依赖关系\n与长时间工作流。",
-      "en": "Manage task queues,\ndependencies, and long-running\nworkflows for OpenAI Codex."
-    },
-    "buttons": [
-      {
-        "label": {
-          "zh-TW": "即將推出",
-          "zh-CN": "即将推出",
-          "en": "COMING SOON"
-        },
-        "href": null,
-        "clickable": false
-      }
-    ]
   }
 ]
