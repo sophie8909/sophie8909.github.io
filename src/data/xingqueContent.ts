@@ -104,7 +104,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     },
     quote: ['Not built for speed.', 'Built for returning.'],
     license: {
-      textBeforeLink: 'XingQue logo typeface: Chongxi Seal Script by Wang Hsin-Yi. Licensed under ',
+      textBeforeLink: 'XingQue logo typeface: Chongxi Seal. Licensed under ',
       linkLabel: 'CC BY-ND 3.0 TW or later',
       textAfterLink: '.'
     }
@@ -166,7 +166,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     },
     quote: ['不求一日精進，', '但求來日仍願再來。'],
     license: {
-      textBeforeLink: '星闕 logo 字體：王心怡書寫之「崇羲篆體」，依 ',
+      textBeforeLink: '星闕 logo 字體：「崇羲篆體」，依 ',
       linkLabel: 'CC BY-ND 3.0 TW 或其後版本',
       textAfterLink: ' 授權使用。'
     }
@@ -228,7 +228,7 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     },
     quote: ['不求一日精进，', '但求来日仍愿再来。'],
     license: {
-      textBeforeLink: '星阙 logo 字体：王心怡书写之“崇羲篆体”，依 ',
+      textBeforeLink: '星阙 logo 字体：“崇羲篆体”，依 ',
       linkLabel: 'CC BY-ND 3.0 TW 或其后版本',
       textAfterLink: ' 授权使用。'
     }
