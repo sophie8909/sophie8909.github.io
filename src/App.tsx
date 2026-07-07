@@ -7,6 +7,7 @@ import { AboutPage } from './pages/AboutPage';
 import { BeichenPage } from './pages/BeichenPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { SxstxCalculatorPage } from './pages/SxstxCalculatorPage';
 import { XingQuePage } from './pages/XingQuePage';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
+        {route === '/sxstx-calculator' ? <SxstxCalculatorPage /> : null}
         {route === '/xingque' ? <XingQuePage /> : null}
         {route === '/xingque/beichen' ? <BeichenPage /> : null}
         {route === '/about' ? <AboutPage /> : null}

@@ -37,6 +37,16 @@
         "WebSite"
       ]
     },
+    "/sxstx-calculator": {
+      "title": "SXSTX Calculator | Feiya Studio",
+      "description": "SXSTX Calculator is a player-made toolkit for Sword and Staff players, including calculator links, updates, and FAQ.",
+      "lastmod": "2026-07-07",
+      "changefreq": "weekly",
+      "priority": "0.9",
+      "schemas": [
+        "WebSite"
+      ]
+    },
     "/xingque": {
       "title": "星闕 XingQue | Feiya Studio",
       "description": "XingQue is a Feiya Studio ecosystem for quiet branch-based tools, beginning with Beichen language-learning tools.",

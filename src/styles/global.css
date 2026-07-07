@@ -2285,6 +2285,226 @@ a.rilu-access-button {
   letter-spacing: 0.04em;
 }
 
+.sxstx-portal-page {
+  overflow: hidden;
+}
+
+.sxstx-portal-hero,
+.sxstx-portal-section {
+  width: min(1180px, calc(100vw - 2rem));
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.sxstx-portal-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  min-height: min(620px, calc(100svh - 72px));
+  padding: 5rem 0;
+}
+
+.sxstx-portal-hero-copy {
+  max-width: 680px;
+}
+
+.sxstx-portal-hero h1 {
+  margin: 1rem 0 0;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 12vw, 6.8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sxstx-portal-subtitle {
+  max-width: 520px;
+  margin: 1.2rem 0 0;
+  color: var(--secondary);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.sxstx-portal-visual {
+  position: relative;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(216, 208, 200, 0.34) 1px, transparent 1px),
+    rgba(239, 231, 221, 0.28);
+  background-size: 28px 28px;
+}
+
+.sxstx-portal-orbit,
+.sxstx-portal-node {
+  position: absolute;
+  display: block;
+}
+
+.sxstx-portal-orbit {
+  border: 1px solid rgba(184, 124, 133, 0.34);
+  border-radius: 50%;
+}
+
+.sxstx-portal-orbit-a {
+  inset: 18%;
+}
+
+.sxstx-portal-orbit-b {
+  inset: 32% 12%;
+  transform: rotate(-18deg);
+}
+
+.sxstx-portal-node {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--primary);
+  background: var(--background);
+}
+
+.sxstx-portal-node-a {
+  top: 20%;
+  left: 24%;
+}
+
+.sxstx-portal-node-b {
+  top: 48%;
+  right: 20%;
+  border-radius: 50%;
+}
+
+.sxstx-portal-node-c {
+  bottom: 18%;
+  left: 44%;
+  transform: rotate(45deg);
+}
+
+.sxstx-portal-section {
+  display: grid;
+  gap: 1.5rem;
+  padding: 4rem 0;
+}
+
+.sxstx-portal-section-heading {
+  max-width: 680px;
+}
+
+.sxstx-portal-section h2 {
+  margin: 0.5rem 0 0;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.sxstx-tool-card,
+.sxstx-update-item,
+.sxstx-faq-item {
+  border: 1px solid var(--line);
+  background: rgba(248, 245, 241, 0.72);
+}
+
+.sxstx-tool-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.sxstx-tool-card:hover,
+.sxstx-tool-card:focus-visible {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.sxstx-tool-card span,
+.sxstx-tool-card strong {
+  overflow-wrap: anywhere;
+}
+
+.sxstx-tool-card span {
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sxstx-tool-card strong {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.sxstx-update-list,
+.sxstx-faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.sxstx-update-item {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.25rem;
+}
+
+.sxstx-update-item time {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.sxstx-update-item h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+}
+
+.sxstx-update-item p,
+.sxstx-faq-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.sxstx-update-item a {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-underline-offset: 0.28em;
+}
+
+.sxstx-faq-item {
+  padding: 0;
+}
+
+.sxstx-faq-item summary {
+  padding: 1.1rem 1.25rem;
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 900;
+  list-style-position: inside;
+}
+
+.sxstx-faq-item p {
+  padding: 0 1.25rem 1.25rem;
+}
+
 .site-footer {
   display: flex;
   flex-direction: column;
@@ -2350,6 +2570,15 @@ a.rilu-access-button {
 
   .artcodex-workflow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sxstx-portal-hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.85fr);
+  }
+
+  .sxstx-portal-section {
+    grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.92fr);
+    align-items: start;
   }
 
   .branch-detail-grid {

@@ -14,6 +14,7 @@ const navItems: Array<
 > = [
   { type: 'anchor', anchor: 'catrodis', labelKey: 'nav.catrodis' },
   { type: 'anchor', anchor: 'creations', labelKey: 'nav.creations' },
+  { type: 'route', route: '/sxstx-calculator', labelKey: 'SXSTX Calculator' },
   { type: 'route', route: '/xingque', labelKey: 'nav.xingque' }
 ];
 
@@ -85,7 +86,7 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
                   item.type === 'route' ? navigate(item.route) : scrollToAnchor(item.anchor)
                 }
               >
-                {t(item.labelKey)}
+                {item.labelKey.startsWith('nav.') ? t(item.labelKey) : item.labelKey}
               </button>
             ))}
           </div>

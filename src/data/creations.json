@@ -54,6 +54,15 @@
         },
         "href": "https://sxstx.feiyastudio.com/",
         "clickable": true
+      },
+      {
+        "label": {
+          "zh-TW": "PROJECT PORTAL",
+          "zh-CN": "PROJECT PORTAL",
+          "en": "PROJECT PORTAL"
+        },
+        "href": "/sxstx-calculator",
+        "clickable": true
       }
     ]
   }

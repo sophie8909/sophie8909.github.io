@@ -1,8 +1,21 @@
 import { useCallback, useEffect, useState } from 'react';
 
-export type AppRoute = '/' | '/projects' | '/xingque' | '/xingque/beichen' | '/about';
+export type AppRoute =
+  | '/'
+  | '/projects'
+  | '/sxstx-calculator'
+  | '/xingque'
+  | '/xingque/beichen'
+  | '/about';
 
-const routeSet = new Set<AppRoute>(['/', '/projects', '/xingque', '/xingque/beichen', '/about']);
+const routeSet = new Set<AppRoute>([
+  '/',
+  '/projects',
+  '/sxstx-calculator',
+  '/xingque',
+  '/xingque/beichen',
+  '/about'
+]);
 
 const normalizeRoute = (pathname: string): AppRoute => {
   const withoutTrailingSlash =
