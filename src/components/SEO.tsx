@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supportedLanguages } from '../i18n/config';
 import type { AppRoute } from '../hooks/useRoute';
-import { buildStructuredData, getCanonicalUrl, getLocalizedUrl, routeSeo, siteSeo } from '../seo/seo';
+import { buildStructuredData, getCanonicalUrl, getLocalizedUrl, getRouteSeo, siteSeo } from '../seo/seo';
 
 interface SEOProps {
   route: AppRoute;
@@ -55,7 +55,7 @@ export const SEO = ({ route }: SEOProps) => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    const meta = routeSeo[route];
+    const meta = getRouteSeo(route);
     const title = getLocalizedTitle(route, i18n.language, meta.title);
     const canonicalUrl = getCanonicalUrl(route);
     const localizedUrl = getLocalizedUrl(route, i18n.language);

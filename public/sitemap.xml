@@ -34,6 +34,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/sxstx-calculator" />
   </url>
   <url>
+    <loc>https://feiyastudio.com/sxstx-calculator/blog/update</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://feiyastudio.com/sxstx-calculator/blog/update?lang=zh-TW" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/sxstx-calculator/blog/update?lang=zh-CN" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/sxstx-calculator/blog/update?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/sxstx-calculator/blog/update" />
+  </url>
+  <url>
     <loc>https://feiyastudio.com/xingque</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -62,6 +72,26 @@
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/about?lang=zh-CN" />
     <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/about?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/about" />
+  </url>
+  <url>
+    <loc>https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-10-season-score</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-10-season-score?lang=zh-TW" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-10-season-score?lang=zh-CN" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-10-season-score?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-10-season-score" />
+  </url>
+  <url>
+    <loc>https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-07-launch</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-07-launch?lang=zh-TW" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-07-launch?lang=zh-CN" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-07-launch?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-07-launch" />
   </url>
   <url>
     <loc>https://feiyastudio.com/sxstx_calculator/</loc>

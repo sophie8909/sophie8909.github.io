@@ -38,13 +38,27 @@
       ]
     },
     "/sxstx-calculator": {
-      "title": "SXSTX Calculator | Feiya Studio",
-      "description": "SXSTX Calculator is a player-made toolkit for Sword and Staff players, including calculator links, updates, and FAQ.",
+      "title": "SXSTX Calculator | Sword and Staff Tools | Feiya Studio",
+      "description": "SXSTX Calculator is a collection of player-made tools for Sword and Staff, including calculators, update logs, and frequently asked questions.",
       "lastmod": "2026-07-07",
       "changefreq": "weekly",
       "priority": "0.9",
       "schemas": [
-        "WebSite"
+        "WebSite",
+        "SoftwareApplication",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    "/sxstx-calculator/blog/update": {
+      "title": "SXSTX Calculator Updates | Feiya Studio",
+      "description": "Read SXSTX Calculator update logs for Feiya Studio's player-made Sword and Staff tools.",
+      "lastmod": "2026-07-10",
+      "changefreq": "weekly",
+      "priority": "0.8",
+      "schemas": [
+        "WebSite",
+        "BreadcrumbList"
       ]
     },
     "/xingque": {

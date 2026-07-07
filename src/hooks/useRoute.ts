@@ -4,6 +4,8 @@ export type AppRoute =
   | '/'
   | '/projects'
   | '/sxstx-calculator'
+  | '/sxstx-calculator/blog/update'
+  | `/sxstx-calculator/blog/update/${string}`
   | '/xingque'
   | '/xingque/beichen'
   | '/about';
@@ -12,6 +14,7 @@ const routeSet = new Set<AppRoute>([
   '/',
   '/projects',
   '/sxstx-calculator',
+  '/sxstx-calculator/blog/update',
   '/xingque',
   '/xingque/beichen',
   '/about'
@@ -22,6 +25,10 @@ const normalizeRoute = (pathname: string): AppRoute => {
     pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
 
   if (routeSet.has(withoutTrailingSlash as AppRoute)) {
+    return withoutTrailingSlash as AppRoute;
+  }
+
+  if (withoutTrailingSlash.startsWith('/sxstx-calculator/blog/update/')) {
     return withoutTrailingSlash as AppRoute;
   }
 

@@ -8,6 +8,8 @@ import { BeichenPage } from './pages/BeichenPage';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { SxstxCalculatorPage } from './pages/SxstxCalculatorPage';
+import { SxstxUpdatePostPage } from './pages/SxstxUpdatePostPage';
+import { SxstxUpdateArchivePage } from './pages/SxstxUpdateArchivePage';
 import { XingQuePage } from './pages/XingQuePage';
 
 function App() {
@@ -26,6 +28,10 @@ function App() {
         {route === '/' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
         {route === '/sxstx-calculator' ? <SxstxCalculatorPage /> : null}
+        {route === '/sxstx-calculator/blog/update' ? <SxstxUpdateArchivePage /> : null}
+        {route.startsWith('/sxstx-calculator/blog/update/') ? (
+          <SxstxUpdatePostPage route={route} />
+        ) : null}
         {route === '/xingque' ? <XingQuePage /> : null}
         {route === '/xingque/beichen' ? <BeichenPage /> : null}
         {route === '/about' ? <AboutPage /> : null}

@@ -1,22 +1,59 @@
-import faqData from '../content/sxstx/faq.json';
-import updatesData from '../content/sxstx/updates.json';
+import { useState } from 'react';
+import { calculatorUrl, faq, sxstxUpdateArchiveRoute, updates } from '../data/sxstxContent';
 
-const calculatorUrl = 'https://sxstx.feiyastudio.com/';
+const latestUpdates = updates.slice(0, 5);
 
-interface UpdateItem {
-  date: string;
-  title: string;
-  body: string;
-  link?: string;
-}
+const renderParagraphs = (content: string) =>
+  content.split(/\n{2,}/).map((paragraph) => <p key={paragraph}>{paragraph}</p>);
 
-interface FaqItem {
-  question: string;
-  answer: string;
-}
+const SxstxFaqList = () => {
+  const [openItems, setOpenItems] = useState<Set<string>>(() => new Set());
 
-const updates = updatesData as UpdateItem[];
-const faq = faqData as FaqItem[];
+  const toggleItem = (title: string) => {
+    setOpenItems((current) => {
+      const next = new Set(current);
+
+      if (next.has(title)) {
+        next.delete(title);
+      } else {
+        next.add(title);
+      }
+
+      return next;
+    });
+  };
+
+  return (
+    <div className="sxstx-faq-list">
+      {faq.map((item) => {
+        const isOpen = openItems.has(item.question);
+        const panelId = `sxstx-faq-${item.question.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+        return (
+          <article className="sxstx-faq-item" key={item.question}>
+            <h3>
+              <button
+                aria-controls={panelId}
+                aria-expanded={isOpen}
+                className="sxstx-faq-toggle"
+                type="button"
+                onClick={() => toggleItem(item.question)}
+              >
+                <span aria-hidden="true" className="sxstx-faq-indicator">
+                  {isOpen ? 'V' : '>'}
+                </span>
+                <span>{item.question}</span>
+              </button>
+            </h3>
+            <div className="sxstx-faq-answer" hidden={!isOpen} id={panelId}>
+              {renderParagraphs(item.content)}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  );
+};
 
 export const SxstxCalculatorPage = () => (
   <div className="page-shell sxstx-portal-page">
@@ -24,7 +61,12 @@ export const SxstxCalculatorPage = () => (
       <div className="sxstx-portal-hero-copy">
         <p className="eyebrow">Project Portal</p>
         <h1 id="sxstx-portal-title">SXSTX Calculator</h1>
-        <p className="sxstx-portal-subtitle">Player-made tools for Sword and Staff players.</p>
+        <p className="sxstx-portal-subtitle">Player-made tools for Sword and Staff.</p>
+        <p className="sxstx-portal-intro">
+          SXSTX Calculator is a Feiya Studio project portal for practical Sword and Staff
+          tools, including material calculators, equipment score calculators, season score
+          planning, update logs, and frequently asked questions.
+        </p>
         <div className="project-actions">
           <a className="action-link action-link-primary" href={calculatorUrl}>
             Open Calculator
@@ -40,47 +82,55 @@ export const SxstxCalculatorPage = () => (
       </div>
     </section>
 
-    <section className="sxstx-portal-section" aria-labelledby="sxstx-tool-link-title">
+    <section className="sxstx-portal-section" aria-labelledby="sxstx-about-title">
       <div className="sxstx-portal-section-heading">
-        <p className="eyebrow">Tool Link</p>
-        <h2 id="sxstx-tool-link-title">Open the calculator tools.</h2>
+        <p className="eyebrow">About</p>
+        <h2 id="sxstx-about-title">About</h2>
       </div>
-      <a className="sxstx-tool-card" href={calculatorUrl}>
-        <span>SXSTX Calculator</span>
-        <strong>https://sxstx.feiyastudio.com/</strong>
-      </a>
+      <div className="sxstx-section-copy">
+        <p>
+          SXSTX Calculator is developed by Feiya Studio as a lightweight collection of
+          player-made tools for Sword and Staff players.
+        </p>
+        <p>
+          The calculator itself is hosted at{' '}
+          <a href={calculatorUrl}>https://sxstx.feiyastudio.com/</a>, while this Feiya
+          Studio page keeps project context, update logs, and FAQ content easy to find.
+        </p>
+      </div>
     </section>
 
     <section className="sxstx-portal-section" aria-labelledby="sxstx-update-title">
       <div className="sxstx-portal-section-heading">
         <p className="eyebrow">Update</p>
-        <h2 id="sxstx-update-title">Latest project notes</h2>
+        <h2 id="sxstx-update-title">Latest Updates</h2>
+        <p>Recent SXSTX Calculator project notes from the editable local update log.</p>
       </div>
       <div className="sxstx-update-list">
-        {updates.map((update) => (
-          <article className="sxstx-update-item" key={`${update.date}-${update.title}`}>
-            <time dateTime={update.date}>{update.date}</time>
-            <h3>{update.title}</h3>
-            <p>{update.body}</p>
-            {update.link ? <a href={update.link}>Read more</a> : null}
+        {latestUpdates.map((update) => (
+          <article className="sxstx-update-item" key={update.title}>
+            <p className="sxstx-update-date">
+              <time dateTime={update.date}>{update.date}</time>
+            </p>
+            <h3>
+              <a href={update.route}>{update.title}</a>
+            </h3>
+            <p>{update.description}</p>
           </article>
         ))}
+        <a className="action-link sxstx-more-link" href={sxstxUpdateArchiveRoute}>
+          More &gt;
+        </a>
       </div>
     </section>
 
     <section className="sxstx-portal-section" aria-labelledby="sxstx-faq-title">
       <div className="sxstx-portal-section-heading">
         <p className="eyebrow">FAQ</p>
-        <h2 id="sxstx-faq-title">Common questions</h2>
+        <h2 id="sxstx-faq-title">Frequently Asked Questions</h2>
+        <p>Answers to common questions about the SXSTX Calculator project and tools.</p>
       </div>
-      <div className="sxstx-faq-list">
-        {faq.map((item) => (
-          <details className="sxstx-faq-item" key={item.question}>
-            <summary>{item.question}</summary>
-            <p>{item.answer}</p>
-          </details>
-        ))}
-      </div>
+      <SxstxFaqList />
     </section>
   </div>
 );
