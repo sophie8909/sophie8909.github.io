@@ -8,8 +8,6 @@ interface RouteSeo {
   title: string;
   description: string;
   lastmod: string;
-  changefreq: string;
-  priority: string;
   schemas: SchemaType[];
 }
 
@@ -34,8 +32,6 @@ export const getRouteSeo = (route: AppRoute): RouteSeo => {
         : 'SXSTX Calculator Update | Feiya Studio',
       description: update?.description ?? 'Read an SXSTX Calculator update from Feiya Studio.',
       lastmod: update?.date ?? '2026-07-10',
-      changefreq: 'monthly',
-      priority: '0.7',
       schemas: ['WebSite', 'BreadcrumbList']
     };
   }
@@ -43,12 +39,14 @@ export const getRouteSeo = (route: AppRoute): RouteSeo => {
   return defaultRouteSeo;
 };
 
-export const getCanonicalUrl = (route: AppRoute) =>
-  `${seoData.siteUrl}${route === '/' ? '/' : route}`;
+export const getCanonicalUrl = (route: AppRoute) => {
+  const canonicalPath = route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
+  return `${seoData.siteUrl}${canonicalPath}`;
+};
 
 export const getLocalizedUrl = (route: AppRoute, language: string) => {
   const canonical = getCanonicalUrl(route);
-  return `${canonical}${route === '/' ? '' : ''}?lang=${language}`;
+  return `${canonical}?lang=${language}`;
 };
 
 export const buildStructuredData = (route: AppRoute) => {
@@ -71,7 +69,7 @@ export const buildStructuredData = (route: AppRoute) => {
       '@type': 'WebSite',
       '@id': `${seoData.siteUrl}/#website`,
       name: seoData.siteName,
-      url: seoData.siteUrl,
+      url: `${seoData.siteUrl}/`,
       publisher: {
         '@id': `${seoData.siteUrl}/#organization`
       },
@@ -82,7 +80,7 @@ export const buildStructuredData = (route: AppRoute) => {
   if (meta.schemas.includes('SoftwareApplication')) {
     graph.push({
       '@type': 'SoftwareApplication',
-      '@id': `${seoData.siteUrl}/sxstx-calculator#software`,
+      '@id': `${seoData.siteUrl}/sxstx-calculator/#software`,
       name: 'SXSTX Calculator',
       applicationCategory: 'GameApplication',
       operatingSystem: 'Web',
@@ -106,7 +104,7 @@ export const buildStructuredData = (route: AppRoute) => {
         '@type': 'ListItem',
         position: 2,
         name: 'SXSTX Calculator',
-        item: `${seoData.siteUrl}/sxstx-calculator`
+        item: `${seoData.siteUrl}/sxstx-calculator/`
       }
     ];
 
@@ -115,7 +113,7 @@ export const buildStructuredData = (route: AppRoute) => {
         '@type': 'ListItem',
         position: 3,
         name: 'Update Logs',
-        item: `${seoData.siteUrl}/sxstx-calculator/blog/update`
+        item: `${seoData.siteUrl}/sxstx-calculator/blog/update/`
       });
     }
 
@@ -129,7 +127,7 @@ export const buildStructuredData = (route: AppRoute) => {
   if (meta.schemas.includes('FAQPage')) {
     graph.push({
       '@type': 'FAQPage',
-      '@id': `${seoData.siteUrl}/sxstx-calculator#faq`,
+      '@id': `${seoData.siteUrl}/sxstx-calculator/#faq`,
       mainEntity: faq.map((item) => ({
         '@type': 'Question',
         name: item.question,

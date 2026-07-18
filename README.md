@@ -136,6 +136,9 @@ Included:
 - `hreflang` alternates for all supported languages
 - Google AdSense account meta tag
 
+
+`npm run build` emits route-specific static HTML plus real `robots.txt` and `sitemap.xml` files in `dist/`.
+Run `npm test` to rebuild the production site and verify the generated sitemap, robots directives, canonical URLs, and calculator link.
 ## Design Notes
 
 The homepage follows an architectural/editorial direction:

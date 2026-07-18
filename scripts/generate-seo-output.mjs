@@ -9,7 +9,6 @@ const publicSitemapPath = join(root, 'public', 'sitemap.xml');
 const distIndexPath = join(distPath, 'index.html');
 
 const seoData = JSON.parse(await readFile(seoDataPath, 'utf8'));
-const routeEntries = Object.entries(seoData.routes);
 
 const escapeXml = (value) =>
   String(value)
@@ -20,7 +19,10 @@ const escapeXml = (value) =>
     .replaceAll("'", '&apos;');
 
 const escapeHtml = escapeXml;
-const canonicalUrl = (route) => `${seoData.siteUrl}${route === '/' ? '/' : route}`;
+const canonicalUrl = (route) => {
+  const canonicalPath = route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
+  return `${seoData.siteUrl}${canonicalPath}`;
+};
 const localizedUrl = (route, language) => `${canonicalUrl(route)}?lang=${language}`;
 const calculatorUrl = 'https://sxstx.feiyastudio.com/';
 const updateArchiveRoute = '/sxstx-calculator/blog/update';
@@ -95,15 +97,23 @@ const updateRouteEntries = updates.map((update) => [
     title: `${update.title} | SXSTX Calculator | Feiya Studio`,
     description: update.description || 'Read an SXSTX Calculator update from Feiya Studio.',
     lastmod: update.date,
-    changefreq: 'monthly',
-    priority: '0.7',
     schemas: ['WebSite', 'BreadcrumbList']
   }
 ]);
 
-const sitemapEntries = routeEntries
-  .concat(updateRouteEntries)
-  .concat(Object.entries(seoData.sitemapOnlyRoutes ?? {}));
+const latestUpdateDate = updates[0]?.date;
+const routeEntries = Object.entries(seoData.routes).map(([route, meta]) => {
+  if (
+    latestUpdateDate &&
+    (route === '/sxstx-calculator' || route === updateArchiveRoute) &&
+    latestUpdateDate > meta.lastmod
+  ) {
+    return [route, { ...meta, lastmod: latestUpdateDate }];
+  }
+
+  return [route, meta];
+});
+const sitemapEntries = routeEntries.concat(updateRouteEntries);
 
 const buildStructuredData = (route, meta) => {
   const graph = [];
@@ -124,7 +134,7 @@ const buildStructuredData = (route, meta) => {
       '@type': 'WebSite',
       '@id': `${seoData.siteUrl}/#website`,
       name: seoData.siteName,
-      url: seoData.siteUrl,
+      url: `${seoData.siteUrl}/`,
       publisher: {
         '@id': `${seoData.siteUrl}/#organization`
       },
@@ -135,7 +145,7 @@ const buildStructuredData = (route, meta) => {
   if (meta.schemas.includes('SoftwareApplication')) {
     graph.push({
       '@type': 'SoftwareApplication',
-      '@id': `${seoData.siteUrl}/sxstx-calculator#software`,
+      '@id': `${seoData.siteUrl}/sxstx-calculator/#software`,
       name: 'SXSTX Calculator',
       applicationCategory: 'GameApplication',
       operatingSystem: 'Web',
@@ -159,7 +169,7 @@ const buildStructuredData = (route, meta) => {
         '@type': 'ListItem',
         position: 2,
         name: 'SXSTX Calculator',
-        item: `${seoData.siteUrl}/sxstx-calculator`
+        item: `${seoData.siteUrl}/sxstx-calculator/`
       }
     ];
 
@@ -168,7 +178,7 @@ const buildStructuredData = (route, meta) => {
         '@type': 'ListItem',
         position: 3,
         name: 'Update Logs',
-        item: `${seoData.siteUrl}${updateArchiveRoute}`
+        item: canonicalUrl(updateArchiveRoute)
       });
     }
 
@@ -182,7 +192,7 @@ const buildStructuredData = (route, meta) => {
   if (meta.schemas.includes('FAQPage')) {
     graph.push({
       '@type': 'FAQPage',
-      '@id': `${seoData.siteUrl}/sxstx-calculator#faq`,
+      '@id': `${seoData.siteUrl}/sxstx-calculator/#faq`,
       mainEntity: faq.map((item) => ({
         '@type': 'Question',
         name: item.question,
@@ -418,36 +428,15 @@ const injectStaticContent = (html, route) => {
   return html.replace('<div id="root"></div>', `<div id="root">\n${staticContent}\n    </div>`);
 };
 
-const renderSitemapAlternates = (route, meta) => {
-  if (meta.alternates === false) {
-    return '';
-  }
-
-  return `${seoData.languages
-    .map(
-      (language) =>
-        `    <xhtml:link rel="alternate" hreflang="${language}" href="${localizedUrl(route, language)}" />`
-    )
-    .join('\n')}
-    <xhtml:link rel="alternate" hreflang="x-default" href="${canonicalUrl(route)}" />`;
-};
-
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapEntries
-  .map(([route, meta]) => {
-    const alternates = renderSitemapAlternates(route, meta);
-
-    return `  <url>
+  .map(
+    ([route, meta]) => `  <url>
     <loc>${canonicalUrl(route)}</loc>
     <lastmod>${meta.lastmod}</lastmod>
-    <changefreq>${meta.changefreq}</changefreq>
-    <priority>${meta.priority}</priority>
-${alternates ? `${alternates}\n` : ''}  </url>`;
-  })
+  </url>`
+  )
   .join('\n')}
 </urlset>
 `;

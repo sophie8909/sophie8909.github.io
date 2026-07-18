@@ -9,7 +9,7 @@
   ],
   "organization": {
     "name": "Feiya Studio",
-    "url": "https://feiyastudio.com",
+    "url": "https://feiyastudio.com/",
     "logo": "https://feiyastudio.com/assets/icons/feiya-studio-icon.png",
     "sameAs": [
       "https://github.com/sophie8909"
@@ -19,9 +19,7 @@
     "/": {
       "title": "Feiya Studio | CatRodis, ArtCodex, and Calculator Tools",
       "description": "Feiya Studio creates character worlds, creator workflow tools, and game progression calculators including CatRodis, ArtCodex, and Sword x Staff calculator utilities.",
-      "lastmod": "2026-06-17",
-      "changefreq": "monthly",
-      "priority": "1.0",
+      "lastmod": "2026-07-07",
       "schemas": [
         "Organization",
         "WebSite"
@@ -30,9 +28,7 @@
     "/projects": {
       "title": "Projects | Feiya Studio",
       "description": "Explore Feiya Studio projects including CatRodis, ArtCodex, and progression calculator tools for creators and players.",
-      "lastmod": "2026-06-17",
-      "changefreq": "monthly",
-      "priority": "0.9",
+      "lastmod": "2026-07-07",
       "schemas": [
         "WebSite"
       ]
@@ -40,9 +36,7 @@
     "/sxstx-calculator": {
       "title": "SXSTX Calculator | Sword x Staff Tools | Feiya Studio",
       "description": "SXSTX Calculator is a collection of player-made tools for Sword x Staff, including calculators, update logs, and frequently asked questions.",
-      "lastmod": "2026-07-07",
-      "changefreq": "weekly",
-      "priority": "0.9",
+      "lastmod": "2026-07-18",
       "schemas": [
         "WebSite",
         "SoftwareApplication",
@@ -53,9 +47,7 @@
     "/sxstx-calculator/blog/update": {
       "title": "SXSTX Calculator Updates | Feiya Studio",
       "description": "Read SXSTX Calculator update logs for Feiya Studio's player-made Sword x Staff tools.",
-      "lastmod": "2026-07-10",
-      "changefreq": "weekly",
-      "priority": "0.8",
+      "lastmod": "2026-07-08",
       "schemas": [
         "WebSite",
         "BreadcrumbList"
@@ -64,9 +56,7 @@
     "/xingque": {
       "title": "星闕 XingQue | Feiya Studio",
       "description": "XingQue is a Feiya Studio ecosystem for quiet branch-based tools, beginning with Beichen language-learning tools.",
-      "lastmod": "2026-06-22",
-      "changefreq": "monthly",
-      "priority": "0.8",
+      "lastmod": "2026-06-23",
       "schemas": [
         "WebSite"
       ]
@@ -74,9 +64,7 @@
     "/xingque/beichen": {
       "title": "XingQue · Beichen | Feiya Studio",
       "description": "Beichen is the XingQue language-learning branch, beginning with Rilu for quiet daily diary writing practice.",
-      "lastmod": "2026-06-22",
-      "changefreq": "monthly",
-      "priority": "0.8",
+      "lastmod": "2026-06-23",
       "schemas": [
         "WebSite"
       ]
@@ -84,26 +72,10 @@
     "/about": {
       "title": "About Feiya Studio",
       "description": "Learn about Feiya Studio, an independent studio building CatRodis, ArtCodex, and practical calculator tools for creative and game workflows.",
-      "lastmod": "2026-06-17",
-      "changefreq": "monthly",
-      "priority": "0.8",
+      "lastmod": "2026-06-14",
       "schemas": [
         "Organization"
       ]
-    }
-  },
-  "sitemapOnlyRoutes": {
-    "/sxstx_calculator/": {
-      "lastmod": "2026-06-22",
-      "changefreq": "weekly",
-      "priority": "0.9",
-      "alternates": false
-    },
-    "/ArtCodex/": {
-      "lastmod": "2026-06-22",
-      "changefreq": "monthly",
-      "priority": "0.8",
-      "alternates": false
     }
   }
 }
