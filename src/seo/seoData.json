@@ -18,7 +18,7 @@
   "routes": {
     "/": {
       "title": "Feiya Studio | CatRodis, ArtCodex, and Calculator Tools",
-      "description": "Feiya Studio creates character worlds, creator workflow tools, and game progression calculators including CatRodis, ArtCodex, and Wand & Sword calculator utilities.",
+      "description": "Feiya Studio creates character worlds, creator workflow tools, and game progression calculators including CatRodis, ArtCodex, and Sword x Staff calculator utilities.",
       "lastmod": "2026-06-17",
       "changefreq": "monthly",
       "priority": "1.0",
@@ -38,8 +38,8 @@
       ]
     },
     "/sxstx-calculator": {
-      "title": "SXSTX Calculator | Sword and Staff Tools | Feiya Studio",
-      "description": "SXSTX Calculator is a collection of player-made tools for Sword and Staff, including calculators, update logs, and frequently asked questions.",
+      "title": "SXSTX Calculator | Sword x Staff Tools | Feiya Studio",
+      "description": "SXSTX Calculator is a collection of player-made tools for Sword x Staff, including calculators, update logs, and frequently asked questions.",
       "lastmod": "2026-07-07",
       "changefreq": "weekly",
       "priority": "0.9",
@@ -52,7 +52,7 @@
     },
     "/sxstx-calculator/blog/update": {
       "title": "SXSTX Calculator Updates | Feiya Studio",
-      "description": "Read SXSTX Calculator update logs for Feiya Studio's player-made Sword and Staff tools.",
+      "description": "Read SXSTX Calculator update logs for Feiya Studio's player-made Sword x Staff tools.",
       "lastmod": "2026-07-10",
       "changefreq": "weekly",
       "priority": "0.8",

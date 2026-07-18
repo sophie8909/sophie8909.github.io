@@ -300,8 +300,8 @@ const renderStaticPortal = () => `    <main class="main-content sxstx-static-con
         <div class="sxstx-portal-hero-copy">
           <p class="eyebrow">Project Portal</p>
           <h1 id="sxstx-portal-title">SXSTX Calculator</h1>
-          <p class="sxstx-portal-subtitle">Player-made tools for Sword and Staff.</p>
-          <p class="sxstx-portal-intro">SXSTX Calculator is a collection of player-made tools for Sword and Staff, including calculators, update logs, and frequently asked questions.</p>
+          <p class="sxstx-portal-subtitle">Player-made tools for Sword x Staff.</p>
+          <p class="sxstx-portal-intro">SXSTX Calculator is a collection of player-made tools for Sword x Staff, including calculators, update logs, and frequently asked questions.</p>
           <div class="project-actions">
             <a class="action-link action-link-primary" href="${calculatorUrl}">Open Calculator</a>
           </div>
@@ -314,7 +314,7 @@ const renderStaticPortal = () => `    <main class="main-content sxstx-static-con
         </div>
         <div class="sxstx-section-copy">
           <p>SXSTX Calculator is developed by Feiya Studio.</p>
-          <p>It provides practical tools for Sword and Staff players, including material calculators, equipment score calculators, and season score planning.</p>
+          <p>It provides practical tools for Sword x Staff players, including material calculators, equipment score calculators, and season score planning.</p>
           <p>The calculator is hosted at <a href="${calculatorUrl}">https://sxstx.feiyastudio.com/</a>.</p>
         </div>
       </section>

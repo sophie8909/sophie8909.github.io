@@ -61,9 +61,9 @@ export const SxstxCalculatorPage = () => (
       <div className="sxstx-portal-hero-copy">
         <p className="eyebrow">Project Portal</p>
         <h1 id="sxstx-portal-title">SXSTX Calculator</h1>
-        <p className="sxstx-portal-subtitle">Player-made tools for Sword and Staff.</p>
+        <p className="sxstx-portal-subtitle">Player-made tools for Sword x Staff.</p>
         <p className="sxstx-portal-intro">
-          SXSTX Calculator is a Feiya Studio project portal for practical Sword and Staff
+          SXSTX Calculator is a Feiya Studio project portal for practical Sword x Staff
           tools, including material calculators, equipment score calculators, season score
           planning, update logs, and frequently asked questions.
         </p>
@@ -90,7 +90,7 @@ export const SxstxCalculatorPage = () => (
       <div className="sxstx-section-copy">
         <p>
           SXSTX Calculator is developed by Feiya Studio as a lightweight collection of
-          player-made tools for Sword and Staff players.
+          player-made tools for Sword x Staff players.
         </p>
         <p>
           The calculator itself is hosted at{' '}
