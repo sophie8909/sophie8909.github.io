@@ -55,7 +55,8 @@ jobs:
         run: |
           mkdir -p dist/assets dist/Beichen
           cp -R .beichen/dist/assets/. dist/assets/
-          cp -R .beichen/dist/Beichen/. dist/Beichen/
+          cp -R .beichen/dist/index.html dist/Beichen/
+          cp -R .beichen/dist/rilu .beichen/dist/chenxun dist/Beichen/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
