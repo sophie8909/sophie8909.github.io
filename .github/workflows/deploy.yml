@@ -21,6 +21,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout Beichen
+        uses: actions/checkout@v4
+        with:
+          repository: sophie8909/Beichen
+          path: .beichen
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -31,6 +37,20 @@ jobs:
 
       - name: Build and test
         run: npm test
+
+      - name: Install Beichen dependencies
+        working-directory: .beichen
+        run: npm ci
+
+      - name: Build Beichen
+        working-directory: .beichen
+        run: npm run build
+
+      - name: Merge Beichen into Pages artifact
+        run: |
+          mkdir -p dist/assets dist/Beichen
+          cp -R .beichen/dist/assets/. dist/assets/
+          cp -R .beichen/dist/Beichen/. dist/Beichen/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
