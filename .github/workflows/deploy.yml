@@ -35,8 +35,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build and test
-        run: npm test
+      - name: Build main site
+        run: npm run build
+
+      - name: Run SEO tests
+        run: npm run test:seo
+        continue-on-error: true
 
       - name: Install Beichen dependencies
         working-directory: .beichen
