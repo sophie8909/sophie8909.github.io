@@ -109,7 +109,7 @@ export const XingQuePage = () => {
         <a href="/Beichen/chenxun/">{content.nav.chenxun}</a>
       </nav>
 
-      <section className="xingque-branches" aria-labelledby="beichen-title">
+      <section className="xingque-branches" aria-label={content.xingque.branchEyebrow}>
         <img
           className="xingque-section-chart"
           src={xingqueAssets.xingqueStarChart}
@@ -117,6 +117,10 @@ export const XingQuePage = () => {
           aria-hidden="true"
         />
 
+        <LocalizedParagraphs
+          paragraphs={content.xingque.body}
+          className="section-localized-copy xingque-branches-intro"
+        />
         <div className="section-kicker">
           <img
             className="section-medallion"
@@ -125,28 +129,21 @@ export const XingQuePage = () => {
             aria-hidden="true"
           />
           <span className="section-number">01</span>
-          <p className="eyebrow">{content.beichen.eyebrow}</p>
+          <p className="eyebrow">{content.xingque.branchEyebrow}</p>
         </div>
-
-        <div className="section-heading xingque-beichen-heading">
-          <h2 id="beichen-title">{content.beichen.title}</h2>
-          <p>{content.beichen.label}</p>
-        </div>
-
-        <div className="beichen-branch-intro xingque-beichen-intro">
-          <div className="beichen-branch-intro-visual" aria-hidden="true">
-            <img
-              src={xingqueAssets.beichenLogo}
-              alt=""
-              width="1254"
-              height="829"
-            />
-          </div>
-          <div className="beichen-branch-intro-copy">
-            <LocalizedParagraphs paragraphs={content.beichen.body} />
-            <a className="action-link action-link-primary" href="/Beichen/">
-              {content.beichen.cta}
-            </a>
+        <div className="section-heading">
+          <div className="beichen-branch-intro">
+            <div className="beichen-branch-intro-visual" aria-hidden="true">
+              <img
+                src={xingqueAssets.beichenLogo}
+                alt=""
+                width="1254"
+                height="829"
+              />
+            </div>
+            <div className="beichen-branch-intro-copy">
+              <LocalizedParagraphs paragraphs={content.beichen.body} />
+            </div>
           </div>
         </div>
 

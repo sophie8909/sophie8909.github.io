@@ -2937,28 +2937,6 @@ a.rilu-access-button {
   color: var(--primary);
 }
 
-.xingque-beichen-heading {
-  max-width: 820px;
-}
-
-.xingque-beichen-heading h2 {
-  font-size: clamp(2.4rem, 8vw, 4.5rem);
-}
-
-.xingque-beichen-intro {
-  max-width: 980px;
-  margin-top: 1.5rem;
-}
-
-.xingque-beichen-intro-copy {
-  display: grid;
-  gap: 1.1rem;
-}
-
-.xingque-beichen-intro-copy .action-link {
-  justify-self: start;
-}
-
 .xingque-workflow,
 .xingque-products,
 .xingque-local-device {

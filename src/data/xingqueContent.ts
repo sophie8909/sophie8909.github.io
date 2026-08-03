@@ -41,6 +41,8 @@ export type XingQueContent = {
   xingque: {
     eyebrow: string;
     heading: string;
+    branchEyebrow: string;
+    body: ParagraphBlock;
   };
   beichen: {
     eyebrow: string;
@@ -85,14 +87,20 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     xingque: {
       eyebrow: 'XINGQUE / TOOL ECOSYSTEM',
       heading: 'A quiet constellation of small offices.',
+      branchEyebrow: 'Beichen Academy',
+      body: [
+        'XingQue takes inspiration from the halls and offices of a traditional Chinese court.',
+        'Each academy keeps its own charge.\nEach office tends to its own duties.',
+        'Like stars scattered across the night sky,\nthey stand apart,\nyet quietly sustain the rhythms of daily life.'
+      ],
     },
     beichen: {
       eyebrow: 'XINGQUE × BEICHEN',
       title: 'Beichen Academy',
       label: 'Language-learning tools for repeatable practice',
       body: [
-        'Beichen Academy is XingQue’s language-learning family. It turns language, level, preferences, and everyday input into prompts that can be reused and refined.',
-        'Rilu shapes daily thoughts, fragments, keywords, or emotions into a foreign-language diary prompt. Chenxun shapes news-learning preferences and recurring conditions into a scheduling prompt for ChatGPT. The website prepares the prompt; your conversation handles what comes next.'
+        'Beichen, the Northern Star, stands at the center of the heavens.',
+        'The Beichen Academy is entrusted with the study of languages:\ngathering words,\nordering passages,\nand through steady practice over time,\nturning unfamiliar tongues into familiar companions.'
       ],
       cta: 'Visit Beichen Academy'
     },
@@ -188,14 +196,20 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     xingque: {
       eyebrow: 'XINGQUE / TOOL ECOSYSTEM',
       heading: '群星各守其位。',
+      branchEyebrow: '北辰院',
+      body: [
+        '星闕取意於古代宮闕與百司。',
+        '諸院各有所掌，\n諸司各有所職。',
+        '如群星分布於夜空，\n彼此獨立，\n卻共同維繫著日常。'
+      ],
     },
     beichen: {
       eyebrow: 'XINGQUE × BEICHEN',
       title: '北辰院 Beichen Academy',
       label: '可重複使用的語言學習工具家族',
       body: [
-        '北辰院是星闕之下的語言學習產品家族，將語言、程度、使用習慣與日常輸入整理成可重複使用、可持續調整的 Prompt。',
-        '日錄 Rilu 將日常想法、片段、關鍵字或情緒整理成外語日記 Prompt；晨訊司 Chenxun 將新聞學習偏好與週期條件整理成可交給 ChatGPT 的排程 Prompt。網站負責設定與產生 Prompt，後續內容由你的對話處理。'
+        '北辰者，天之樞也。',
+        '北辰院司掌諸語之學，\n收詞句、理篇章，\n以日積月累之功，\n使陌生之語漸成可親之語。'
       ],
       cta: '前往北辰院'
     },
@@ -291,14 +305,20 @@ export const xingqueContent: Record<LanguageCode, XingQueContent> = {
     xingque: {
       eyebrow: 'XINGQUE / TOOL ECOSYSTEM',
       heading: '群星各守其位。',
+      branchEyebrow: '北辰院',
+      body: [
+        '星阙取意于古代宫阙与百司。',
+        '诸院各有所掌，\n诸司各有所职。',
+        '如群星分布于夜空，\n彼此独立，\n却共同维系着日常。'
+      ],
     },
     beichen: {
       eyebrow: 'XINGQUE × BEICHEN',
       title: '北辰院 Beichen Academy',
       label: '可重复使用的语言学习工具家族',
       body: [
-        '北辰院是星阙之下的语言学习产品家族，将语言、程度、使用习惯与日常输入整理成可重复使用、可持续调整的 Prompt。',
-        '日录 Rilu 将日常想法、片段、关键词或情绪整理成外语日记 Prompt；晨讯司 Chenxun 将新闻学习偏好与周期条件整理成可交给 ChatGPT 的排程 Prompt。网站负责设置与生成 Prompt，后续内容由你的对话处理。'
+        '北辰者，天之枢也。',
+        '北辰院司掌诸语之学，\n收词句、理篇章，\n以日积月累之功，\n使陌生之语渐成可亲之语。'
       ],
       cta: '前往北辰院'
     },
