@@ -147,6 +147,12 @@ export const XingQuePage = () => {
           </div>
         </div>
 
+        <div className="xingque-product-grid">
+          <ProductCard product={content.rilu} titleId="rilu-title" />
+          <ProductCard product={content.chenxun} titleId="chenxun-title" />
+        </div>
+        <p className="xingque-products-note">{content.productsNote}</p>
+
         <section className="xingque-workflow" aria-label={content.workflow.eyebrow}>
           <div className="section-kicker">
             <img
@@ -169,28 +175,6 @@ export const XingQuePage = () => {
           </ol>
         </section>
 
-        <section className="xingque-products" aria-labelledby="products-title">
-          <div className="section-kicker">
-            <img
-              className="section-medallion"
-              src={xingqueAssets.constellationMedallion}
-              alt=""
-              aria-hidden="true"
-            />
-            <span className="section-number">03</span>
-            <p className="eyebrow">{content.nav.beichen}</p>
-          </div>
-          <div className="section-heading">
-            <h2 id="products-title">{content.beichen.title}</h2>
-            <p>{content.beichen.label}</p>
-          </div>
-          <div className="xingque-product-grid">
-            <ProductCard product={content.rilu} titleId="rilu-title" />
-            <ProductCard product={content.chenxun} titleId="chenxun-title" />
-          </div>
-          <p className="xingque-products-note">{content.productsNote}</p>
-        </section>
-
         <section className="xingque-local-device" aria-labelledby="local-device-title">
           <div className="section-kicker">
             <img
@@ -199,7 +183,7 @@ export const XingQuePage = () => {
               alt=""
               aria-hidden="true"
             />
-            <span className="section-number">04</span>
+            <span className="section-number">03</span>
             <p className="eyebrow">{content.localDevice.title}</p>
           </div>
           <div className="section-heading">
