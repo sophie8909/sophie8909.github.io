@@ -1,7 +1,36 @@
 import { useTranslation } from 'react-i18next';
 import { xingqueAssets } from '../assets/xingque';
 import { LocalizedParagraphs } from '../components/LocalizedParagraphs';
-import { getXingQueContent } from '../data/xingqueContent';
+import { getXingQueContent, type XingQueContent } from '../data/xingqueContent';
+
+type ProductCardProps = {
+  product: XingQueContent['rilu'] | XingQueContent['chenxun'];
+  titleId: string;
+};
+
+const ProductCard = ({ product, titleId }: ProductCardProps) => (
+  <article className="branch-card xingque-product-card" aria-labelledby={titleId}>
+    <header className="xingque-product-card-header">
+      <span className="branch-symbol" aria-hidden="true">
+        <img src={xingqueAssets.constellationMedallion} alt="" />
+      </span>
+      <div>
+        <h3 id={titleId}>{product.title}</h3>
+        <p className="branch-content-subtitle">{product.short}</p>
+      </div>
+    </header>
+    <div className="xingque-product-card-body">
+      <ul className="xingque-product-tags">
+        {product.tags.map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+      <a className="action-link action-link-primary xingque-product-action" href={product.href}>
+        {product.cta}
+      </a>
+    </div>
+  </article>
+);
 
 export const XingQuePage = () => {
   const { i18n } = useTranslation();
@@ -34,6 +63,7 @@ export const XingQuePage = () => {
           </div>
 
           <div className="hero-inner xingque-hero-copy">
+            <p className="eyebrow">{content.xingque.eyebrow}</p>
             <h1 id="xingque-title">
               <img
                 className="xingque-wordmark"
@@ -43,7 +73,7 @@ export const XingQuePage = () => {
                 height="650"
               />
             </h1>
-            <p className="hero-subtitle">xingque</p>
+            <p className="hero-subtitle">{content.xingque.heading}</p>
           </div>
 
           <div className="xingque-hero-right" aria-hidden="true">
@@ -70,17 +100,23 @@ export const XingQuePage = () => {
         </div>
       </section>
 
-      <section className="xingque-branches" aria-label={content.xingque.eyebrow}>
+      <nav className="xingque-product-nav" aria-label={content.xingque.eyebrow}>
+        <a href="/xingque/" aria-current="page">
+          {content.nav.xingque}
+        </a>
+        <a href="/Beichen/">{content.nav.beichen}</a>
+        <a href="/Beichen/rilu/">{content.nav.rilu}</a>
+        <a href="/Beichen/chenxun/">{content.nav.chenxun}</a>
+      </nav>
+
+      <section className="xingque-branches" aria-labelledby="beichen-title">
         <img
           className="xingque-section-chart"
           src={xingqueAssets.xingqueStarChart}
           alt=""
           aria-hidden="true"
         />
-        <LocalizedParagraphs
-          paragraphs={content.xingque.body}
-          className="section-localized-copy xingque-branches-intro"
-        />
+
         <div className="section-kicker">
           <img
             className="section-medallion"
@@ -89,97 +125,98 @@ export const XingQuePage = () => {
             aria-hidden="true"
           />
           <span className="section-number">01</span>
-          <p className="eyebrow">{content.xingque.eyebrow}</p>
+          <p className="eyebrow">{content.beichen.eyebrow}</p>
         </div>
-        <div className="section-heading">
-          <div className="beichen-branch-intro">
-            <div className="beichen-branch-intro-visual" aria-hidden="true">
-              <img
-                src={xingqueAssets.beichenLogo}
-                alt=""
-                width="1254"
-                height="829"
-              />
-            </div>
-            <div className="beichen-branch-intro-copy">
-              <LocalizedParagraphs paragraphs={content.beichen.body} />
-            </div>
+
+        <div className="section-heading xingque-beichen-heading">
+          <h2 id="beichen-title">{content.beichen.title}</h2>
+          <p>{content.beichen.label}</p>
+        </div>
+
+        <div className="beichen-branch-intro xingque-beichen-intro">
+          <div className="beichen-branch-intro-visual" aria-hidden="true">
+            <img
+              src={xingqueAssets.beichenLogo}
+              alt=""
+              width="1254"
+              height="829"
+            />
+          </div>
+          <div className="beichen-branch-intro-copy">
+            <LocalizedParagraphs paragraphs={content.beichen.body} />
+            <a className="action-link action-link-primary" href="/Beichen/">
+              {content.beichen.cta}
+            </a>
           </div>
         </div>
 
-        <div className="branch-card-grid">
-          <details className="branch-card branch-rilu-card" id="rilu">
-            <summary>
-              <span className="branch-symbol" aria-hidden="true">
-                <img src={xingqueAssets.constellationMedallion} alt="" />
-              </span>
-              <span>
-                <span className="branch-title">{content.rilu.title}</span>
-                <span className="branch-english">RILU</span>
-              </span>
-              <span className="inline-rilu-action">{content.rilu.expandCta}</span>
-            </summary>
-            <div className="branch-card-body">
-              <div className="branch-card-layout">
-                <div className="branch-card-copy">
-                  <p className="branch-content-subtitle">{content.rilu.short}</p>
-                  <LocalizedParagraphs paragraphs={content.rilu.body} />
-                </div>
-              </div>
+        <section className="xingque-workflow" aria-label={content.workflow.eyebrow}>
+          <div className="section-kicker">
+            <img
+              className="section-medallion"
+              src={xingqueAssets.constellationMedallion}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="section-number">02</span>
+            <p className="eyebrow">{content.workflow.eyebrow}</p>
+          </div>
+          <ol className="xingque-workflow-grid">
+            {content.workflow.steps.map((step, index) => (
+              <li className="xingque-workflow-step" key={step.title}>
+                <span className="xingque-step-number">0{index + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
 
-              <div className="inline-rilu-body">
-                <div className="branch-rilu-intro">
-                  <div className="rilu-access-actions">
-                    {content.rilu.access.map((option) =>
-                      option.href ? (
-                        <a className="rilu-access-button" href={option.href} key={option.status}>
-                          <span>{option.status}</span>
-                        </a>
-                      ) : (
-                        <button
-                          className="rilu-access-button"
-                          type="button"
-                          disabled
-                          key={option.status}
-                        >
-                          {option.recommended ? (
-                            <span className="rilu-access-recommendation">
-                              {option.recommended}
-                            </span>
-                          ) : null}
-                          <span>{option.status}</span>
-                        </button>
-                      )
-                    )}
-                  </div>
-                </div>
+        <section className="xingque-products" aria-labelledby="products-title">
+          <div className="section-kicker">
+            <img
+              className="section-medallion"
+              src={xingqueAssets.constellationMedallion}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="section-number">03</span>
+            <p className="eyebrow">{content.nav.beichen}</p>
+          </div>
+          <div className="section-heading">
+            <h2 id="products-title">{content.beichen.title}</h2>
+            <p>{content.beichen.label}</p>
+          </div>
+          <div className="xingque-product-grid">
+            <ProductCard product={content.rilu} titleId="rilu-title" />
+            <ProductCard product={content.chenxun} titleId="chenxun-title" />
+          </div>
+          <p className="xingque-products-note">{content.productsNote}</p>
+        </section>
 
-                <aside
-                  className="branch-privacy-note rilu-privacy-note"
-                  aria-labelledby="rilu-privacy-title"
-                >
-                  <img
-                    className="section-medallion"
-                    src={xingqueAssets.constellationMedallion}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h3 id="rilu-privacy-title">{content.privacy.title}</h3>
-                    <p>{content.privacy.body}</p>
-                  </div>
-                </aside>
+        <section className="xingque-local-device" aria-labelledby="local-device-title">
+          <div className="section-kicker">
+            <img
+              className="section-medallion"
+              src={xingqueAssets.constellationMedallion}
+              alt=""
+              aria-hidden="true"
+            />
+            <span className="section-number">04</span>
+            <p className="eyebrow">{content.localDevice.title}</p>
+          </div>
+          <div className="section-heading">
+            <h2 id="local-device-title">{content.localDevice.title}</h2>
+          </div>
+          <LocalizedParagraphs paragraphs={content.localDevice.body} />
+          <p className="xingque-local-support">{content.localDevice.support}</p>
+        </section>
 
-                <blockquote className="beichen-footer-quote rilu-footer-quote">
-                  {content.quote.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
-                </blockquote>
-              </div>
-            </div>
-          </details>
-        </div>
-
+        <blockquote className="beichen-footer-quote xingque-quote">
+          {content.quote.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </blockquote>
       </section>
     </div>
   );

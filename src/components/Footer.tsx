@@ -17,13 +17,21 @@ export const Footer = ({ route }: FooterProps) => {
       <div>
         <p className="footer-brand">Feiya Studio</p>
         {showXingQueAttribution ? (
-          <p className="footer-attribution">
-            {content.license.textBeforeLink}
-            <a href={chongxiLicenseUrl} rel="noreferrer" target="_blank">
-              {content.license.linkLabel}
-            </a>
-            {content.license.textAfterLink}
-          </p>
+          <>
+            <nav className="footer-xingque-links" aria-label={content.xingque.eyebrow}>
+              <a href="/xingque/">{content.nav.xingque}</a>
+              <a href="/Beichen/">{content.nav.beichen}</a>
+              <a href="/Beichen/rilu/">{content.nav.rilu}</a>
+              <a href="/Beichen/chenxun/">{content.nav.chenxun}</a>
+            </nav>
+            <p className="footer-attribution">
+              {content.license.textBeforeLink}
+              <a href={chongxiLicenseUrl} rel="noreferrer" target="_blank">
+                {content.license.linkLabel}
+              </a>
+              {content.license.textAfterLink}
+            </p>
+          </>
         ) : null}
       </div>
       <p>{t('footer.copyright')}</p>

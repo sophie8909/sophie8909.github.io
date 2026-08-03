@@ -54,17 +54,17 @@
       ]
     },
     "/xingque": {
-      "title": "星闕 XingQue | Feiya Studio",
-      "description": "XingQue is a Feiya Studio ecosystem for quiet branch-based tools, beginning with Beichen language-learning tools.",
-      "lastmod": "2026-06-23",
+      "title": "XingQue | Feiya Studio Tool Ecosystem",
+      "description": "XingQue is Feiya Studio’s branch-based tool ecosystem. Beichen Academy provides Rilu language diary prompts and Chenxun scheduled news-learning prompts.",
+      "lastmod": "2026-08-01",
       "schemas": [
         "WebSite"
       ]
     },
     "/xingque/beichen": {
       "title": "XingQue · Beichen | Feiya Studio",
-      "description": "Beichen is the XingQue language-learning branch, beginning with Rilu for quiet daily diary writing practice.",
-      "lastmod": "2026-06-23",
+      "description": "Beichen Academy is the XingQue language-learning family, with Rilu diary prompts and Chenxun scheduled news-learning prompts.",
+      "lastmod": "2026-08-01",
       "schemas": [
         "WebSite"
       ]
