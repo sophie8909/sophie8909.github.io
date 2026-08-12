@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "title": "FeiyaStudio implemented color palette audit",
+    "sourceOfTruth": "Active repository implementation",
+    "scope": "Frontend source under src/, excluding dependencies, dist/, caches, unused/overridden legacy selectors, transparent-only stops, and raster-image internal pixels",
+    "activeRoutes": [
+      "/",
+      "/projects",
+      "/sxstx-calculator",
+      "/sxstx-calculator/blog/update",
+      "/sxstx-calculator/blog/update/:post",
+      "/xingque",
+      "/xingque/beichen",
+      "/about"
+    ],
+    "counts": {
+      "uniqueEffectiveRgbColors": 10,
+      "activeColorAlphaSignatures": 70,
+      "dominantFeiyaStudioColors": 8,
+      "sectionSpecificColors": 2,
+      "isolatedOneOffRgbColors": 0,
+      "detectedInconsistencies": 6
+    },
+    "method": [
+      "Read the imported global stylesheet, rendered JSX/TSX class usage, route composition, and SVG source attributes.",
+      "Normalized equivalent HEX and rgba()/SVG opacity values to uppercase six-digit HEX plus separate alpha.",
+      "Counted a color as active only when its selector or asset is mounted by a current route and not replaced by a later active declaration.",
+      "Raster PNG artwork was treated as an asset, not reverse-engineered into a color-token inventory.",
+      "No application code, CSS, theme, asset, or behavior was changed by this audit."
+    ]
+  },
+  "brand": {
+    "primary": {
+      "color": "#B87C85",
+      "alpha": "100%",
+      "existingToken": "--primary",
+      "semanticRole": "Primary FeiyaStudio rose; primary controls, selected navigation, geometric accents, XingQue linework.",
+      "usageExamples": ["Primary action borders", "hover link text", "brand glyph color", "XingQue/Beichen SVG strokes and seals"],
+      "source": ["src/styles/global.css:9", "src/assets/xingque/*.svg"],
+      "frequency": "dominant",
+      "notes": "Implemented both through --primary and repeated hardcoded SVG/rgba values."
+    },
+    "secondary": {
+      "color": "#8A7177",
+      "alpha": "100%",
+      "existingToken": "--secondary",
+      "semanticRole": "Warm desaturated secondary text and subtitle color.",
+      "usageExamples": ["Hero subtitles", "eyebrows and project subtitles", "Beichen quote text"],
+      "source": ["src/styles/global.css:10"],
+      "frequency": "common",
+      "notes": "Token-only in the active CSS."
+    },
+    "accent": {
+      "color": "#B79974",
+      "alpha": "100%",
+      "existingToken": "--accent",
+      "semanticRole": "Muted gold accent for sequence numbers, labels, dates, map blocks, and warm SVG details.",
+      "usageExamples": ["Section numbers", "project indexes", "update dates", "blueprint axes and map blocks"],
+      "source": ["src/styles/global.css:11", "src/assets/xingque/constellation-medallion.svg:5", "src/assets/xingque/moon-gate-window.svg:19,47,55", "src/assets/xingque/xingque-star-chart.svg:12,14,56"],
+      "frequency": "common",
+      "notes": "The SVG asset family hardcodes the same RGB value rather than consuming --accent."
+    }
+  },
+  "background": {
+    "pageBackground": {
+      "color": "#F8F5F1",
+      "alpha": "100%",
+      "existingToken": "--background",
+      "semanticRole": "Global page, body, form, and portal-node background.",
+      "usageExamples": ["body background", "language select", "SXSTX portal nodes", "XingQue page overlay base"],
+      "source": ["src/styles/global.css:7,17,36,168,235,1663,1671,1854,1920,1983,2005,2181,2256,2393,2961"],
+      "frequency": "dominant",
+      "notes": "Also appears as direct SVG fill/stroke color in the XingQue asset family."
+    },
+    "sectionBackground": {
+      "color": "#EFE7DD",
+      "alpha": "100%",
+      "existingToken": "--surface",
+      "semanticRole": "Warm section/surface fill and primary action surface.",
+      "usageExamples": ["primary action background", "page overlay layers", "XingQue/Beichen card and privacy surfaces"],
+      "source": ["src/styles/global.css:8,460,1662,1648,1853,1919,1982,2004,2141,2180,2207,2255,2365,2960", "src/assets/xingque/moon-gate-window.svg:20"],
+      "frequency": "common",
+      "notes": "Active translucent variants are listed in rawColors.alphaVariants."
+    },
+    "elevatedSurface": {
+      "color": "#FAF7F3",
+      "alpha": "100%",
+      "existingToken": null,
+      "semanticRole": "Lighter XingQue product-card/action and moon-gate surface.",
+      "usageExamples": ["XingQue product cards", "Rilu access buttons", "moon-gate outer circle"],
+      "source": ["src/styles/global.css:1853,2141", "src/assets/xingque/moon-gate-window.svg:18"],
+      "frequency": "occasional",
+      "notes": "Page-specific hardcoded color; no CSS token exists."
+    },
+    "softDecorativeBackground": {
+      "color": "#D69E8E",
+      "alpha": "100%",
+      "existingToken": null,
+      "semanticRole": "Soft rose-peach decorative wash in XingQue/Beichen imagery and hero atmosphere.",
+      "usageExamples": ["Beichen hero radial wash", "moon-gate landscape wash"],
+      "source": ["src/styles/global.css:1386", "src/assets/xingque/moon-gate-window.svg:23"],
+      "frequency": "occasional",
+      "notes": "Page-specific hardcoded color; no CSS token exists."
+    }
+  },
+  "text": {
+    "primaryText": {
+      "color": "#2D2926",
+      "alpha": "100%",
+      "existingToken": "--text",
+      "semanticRole": "Primary dark text, headings, focus outline, and strong linework.",
+      "usageExamples": ["all primary headings", "brand/navigation text", "focus-visible outline", "SVG constellation linework"],
+      "source": ["src/styles/global.css:13,18,38,57,75,113,209,396,443,486,503,679,701,1397,1642,1947,2105,2313,2425,2512,2550,2564", "src/assets/xingque/constellation-medallion.svg:6", "src/assets/xingque/moon-gate-window.svg:24,33", "src/assets/xingque/xingque-star-chart.svg:21,28"],
+      "frequency": "dominant",
+      "notes": "SVG linework adds explicit opacity variants."
+    },
+    "secondaryText": {
+      "color": "#8A7177",
+      "alpha": "100%",
+      "existingToken": "--secondary",
+      "semanticRole": "Secondary heading-adjacent copy, subtitles, and quotes.",
+      "usageExamples": ["hero subtitle", "project subtitle", "Beichen footer quote", "XingQue product subtitle"],
+      "source": ["src/styles/global.css:386,407,466,558,1335,1411,1616,2039,2325,3047,3119,3127"],
+      "frequency": "common",
+      "notes": "The same token serves both brand-secondary and text-secondary roles."
+    },
+    "mutedText": {
+      "color": "#7D746D",
+      "alpha": "100%",
+      "existingToken": "--muted",
+      "semanticRole": "Long-form body copy, metadata, disabled text, and footer copy.",
+      "usageExamples": ["project descriptions", "localized paragraphs", "SXSTX update/FAQ copy", "disabled actions and footer"],
+      "source": ["src/styles/global.css:14,194,226,453,525,610,709,735,844,873,887,1349,1432,1596,1654,1964,2334,2478,2542,2733,2928,2983"],
+      "frequency": "common",
+      "notes": "Token-only in active CSS."
+    },
+    "accentText": {
+      "color": "#B79974",
+      "alpha": "100%",
+      "existingToken": "--accent",
+      "semanticRole": "Warm accent text for labels, indexes, and dates.",
+      "usageExamples": ["section numbers", "tool indexes", "SXSTX update dates"],
+      "source": ["src/styles/global.css:370,547,618,695,2452"],
+      "frequency": "common",
+      "notes": "No separate link-text token exists."
+    },
+    "linkText": {
+      "color": "#B87C85",
+      "alpha": "100%",
+      "existingToken": "--primary",
+      "semanticRole": "Interactive link and hover accent text.",
+      "usageExamples": ["action-link hover", "SXSTX content links", "footer links", "XingQue product tags"],
+      "source": ["src/styles/global.css:443-444,1647-1648,2353,2483,2937,3010,3119"],
+      "frequency": "common",
+      "notes": "Hover, link, and primary-control roles all reuse the primary token."
+    }
+  },
+  "border": {
+    "defaultBorder": {
+      "color": "#D8D0C8",
+      "alpha": "100%",
+      "existingToken": "--line",
+      "semanticRole": "Default border, divider, grid line, and geometric line.",
+      "usageExamples": ["site header/footer dividers", "cards and panels", "blueprint grids", "hero geometry"],
+      "source": ["src/styles/global.css:12,93,150,167,248,268,288,427,473,477,531,568,602,627,721,744,804,816,898,1198,1225,1383,1572,2279,2296,2361,2435,2922,2944"],
+      "frequency": "dominant",
+      "notes": "Grid gradients also use this RGB as explicit translucent rgba values."
+    },
+    "softBorder": {
+      "color": "#B87C85",
+      "alpha": "22%",
+      "existingToken": null,
+      "semanticRole": "Soft rose border and selection wash.",
+      "usageExamples": ["brand glyph inset", "XingQue workflow/card details", "text selection background"],
+      "source": ["src/styles/global.css:62,135,2958"],
+      "frequency": "common",
+      "notes": "Hardcoded rgba equivalent of --primary."
+    },
+    "strongBorder": {
+      "color": "#2D2926",
+      "alpha": "100%",
+      "existingToken": "--text",
+      "semanticRole": "Strong hover/focus border and SVG linework.",
+      "usageExamples": ["hovered network/card borders", "focus outline", "SVG linework"],
+      "source": ["src/styles/global.css:57,679", "src/assets/xingque/*.svg"],
+      "frequency": "common",
+      "notes": "No separate strong-border token exists."
+    },
+    "divider": {
+      "color": "#D8D0C8",
+      "alpha": "100%",
+      "existingToken": "--line",
+      "semanticRole": "Section and content divider.",
+      "usageExamples": ["page-intro bottom rule", "portal section rules", "XingQue product navigation rule"],
+      "source": ["src/styles/global.css:473,477,531,602,721,1198,1383,1572,2279,2296,2922,2944"],
+      "frequency": "dominant",
+      "notes": "Same effective color as defaultBorder."
+    }
+  },
+  "interactive": {
+    "buttonPrimary": {
+      "color": "#B87C85",
+      "alpha": "100%",
+      "existingToken": "--primary",
+      "semanticRole": "Primary action border/accent.",
+      "usageExamples": ["Buy Me a Coffee", "project CTAs", "XingQue/Beichen access actions"],
+      "source": ["src/styles/global.css:459-461,1638-1648,2140-2163"],
+      "frequency": "common",
+      "notes": "XingQue/Beichen overrides use rgba(184,124,133,0.70) for the border."
+    },
+    "buttonSecondary": {
+      "color": "#D8D0C8",
+      "alpha": "100%",
+      "existingToken": "--line",
+      "semanticRole": "Secondary action border with transparent background.",
+      "usageExamples": ["GitHub link", "secondary navigation/actions", "return links"],
+      "source": ["src/styles/global.css:427-429"],
+      "frequency": "common",
+      "notes": "Text remains --text."
+    },
+    "hover": {
+      "color": "#2D2926",
+      "alpha": "100%",
+      "existingToken": "--text",
+      "semanticRole": "Hover border and active emphasis.",
+      "usageExamples": ["action-link hover border", "nav hover/current border", "network-node hover"],
+      "source": ["src/styles/global.css:206-209,443-444,677-683"],
+      "frequency": "common",
+      "notes": "Hover text commonly shifts to --primary."
+    },
+    "selected": {
+      "color": "#B87C85",
+      "alpha": "100%",
+      "existingToken": "--primary",
+      "semanticRole": "Selected/current navigation border.",
+      "usageExamples": ["aria-current navigation link", "XingQue product navigation"],
+      "source": ["src/styles/global.css:206-209,2935-2937"],
+      "frequency": "occasional",
+      "notes": "The selected text itself remains --text in the global navigation."
+    },
+    "focus": {
+      "color": "#2D2926",
+      "alpha": "100%",
+      "existingToken": "--text",
+      "semanticRole": "Visible keyboard focus outline.",
+      "usageExamples": [":focus-visible outline"],
+      "source": ["src/styles/global.css:57"],
+      "frequency": "occasional",
+      "notes": "2px outline with 4px offset."
+    },
+    "disabled": {
+      "color": "#7D746D",
+      "alpha": "100%",
+      "existingToken": "--muted",
+      "semanticRole": "Disabled action text; disabled border remains rose.",
+      "usageExamples": ["Coming Soon buttons", "disabled Beichen/XingQue actions"],
+      "source": ["src/styles/global.css:448-453,1651-1654"],
+      "frequency": "occasional",
+      "notes": "Opacity is also set to 0.76 for generic disabled action links."
+    }
+  },
+  "decorative": {
+    "illustrationColors": ["#B87C85", "#B79974", "#D69E8E", "#2D2926", "#F8F5F1", "#EFE7DD", "#FAF7F3"],
+    "iconColors": ["#B87C85", "#B79974", "#2D2926", "#F8F5F1"],
+    "decorativeAccents": ["#D69E8E", "#B79974", "#B87C85"],
+    "svgColors": {
+      "source": ["src/assets/xingque/armillary-sphere.svg", "src/assets/xingque/astronomical-telescope.svg", "src/assets/xingque/constellation-medallion.svg", "src/assets/xingque/lattice-moon-gate.svg", "src/assets/xingque/lattice-song.svg", "src/assets/xingque/lattice-square.svg", "src/assets/xingque/moon-gate-window.svg", "src/assets/xingque/seal-beichen.svg", "src/assets/xingque/xingque-star-chart.svg"],
+      "notes": "The active SVG family primarily uses the global rose/gold/ink/paper colors plus #D69E8E and #FAF7F3."
+    }
+  },
+  "gradients": {
+    "bodyGrid": {
+      "type": "linear",
+      "stops": ["rgba(216,208,200,0.28) at 1px", "transparent at 1px"],
+      "direction": "90deg",
+      "usage": "Global body vertical grid line",
+      "source": ["src/styles/global.css:34"]
+    },
+    "bodyGridCrossLine": {
+      "type": "linear",
+      "stops": ["rgba(216,208,200,0.20) at 1px", "transparent at 1px"],
+      "direction": "180deg",
+      "usage": "Global body horizontal grid line",
+      "source": ["src/styles/global.css:35"]
+    },
+    "featuredBlueprintGrid": {
+      "type": "linear pair",
+      "stops": ["rgba(216,208,200,0.42) at 1px", "transparent at 1px"],
+      "directions": ["90deg", "180deg"],
+      "usage": "CatRodis featured blueprint grid",
+      "source": ["src/styles/global.css:570-571"]
+    },
+    "toolVisualGrid": {
+      "type": "linear pair",
+      "stops": ["rgba(216,208,200,0.34) at 1px", "transparent at 1px"],
+      "directions": ["90deg", "180deg"],
+      "usage": "Homepage supporting-project visuals and SXSTX portal visual",
+      "source": ["src/styles/global.css:629-630,2363-2364"]
+    },
+    "toolVisualSurface": {
+      "type": "solid stop",
+      "stops": ["rgba(239,231,221,0.26)"],
+      "usage": "Homepage supporting-project visual surface",
+      "source": ["src/styles/global.css:631"]
+    },
+    "sxstxVisualSurface": {
+      "type": "solid stop",
+      "stops": ["rgba(239,231,221,0.28)"],
+      "usage": "SXSTX portal visual surface",
+      "source": ["src/styles/global.css:2365"]
+    },
+    "productPageOverlay": {
+      "type": "linear",
+      "stops": ["rgba(248,245,241,0.96)", "rgba(239,231,221,0.34)"],
+      "direction": "180deg",
+      "usage": "XingQue and Beichen page shell overlay",
+      "source": ["src/styles/global.css:1662"]
+    },
+    "xingqueHeroOverlay": {
+      "type": "linear",
+      "stops": ["rgba(248,245,241,0.94)", "rgba(248,245,241,0.76)"],
+      "direction": "90deg",
+      "usage": "XingQue hero background",
+      "source": ["src/styles/global.css:1670"]
+    },
+    "branchCardSurface": {
+      "type": "linear",
+      "stops": ["rgba(250,247,243,0.96)", "rgba(239,231,221,0.62)"],
+      "direction": "135deg",
+      "usage": "XingQue product cards",
+      "source": ["src/styles/global.css:1853"]
+    },
+    "workflowStepSurface": {
+      "type": "linear",
+      "stops": ["rgba(250,247,243,0.92)", "rgba(239,231,221,0.42)"],
+      "direction": "135deg",
+      "usage": "XingQue workflow steps",
+      "source": ["src/styles/global.css:2960"]
+    },
+    "beichenHeroOverlay": {
+      "type": "linear",
+      "stops": ["rgba(248,245,241,0.94)", "rgba(248,245,241,0.72)"],
+      "direction": "90deg",
+      "usage": "Beichen hero background",
+      "source": ["src/styles/global.css:2207"]
+    },
+    "branchPrivacySurface": {
+      "type": "linear",
+      "stops": ["rgba(248,245,241,0.84)", "rgba(239,231,221,0.28)"],
+      "direction": "90deg",
+      "usage": "Beichen Rilu privacy note",
+      "source": ["src/styles/global.css:2180"]
+    }
+  },
+  "shadows": {
+    "branchCardInset": {
+      "value": "inset 0 0 0 1px rgba(184,124,133,0.08)",
+      "color": "#B87C85",
+      "alpha": "8%",
+      "usage": "XingQue product-card inset rose edge",
+      "source": ["src/styles/global.css:1232"]
+    },
+    "darkAssetDropShadow": {
+      "values": [
+        "drop-shadow(0 10px 22px rgba(45,41,38,0.08))",
+        "drop-shadow(0 22px 38px rgba(45,41,38,0.08))",
+        "drop-shadow(0 22px 34px rgba(45,41,38,0.08))"
+      ],
+      "color": "#2D2926",
+      "alpha": "8%",
+      "usage": "Active XingQue/Beichen decorative artwork",
+      "source": ["src/styles/global.css:1463,1751,2233"]
+    },
+    "paperWordmarkDropShadow": {
+      "value": "drop-shadow(0 18px 42px rgba(248,245,241,0.92))",
+      "color": "#F8F5F1",
+      "alpha": "92%",
+      "usage": "XingQue and Beichen wordmarks",
+      "source": ["src/styles/global.css:1789,1795"]
+    }
+  },
+  "sectionPalettes": {
+    "globalFeiyaStudioPalette": {
+      "routes": ["/", "/projects", "/about", "/sxstx-calculator", "/sxstx-calculator/blog/update", "/sxstx-calculator/blog/update/:post"],
+      "colors": ["#F8F5F1", "#EFE7DD", "#B87C85", "#8A7177", "#B79974", "#D8D0C8", "#2D2926", "#7D746D"],
+      "notes": "The shared homepage, project, about, and SXSTX surfaces use the eight :root tokens."
+    },
+    "xingqueBeichenSectionPalette": {
+      "routes": ["/xingque", "/xingque/beichen"],
+      "colors": ["#F8F5F1", "#EFE7DD", "#FAF7F3", "#B87C85", "#B79974", "#D69E8E", "#2D2926", "#8A7177", "#7D746D", "#D8D0C8"],
+      "relationship": "Global FeiyaStudio palette -> XingQue/Beichen section-specific palette -> SVG asset and product-card exceptions",
+      "componentExceptions": [
+        {
+          "component": "XingQue SVG asset family",
+          "colors": ["#FAF7F3", "#D69E8E", "#B87C85", "#B79974", "#2D2926", "#F8F5F1", "#EFE7DD"],
+          "source": ["src/assets/xingque/*.svg"]
+        },
+        {
+          "component": "XingQue product cards and Rilu access buttons",
+          "colors": ["#FAF7F3", "#EFE7DD", "#B87C85"],
+          "source": ["src/styles/global.css:1853,2140-2142"]
+        }
+      ],
+      "notes": "No new status colors or unrelated page hue family appears on these routes; the section adds only #FAF7F3 and #D69E8E as distinct RGB bases."
+    },
+    "sxstxSectionPalette": {
+      "routes": ["/sxstx-calculator", "/sxstx-calculator/blog/update", "/sxstx-calculator/blog/update/:post"],
+      "colors": ["#F8F5F1", "#EFE7DD", "#B87C85", "#B79974", "#D8D0C8", "#2D2926", "#7D746D", "#8A7177"],
+      "relationship": "Global FeiyaStudio palette -> SXSTX portal reuse",
+      "notes": "SXSTX has component-specific alpha treatments but no distinct RGB base color."
+    }
+  },
+  "rawColors": [
+    {
+      "color": "#2D2926",
+      "alpha": "100%",
+      "existingTokens": ["--text"],
+      "semanticRole": "Primary ink/text and strong SVG linework.",
+      "usageExamples": ["headings and navigation", "focus outline", "constellation and chart linework"],
+      "source": ["src/styles/global.css:13", "src/assets/xingque/constellation-medallion.svg:6", "src/assets/xingque/moon-gate-window.svg:24,33", "src/assets/xingque/xingque-star-chart.svg:21,28"],
+      "frequency": "dominant",
+      "cssAlphaVariants": ["8%"],
+      "svgOpacityVariants": ["42%", "58%", "62%", "72%"],
+      "notes": "The 8% CSS variant is a colored drop shadow; SVG opacities remain separate and are not flattened."
+    },
+    {
+      "color": "#7D746D",
+      "alpha": "100%",
+      "existingTokens": ["--muted"],
+      "semanticRole": "Muted copy and disabled text.",
+      "usageExamples": ["body copy", "metadata", "footer", "disabled actions"],
+      "source": ["src/styles/global.css:14"],
+      "frequency": "common",
+      "cssAlphaVariants": [],
+      "svgOpacityVariants": [],
+      "notes": "Token-only; no separate alpha literal is active."
+    },
+    {
+      "color": "#8A7177",
+      "alpha": "100%",
+      "existingTokens": ["--secondary"],
+      "semanticRole": "Secondary text and subtitle.",
+      "usageExamples": ["hero/project subtitles", "quotes", "product subtitles"],
+      "source": ["src/styles/global.css:10"],
+      "frequency": "common",
+      "cssAlphaVariants": [],
+      "svgOpacityVariants": [],
+      "notes": "Token-only; no separate alpha literal is active."
+    },
+    {
+      "color": "#B79974",
+      "alpha": "100%",
+      "existingTokens": ["--accent"],
+      "semanticRole": "Muted gold accent and SVG warm detail.",
+      "usageExamples": ["indexes/dates", "map blocks", "star-chart and moon-gate details"],
+      "source": ["src/styles/global.css:11", "src/styles/global.css:321", "src/assets/xingque/constellation-medallion.svg:5", "src/assets/xingque/moon-gate-window.svg:19,47,55", "src/assets/xingque/xingque-star-chart.svg:12,14,56"],
+      "frequency": "common",
+      "cssAlphaVariants": ["24%"],
+      "svgOpacityVariants": ["22%", "34%", "48%", "55%", "72%"],
+      "notes": "The geo-triangle uses rgba(183,153,116,0.24); the SVG family uses explicit opacity attributes."
+    },
+    {
+      "color": "#B87C85",
+      "alpha": "100%",
+      "existingTokens": ["--primary"],
+      "semanticRole": "Primary rose brand/interactive/decorative color.",
+      "usageExamples": ["primary actions", "hover/selected links", "XingQue linework, seals, lattices, and product accents"],
+      "source": ["src/styles/global.css:9", "src/styles/global.css:62,135,1640,2140,2354,2471,2565,2958,3104,3118", "src/assets/xingque/*.svg"],
+      "frequency": "dominant",
+      "cssAlphaVariants": ["8%", "22%", "24%", "28%", "32%", "34%", "36%", "40%", "42%", "48%", "70%"],
+      "svgOpacityVariants": ["14%", "24%", "34%", "40%", "42%", "48%", "52%", "54%", "55%", "56%", "58%", "60%", "62%", "64%", "68%", "70%", "72%", "82%", "85%", "86%", "96%"],
+      "notes": "Several CSS values are hardcoded rgba equivalents of --primary; SVG opacity variants are inherited from active groups/elements."
+    },
+    {
+      "color": "#D69E8E",
+      "alpha": "100%",
+      "existingTokens": [],
+      "semanticRole": "XingQue/Beichen soft rose-peach decorative color.",
+      "usageExamples": ["Beichen hero wash", "moon-gate landscape wash"],
+      "source": ["src/styles/global.css:1386", "src/assets/xingque/moon-gate-window.svg:23"],
+      "frequency": "occasional",
+      "cssAlphaVariants": ["12%"],
+      "svgOpacityVariants": ["28%"],
+      "notes": "Section-specific hardcoded color; no CSS variable exists."
+    },
+    {
+      "color": "#D8D0C8",
+      "alpha": "100%",
+      "existingTokens": ["--line"],
+      "semanticRole": "Default border, divider, and geometric grid color.",
+      "usageExamples": ["borders/dividers", "body grid", "blueprint/tool/SXSTX grids"],
+      "source": ["src/styles/global.css:12,34-35,570-571,629-630,2363-2364"],
+      "frequency": "dominant",
+      "cssAlphaVariants": ["20%", "28%", "34%", "42%"],
+      "svgOpacityVariants": [],
+      "notes": "The same base color is reused at several grid opacities."
+    },
+    {
+      "color": "#EFE7DD",
+      "alpha": "100%",
+      "existingTokens": ["--surface"],
+      "semanticRole": "Surface, section overlay, card, and primary-action background.",
+      "usageExamples": ["primary buttons", "XingQue/Beichen product surfaces", "portal and workflow gradients"],
+      "source": ["src/styles/global.css:8,1641,1662,1853,1919,2004,2141,2180,2207,2365,2960", "src/assets/xingque/moon-gate-window.svg:20"],
+      "frequency": "common",
+      "cssAlphaVariants": ["26%", "28%", "34%", "42%", "62%", "72%"],
+      "svgOpacityVariants": ["72%"],
+      "notes": "#FAF7F3 is a lighter page-specific surface next to this global surface."
+    },
+    {
+      "color": "#F8F5F1",
+      "alpha": "100%",
+      "existingTokens": ["--background"],
+      "semanticRole": "Paper/page background, inverse-on-dark-paper color, and SVG paper fill.",
+      "usageExamples": ["body/page background", "header and hero overlays", "SVG paper and seal details", "wordmark shadow"],
+      "source": ["src/styles/global.css:7,94,1662,1670,1789,1795,1919,2180,2207,2255", "src/assets/xingque/*.svg"],
+      "frequency": "dominant",
+      "cssAlphaVariants": ["72%", "76%", "84%", "92%", "94%", "96%"],
+      "svgOpacityVariants": ["60%", "86%"],
+      "notes": "The active SVG set also contains explicit F8F5F1 opacity variants in Beichen seal details."
+    },
+    {
+      "color": "#FAF7F3",
+      "alpha": "100%",
+      "existingTokens": [],
+      "semanticRole": "Lighter XingQue elevated/card surface.",
+      "usageExamples": ["XingQue product-card gradient", "Rilu access buttons", "moon-gate circle"],
+      "source": ["src/styles/global.css:1853,2141", "src/assets/xingque/moon-gate-window.svg:18"],
+      "frequency": "occasional",
+      "cssAlphaVariants": ["72%", "92%", "96%"],
+      "svgOpacityVariants": ["96%"],
+      "notes": "Near-identical to the global paper color but intentionally distinct in the active XingQue surface definitions."
+    }
+  ],
+  "namedColors": {
+    "transparent": {
+      "usage": "Gradient zero-alpha stops and transparent button/background declarations.",
+      "source": ["src/styles/global.css:34-35,121,151,192-193,320,322,428,570-571,629-630,993-994,1025-1039,1093-1116,1132-1133,1210-1211,1251,1260,1298,1315-1316,1500-1552,1587,1887,2363-2364,2513,2693,2732,2803-2805"],
+      "notes": "Not counted as a chromatic effective color."
+    }
+  }
+}
