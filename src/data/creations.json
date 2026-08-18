@@ -65,5 +65,34 @@
         "clickable": true
       }
     ]
+  },
+  {
+    "id": "where2meet",
+    "title": {
+      "zh-TW": "唯驛 Where2Meet",
+      "zh-CN": "唯驛 Where2Meet",
+      "en": "唯驛 Where2Meet"
+    },
+    "subtitle": {
+      "zh-TW": "找一站，讓我們碰面。",
+      "zh-CN": "找一站，让我们碰面。",
+      "en": "Find a stop, let's meet."
+    },
+    "description": {
+      "zh-TW": "找一站，讓我們碰面。",
+      "zh-CN": "找一站，让我们碰面。",
+      "en": "Find a stop, let's meet."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "開啟 Where2Meet",
+          "zh-CN": "打开 Where2Meet",
+          "en": "OPEN WHERE2MEET"
+        },
+        "href": "https://where2meet.feiyastudio.com/",
+        "clickable": true
+      }
+    ]
   }
 ]
