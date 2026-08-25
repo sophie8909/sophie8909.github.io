@@ -135,12 +135,13 @@ Included:
 - `sitemap.xml`
 - canonical URL
 - `hreflang` alternates for all supported languages
-- Google AdSense account meta tag
+- Google AdSense account metadata site-wide and the loader on every assembled child page, excluding the homepage
+- deployable `ads.txt`
 - Google Analytics 4
 
 
 `npm run build` emits route-specific static HTML plus real `robots.txt` and `sitemap.xml` files in `dist/`.
-Run `npm test` to rebuild the production site and verify the generated sitemap, robots directives, canonical URLs, and calculator link.
+Run `npm test` to rebuild the production site and verify AdSense coverage, the generated sitemap, robots directives, canonical URLs, and calculator link.
 ## Design Notes
 
 The homepage follows an architectural/editorial direction:

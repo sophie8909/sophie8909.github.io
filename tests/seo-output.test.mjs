@@ -8,6 +8,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const distPath = join(root, 'dist');
 const sitemapPath = join(distPath, 'sitemap.xml');
 const robotsPath = join(distPath, 'robots.txt');
+const adsTxtPath = join(distPath, 'ads.txt');
 
 const expectedUrls = [
   'https://feiyastudio.com/',
@@ -20,6 +21,12 @@ const expectedUrls = [
   'https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-19/',
   'https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-08/'
 ];
+
+const adsenseScriptPattern =
+  /<script\b[^>]*\bsrc="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-2263683088830621"[^>]*>\s*<\/script>/g;
+const adsenseMetaPattern =
+  /<meta\b[^>]*\bname="google-adsense-account"[^>]*\bcontent="ca-pub-2263683088830621"[^>]*>/g;
+const countMatches = (html, pattern) => [...html.matchAll(pattern)].length;
 
 const readCanonical = async (route) => {
   const htmlPath = route === '/' ? join(distPath, 'index.html') : join(distPath, route.slice(1), 'index.html');
@@ -41,6 +48,38 @@ test('production output contains a real static sitemap and robots file', async (
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>\s*<urlset\b/);
   assert.doesNotMatch(sitemap, /<div id="root">/);
   assert.doesNotMatch(sitemap, /<changefreq>|<priority>/);
+});
+
+test('production output serves the canonical AdSense seller record', async () => {
+  const adsTxt = await readFile(adsTxtPath, 'utf8');
+
+  assert.equal(
+    adsTxt.trim(),
+    'google.com, pub-2263683088830621, DIRECT, f08c47fec0942fa0'
+  );
+});
+
+test('AdSense is excluded from the homepage and included once on every child page', async () => {
+  const homepageHtml = await readFile(join(distPath, 'index.html'), 'utf8');
+
+  assert.equal(countMatches(homepageHtml, adsenseScriptPattern), 0);
+  assert.equal(countMatches(homepageHtml, adsenseMetaPattern), 1);
+
+  for (const url of expectedUrls.slice(1)) {
+    const pathname = new URL(url).pathname.replace(/^\/+|\/+$/g, '');
+    const html = await readFile(join(distPath, pathname, 'index.html'), 'utf8');
+
+    assert.equal(
+      countMatches(html, adsenseScriptPattern),
+      1,
+      `${url} should contain one AdSense loader`
+    );
+    assert.equal(
+      countMatches(html, adsenseMetaPattern),
+      1,
+      `${url} should contain one AdSense account meta tag`
+    );
+  }
 });
 
 test('main-site sitemap contains exactly the canonical public route set', async () => {

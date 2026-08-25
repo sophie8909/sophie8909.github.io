@@ -58,6 +58,9 @@ jobs:
           cp -R .beichen/dist/index.html dist/Beichen/
           cp -R .beichen/dist/rilu .beichen/dist/chenxun dist/Beichen/
 
+      - name: Apply AdSense tags to assembled child pages
+        run: node scripts/inject-adsense-output.mjs
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

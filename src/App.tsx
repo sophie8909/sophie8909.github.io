@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { AdSense } from './components/AdSense';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { SEO } from './components/SEO';
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="app-shell">
+      <AdSense route={route} />
       <SEO route={route} />
       <Header route={route} onNavigate={navigate} />
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>

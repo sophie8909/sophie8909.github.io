@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/generate-seo-output.mjs",
+    "build": "tsc -b && vite build && node scripts/generate-seo-output.mjs && node scripts/inject-adsense-output.mjs",
     "preview": "vite preview",
     "test": "npm run build && npm run test:seo",
     "test:seo": "node --test tests/seo-output.test.mjs",
