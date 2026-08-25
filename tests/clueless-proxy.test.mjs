@@ -18,7 +18,7 @@ async function withFetchStub(stub, callback) {
   }
 }
 
-test('maps the document to the fixed upstream and preserves seed and language', async () => {
+test('maps the root document to the fixed upstream and preserves seed and language', async () => {
   let capturedRequest;
   const response = await withFetchStub(
     async (request) => {
@@ -27,14 +27,14 @@ test('maps the document to the fixed upstream and preserves seed and language', 
         headers: { 'content-type': 'text/html; charset=utf-8' },
       });
     },
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless?seed=example&lang=zh')),
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/?seed=example&lang=zh')),
   );
 
   assert.equal(capturedRequest.url, 'https://clueless-daily.sophielien09.chatgpt.site/?seed=example&lang=zh');
   assert.equal(response.status, 200);
 });
 
-test('rewrites HTML assets, metadata, and public origin under the subpath', async () => {
+test('keeps root assets and rewrites canonical, Open Graph, and Twitter metadata', async () => {
   const upstreamHtml = [
     '<!doctype html><html><head>',
     '<link rel="stylesheet" href="/assets/game.css">',
@@ -44,34 +44,38 @@ test('rewrites HTML assets, metadata, and public origin under the subpath', asyn
 
   const response = await withFetchStub(
     async () => new Response(upstreamHtml, { headers: { 'content-type': 'text/html' } }),
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless?tracking=ignored&lang=zh&seed=my+puzzle')),
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/?tracking=ignored&lang=zh&seed=my+puzzle')),
   );
   const html = await response.text();
 
-  assert.match(html, /href="\/clueless\/assets\/game\.css"/);
-  assert.match(html, /src="\/clueless\/assets\/game\.js"/);
-  assert.match(html, /https:\/\/feiyastudio\.com\/clueless\/og\.png/);
-  assert.match(html, /rel="canonical" href="https:\/\/feiyastudio\.com\/clueless\?seed=my\+puzzle&amp;lang=zh"/);
-  assert.match(html, /property="og:url" content="https:\/\/feiyastudio\.com\/clueless\?seed=my\+puzzle&amp;lang=zh"/);
+  assert.match(html, /href="\/assets\/game\.css"/);
+  assert.match(html, /src="\/assets\/game\.js"/);
+  assert.match(html, /https:\/\/clueless\.feiyastudio\.com\/og\.png/);
+  assert.match(html, /rel="canonical" href="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
+  assert.match(html, /property="og:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
+  assert.match(html, /name="twitter:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
   assert.doesNotMatch(html, /chatgpt\.site/);
   assert.doesNotMatch(html, /tracking=ignored/);
 });
 
-test('rewrites browser API and Vinext runtime paths in JavaScript bundles', async () => {
+test('keeps browser API and Vinext runtime paths at the subdomain root', async () => {
   const upstreamJavaScript = [
     'fetch(`/api/game`);',
     'new URL(`/__vite_rsc_findSourceMapURL`,import.meta.url);',
     'function prefix(asset){return`/`+asset}',
+    'const origin="https://clueless-daily.sophielien09.chatgpt.site";',
   ].join('');
   const response = await withFetchStub(
     async () => new Response(upstreamJavaScript, { headers: { 'content-type': 'application/javascript' } }),
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless/assets/game-123.js')),
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/assets/game-123.js')),
   );
 
   const javascript = await response.text();
-  assert.match(javascript, /fetch\(`\/clueless\/api\/game`\)/);
-  assert.match(javascript, /new URL\(`\/clueless\/__vite_rsc_findSourceMapURL`/);
-  assert.match(javascript, /return`\/clueless\/`\+asset/);
+  assert.match(javascript, /fetch\(`\/api\/game`\)/);
+  assert.match(javascript, /new URL\(`\/__vite_rsc_findSourceMapURL`/);
+  assert.match(javascript, /return`\/`\+asset/);
+  assert.match(javascript, /https:\/\/clueless\.feiyastudio\.com/);
+  assert.doesNotMatch(javascript, /chatgpt\.site/);
 });
 
 test('forwards API bodies server-side and disables caching', async () => {
@@ -80,23 +84,35 @@ test('forwards API bodies server-side and disables caching', async () => {
   const response = await withFetchStub(
     async (request) => {
       capturedRequest = request;
-      return Response.json({ distance: 42, solved: false });
+      return Response.json(
+        { distance: 42, solved: false },
+        { headers: { 'set-cookie': 'private=value' } },
+      );
     },
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless/api/game', {
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/api/game', {
       method: 'POST',
-      headers: { 'content-type': 'application/json', origin: 'https://feiyastudio.com' },
+      headers: {
+        'content-type': 'application/json',
+        origin: 'https://clueless.feiyastudio.com',
+        referer: 'https://clueless.feiyastudio.com/?seed=example&lang=en',
+      },
       body,
     })),
   );
 
   assert.equal(capturedRequest.url, 'https://clueless-daily.sophielien09.chatgpt.site/api/game');
   assert.equal(capturedRequest.headers.get('origin'), 'https://clueless-daily.sophielien09.chatgpt.site');
+  assert.equal(
+    capturedRequest.headers.get('referer'),
+    'https://clueless-daily.sophielien09.chatgpt.site/?seed=example&lang=en',
+  );
   assert.equal(await capturedRequest.text(), body);
   assert.equal(response.headers.get('cache-control'), 'no-store');
+  assert.equal(response.headers.get('set-cookie'), null);
   assert.deepEqual(await response.json(), { distance: 42, solved: false });
 });
 
-test('preserves RSC headers while remapping Next-Url and response asset paths', async () => {
+test('preserves RSC headers and root asset paths', async () => {
   let capturedRequest;
   const response = await withFetchStub(
     async (request) => {
@@ -105,11 +121,11 @@ test('preserves RSC headers while remapping Next-Url and response asset paths', 
         headers: { 'content-type': 'text/x-component' },
       });
     },
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless?seed=rsc', {
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/?seed=rsc', {
       headers: {
         rsc: '1',
         'next-router-state-tree': 'state',
-        'next-url': '/clueless',
+        'next-url': '/',
       },
     })),
   );
@@ -119,7 +135,7 @@ test('preserves RSC headers while remapping Next-Url and response asset paths', 
   assert.equal(capturedRequest.headers.get('next-url'), '/');
   assert.equal(
     await response.text(),
-    '1:["/clueless/assets/game.js","https://feiyastudio.com/clueless/og.png"]',
+    '1:["/assets/game.js","https://clueless.feiyastudio.com/og.png"]',
   );
 });
 
@@ -131,7 +147,7 @@ test('proxies the exact Vinext source-map endpoint without broadening the allowl
       return new Response('Not Found', { status: 404 });
     },
     () => worker.fetch(new Request(
-      'https://feiyastudio.com/clueless/__vite_rsc_findSourceMapURL?filename=test&environmentName=client',
+      'https://clueless.feiyastudio.com/__vite_rsc_findSourceMapURL?filename=test&environmentName=client',
     )),
   );
 
@@ -142,29 +158,19 @@ test('proxies the exact Vinext source-map endpoint without broadening the allowl
   );
 });
 
-test('canonicalizes the trailing slash without leaving Feiya Studio', async () => {
-  const response = await withFetchStub(
-    async () => new Response('unexpected'),
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless/?lang=zh&seed=example')),
-  );
-
-  assert.equal(response.status, 308);
-  assert.equal(
-    response.headers.get('location'),
-    'https://feiyastudio.com/clueless?lang=zh&seed=example',
-  );
-});
-
-test('rewrites upstream redirects without leaving Feiya Studio', async () => {
+test('rewrites upstream redirects without leaving the CLUELESS subdomain', async () => {
   const response = await withFetchStub(
     async () => new Response(null, {
       status: 307,
       headers: { location: 'https://clueless-daily.sophielien09.chatgpt.site/?seed=redirected&lang=en' },
     }),
-    () => worker.fetch(new Request('https://feiyastudio.com/clueless')),
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/')),
   );
 
-  assert.equal(response.headers.get('location'), 'https://feiyastudio.com/clueless?seed=redirected&lang=en');
+  assert.equal(
+    response.headers.get('location'),
+    'https://clueless.feiyastudio.com/?seed=redirected&lang=en',
+  );
 });
 
 test('rejects unrelated paths and unsupported methods without an upstream fetch', async () => {
@@ -175,11 +181,11 @@ test('rejects unrelated paths and unsupported methods without an upstream fetch'
       return new Response('unexpected');
     },
     async () => {
-      const unrelated = await worker.fetch(new Request('https://feiyastudio.com/'));
-      const disguisedProxy = await worker.fetch(new Request('https://feiyastudio.com/clueless/proxy?url=https://example.com'));
-      const badMethod = await worker.fetch(new Request('https://feiyastudio.com/clueless/assets/game.js', { method: 'POST' }));
+      const oldSubpath = await worker.fetch(new Request('https://clueless.feiyastudio.com/clueless'));
+      const disguisedProxy = await worker.fetch(new Request('https://clueless.feiyastudio.com/proxy?url=https://example.com'));
+      const badMethod = await worker.fetch(new Request('https://clueless.feiyastudio.com/assets/game.js', { method: 'POST' }));
 
-      assert.equal(unrelated.status, 404);
+      assert.equal(oldSubpath.status, 404);
       assert.equal(disguisedProxy.status, 404);
       assert.equal(badMethod.status, 405);
       assert.equal(badMethod.headers.get('allow'), 'GET, HEAD');

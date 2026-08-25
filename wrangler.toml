@@ -5,5 +5,5 @@ workers_dev = false
 preview_urls = false
 
 [[routes]]
-pattern = "feiyastudio.com/clueless*"
-zone_name = "feiyastudio.com"
+pattern = "clueless.feiyastudio.com"
+custom_domain = true

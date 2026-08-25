@@ -1,19 +1,16 @@
 const UPSTREAM_ORIGIN = 'https://clueless-daily.sophielien09.chatgpt.site';
-const PUBLIC_ORIGIN = 'https://feiyastudio.com';
-const BASE_PATH = '/clueless';
-const PUBLIC_BASE = `${PUBLIC_ORIGIN}${BASE_PATH}`;
+const PUBLIC_ORIGIN = 'https://clueless.feiyastudio.com';
 
-const ASSET_PATH = /^\/clueless\/assets\/[A-Za-z0-9._~%/-]+$/;
-const DOCUMENT_PATHS = new Set([BASE_PATH, `${BASE_PATH}/`]);
-const API_PATH = `${BASE_PATH}/api/game`;
+const ASSET_PATH = /^\/assets\/[A-Za-z0-9._~%/-]+$/;
+const API_PATH = '/api/game';
 const STATIC_PATHS = new Set([
-  `${BASE_PATH}/favicon.svg`,
-  `${BASE_PATH}/__vite_rsc_findSourceMapURL`,
-  `${BASE_PATH}/og.png`,
+  '/favicon.svg',
+  '/__vite_rsc_findSourceMapURL',
+  '/og.png',
 ]);
 
 function classifyPath(pathname) {
-  if (DOCUMENT_PATHS.has(pathname)) return 'document';
+  if (pathname === '/') return 'document';
   if (pathname === API_PATH) return 'api';
   if (STATIC_PATHS.has(pathname) || ASSET_PATH.test(pathname)) return 'asset';
   return null;
@@ -24,13 +21,8 @@ function methodAllowed(kind, method) {
   return method === 'GET' || method === 'HEAD';
 }
 
-function upstreamPath(pathname) {
-  const stripped = pathname.slice(BASE_PATH.length);
-  return stripped === '' || stripped === '/' ? '/' : stripped;
-}
-
 function canonicalUrl(requestUrl) {
-  const canonical = new URL(PUBLIC_BASE);
+  const canonical = new URL(PUBLIC_ORIGIN);
   for (const key of ['seed', 'lang']) {
     const value = requestUrl.searchParams.get(key);
     if (value !== null) canonical.searchParams.set(key, value);
@@ -42,29 +34,19 @@ function escapeHtmlAttribute(value) {
   return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;');
 }
 
-function replaceScopedPaths(text) {
-  let rewritten = text.replaceAll(UPSTREAM_ORIGIN, PUBLIC_BASE);
-
-  for (const quote of ['"', "'", '`']) {
-    rewritten = rewritten
-      .replaceAll(`${quote}/assets/`, `${quote}${BASE_PATH}/assets/`)
-      .replaceAll(`${quote}/api/game`, `${quote}${BASE_PATH}/api/game`)
-      .replaceAll(`${quote}/favicon.svg`, `${quote}${BASE_PATH}/favicon.svg`)
-      .replaceAll(`${quote}/__vite_rsc_findSourceMapURL`, `${quote}${BASE_PATH}/__vite_rsc_findSourceMapURL`)
-      .replaceAll(`${quote}/og.png`, `${quote}${BASE_PATH}/og.png`);
-  }
-
-  rewritten = rewritten.replace(/return`\/`\+([A-Za-z_$][\w$]*)/g, `return\`${BASE_PATH}/\`+$1`);
-  return rewritten;
+function replacePublicOrigin(text) {
+  return text.replaceAll(UPSTREAM_ORIGIN, PUBLIC_ORIGIN);
 }
 
 function rewriteHtml(text, publicUrl) {
-  let rewritten = replaceScopedPaths(text);
+  let rewritten = replacePublicOrigin(text);
   const escapedUrl = escapeHtmlAttribute(publicUrl);
   const canonicalTag = `<link rel="canonical" href="${escapedUrl}"/>`;
   const openGraphUrlTag = `<meta property="og:url" content="${escapedUrl}"/>`;
+  const twitterUrlTag = `<meta name="twitter:url" content="${escapedUrl}"/>`;
   const canonicalPattern = /<link[^>]*rel=["']canonical["'][^>]*>/i;
   const openGraphUrlPattern = /<meta[^>]*property=["']og:url["'][^>]*>/i;
+  const twitterUrlPattern = /<meta[^>]*name=["']twitter:url["'][^>]*>/i;
 
   if (canonicalPattern.test(rewritten)) {
     rewritten = rewritten.replace(canonicalPattern, canonicalTag);
@@ -78,6 +60,12 @@ function rewriteHtml(text, publicUrl) {
     rewritten = rewritten.replace(canonicalTag, `${canonicalTag}${openGraphUrlTag}`);
   }
 
+  if (twitterUrlPattern.test(rewritten)) {
+    rewritten = rewritten.replace(twitterUrlPattern, twitterUrlTag);
+  } else {
+    rewritten = rewritten.replace(openGraphUrlTag, `${openGraphUrlTag}${twitterUrlTag}`);
+  }
+
   return rewritten;
 }
 
@@ -89,7 +77,6 @@ function rewriteLocation(location) {
     if (target.origin !== UPSTREAM_ORIGIN) return location;
     target.protocol = 'https:';
     target.host = new URL(PUBLIC_ORIGIN).host;
-    target.pathname = `${BASE_PATH}${target.pathname === '/' ? '' : target.pathname}`;
     return target.toString();
   } catch {
     return location;
@@ -106,20 +93,14 @@ function upstreamHeaders(request) {
   if (referer) {
     try {
       const refererUrl = new URL(referer);
-      if (refererUrl.origin === PUBLIC_ORIGIN && refererUrl.pathname.startsWith(BASE_PATH)) {
+      if (refererUrl.origin === PUBLIC_ORIGIN) {
         refererUrl.protocol = 'https:';
         refererUrl.host = new URL(UPSTREAM_ORIGIN).host;
-        refererUrl.pathname = upstreamPath(refererUrl.pathname);
         headers.set('referer', refererUrl.toString());
       }
     } catch {
       headers.delete('referer');
     }
-  }
-
-  const nextUrl = headers.get('next-url');
-  if (nextUrl?.startsWith(BASE_PATH)) {
-    headers.set('next-url', upstreamPath(new URL(nextUrl, PUBLIC_ORIGIN).pathname));
   }
 
   return headers;
@@ -152,13 +133,7 @@ async function proxyRequest(request) {
     });
   }
 
-  if (requestUrl.pathname === `${BASE_PATH}/`) {
-    const location = new URL(PUBLIC_BASE);
-    location.search = requestUrl.search;
-    return Response.redirect(location, 308);
-  }
-
-  const target = new URL(upstreamPath(requestUrl.pathname), UPSTREAM_ORIGIN);
+  const target = new URL(requestUrl.pathname, UPSTREAM_ORIGIN);
   target.search = requestUrl.search;
   const requestBody = request.method === 'GET' || request.method === 'HEAD'
     ? undefined
@@ -190,7 +165,7 @@ async function proxyRequest(request) {
     const source = await upstreamResponse.text();
     const body = isHtml
       ? rewriteHtml(source, canonicalUrl(requestUrl))
-      : replaceScopedPaths(source);
+      : replacePublicOrigin(source);
     return new Response(body, {
       status: upstreamResponse.status,
       statusText: upstreamResponse.statusText,
@@ -212,8 +187,7 @@ export default {
 export {
   canonicalUrl,
   classifyPath,
-  replaceScopedPaths,
+  replacePublicOrigin,
   rewriteHtml,
   rewriteLocation,
-  upstreamPath,
 };
