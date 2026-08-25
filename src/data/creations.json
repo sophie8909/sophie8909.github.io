@@ -94,5 +94,34 @@
         "clickable": true
       }
     ]
+  },
+  {
+    "id": "clueless",
+    "title": {
+      "zh-TW": "CLUELESS",
+      "zh-CN": "CLUELESS",
+      "en": "CLUELESS"
+    },
+    "subtitle": {
+      "zh-TW": "每日語意猜字遊戲",
+      "zh-CN": "每日语义猜词游戏",
+      "en": "DAILY SEMANTIC WORD GAME"
+    },
+    "description": {
+      "zh-TW": "用語意距離找出秘密詞。相同 seed 會開啟相同謎題，支援英文與中文。",
+      "zh-CN": "用语义距离找出秘密词。相同 seed 会打开相同谜题，支持英文与中文。",
+      "en": "Find the secret word through semantic distance. The same seed opens the same puzzle in English or Chinese."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "開始遊戲",
+          "zh-CN": "开始游戏",
+          "en": "PLAY CLUELESS"
+        },
+        "href": "https://clueless.feiyastudio.com/",
+        "clickable": true
+      }
+    ]
   }
 ]

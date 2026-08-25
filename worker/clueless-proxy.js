@@ -1,5 +1,70 @@
 const UPSTREAM_ORIGIN = 'https://clueless-daily.sophielien09.chatgpt.site';
 const PUBLIC_ORIGIN = 'https://clueless.feiyastudio.com';
+const FEIYA_INTEGRATION_PATH = '/feiya-integration.js';
+const GA_MEASUREMENT_ID = 'G-EPGN73HBMP';
+const BUY_ME_A_COFFEE_URL = 'https://www.buymeacoffee.com/feiyastudio';
+
+const FEIYA_INTEGRATION_SCRIPT = `
+(() => {
+  const measurementId = '${GA_MEASUREMENT_ID}';
+  const supportUrl = '${BUY_ME_A_COFFEE_URL}';
+  const integrationId = 'feiya-clueless-integration';
+
+  const initializeAnalytics = () => {
+    if (window.__feiyaCluelessGa4) return;
+    window.__feiyaCluelessGa4 = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      page_location: window.location.origin + window.location.pathname,
+      page_title: document.title,
+    });
+
+    if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      const analyticsScript = document.createElement('script');
+      analyticsScript.async = true;
+      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+      document.head.append(analyticsScript);
+    }
+  };
+
+  const addSupportLinks = () => {
+    if (document.getElementById(integrationId)) return;
+
+    const style = document.createElement('style');
+    style.textContent = '.feiya-clueless-support{display:flex;align-items:center;justify-content:center;gap:.65rem;flex-wrap:wrap;padding:1rem;color:#6f6259;border-top:1px solid rgba(111,98,89,.2);font:500 .78rem/1.4 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.feiya-clueless-support a{display:inline-flex;align-items:center;min-height:44px;color:#744a47;text-underline-offset:.2em}.feiya-clueless-support span{opacity:.55}';
+    document.head.append(style);
+
+    const support = document.createElement('aside');
+    support.id = integrationId;
+    support.className = 'feiya-clueless-support';
+    support.setAttribute('aria-label', document.documentElement.lang.startsWith('zh') ? 'Feiya Studio 支持連結' : 'Feiya Studio support links');
+
+    const studioLink = document.createElement('a');
+    studioLink.href = 'https://feiyastudio.com/';
+    studioLink.textContent = 'Feiya Studio';
+
+    const separator = document.createElement('span');
+    separator.setAttribute('aria-hidden', 'true');
+    separator.textContent = '·';
+
+    const supportLink = document.createElement('a');
+    supportLink.href = supportUrl;
+    supportLink.target = '_blank';
+    supportLink.rel = 'noreferrer';
+    supportLink.textContent = 'Buy Me a Coffee';
+
+    support.append(studioLink, separator, supportLink);
+    document.body.append(support);
+  };
+
+  initializeAnalytics();
+  const scheduleSupportLinks = () => window.setTimeout(addSupportLinks, 0);
+  if (document.readyState === 'complete') scheduleSupportLinks();
+  else window.addEventListener('load', scheduleSupportLinks, { once: true });
+})();
+`;
 
 const ASSET_PATH = /^\/assets\/[A-Za-z0-9._~%/-]+$/;
 const API_PATH = '/api/game';
@@ -7,6 +72,7 @@ const STATIC_PATHS = new Set([
   '/favicon.svg',
   '/__vite_rsc_findSourceMapURL',
   '/og.png',
+  FEIYA_INTEGRATION_PATH,
 ]);
 
 function classifyPath(pathname) {
@@ -66,7 +132,22 @@ function rewriteHtml(text, publicUrl) {
     rewritten = rewritten.replace(openGraphUrlTag, `${openGraphUrlTag}${twitterUrlTag}`);
   }
 
+  const integrationTag = `<script defer src="${FEIYA_INTEGRATION_PATH}"></script>`;
+  if (!rewritten.includes(integrationTag)) {
+    rewritten = rewritten.replace('</head>', `${integrationTag}</head>`);
+  }
+
   return rewritten;
+}
+
+function integrationResponse(method) {
+  return new Response(method === 'HEAD' ? null : FEIYA_INTEGRATION_SCRIPT, {
+    headers: {
+      'cache-control': 'public, max-age=3600',
+      'content-type': 'text/javascript; charset=utf-8',
+      'x-content-type-options': 'nosniff',
+    },
+  });
 }
 
 function rewriteLocation(location) {
@@ -131,6 +212,9 @@ async function proxyRequest(request) {
       status: 405,
       headers: { allow: kind === 'api' ? 'OPTIONS, POST' : 'GET, HEAD' },
     });
+  }
+  if (requestUrl.pathname === FEIYA_INTEGRATION_PATH) {
+    return integrationResponse(request.method);
   }
 
   const target = new URL(requestUrl.pathname, UPSTREAM_ORIGIN);

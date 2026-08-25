@@ -4,6 +4,7 @@ Production homepage for [feiyastudio.com](https://feiyastudio.com).
 
 - CatRodis
 - ArtCodex
+- CLUELESS
 - sxstx Calculator
 
 ## Stack
@@ -135,6 +136,7 @@ Included:
 - canonical URL
 - `hreflang` alternates for all supported languages
 - Google AdSense account meta tag
+- Google Analytics 4
 
 
 `npm run build` emits route-specific static HTML plus real `robots.txt` and `sitemap.xml` files in `dist/`.

@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "Feiya Studio",
-    "description": "CatRodis。ArtCodex。sxstx Calculator。",
+    "description": "CatRodis。ArtCodex。CLUELESS。sxstx Calculator。",
     "projectsTitle": "FEIYA | Projects",
-    "projectsDescription": "CatRodis。ArtCodex。sxstx Calculator。",
+    "projectsDescription": "CatRodis。ArtCodex。CLUELESS。sxstx Calculator。",
     "artcodexTitle": "ArtCodex | Feiya Studio",
     "artcodexDescription": "ArtCodex 是为创作流程设计的提示词生成工具。",
     "aboutTitle": "Feiya Studio",
-    "aboutDescription": "CatRodis。ArtCodex。sxstx Calculator。"
+    "aboutDescription": "CatRodis。ArtCodex。CLUELESS。sxstx Calculator。"
   },
   "language": {
     "label": "选择语言",
@@ -42,7 +42,7 @@
   },
   "projectsPage": {
     "eyebrow": "Projects",
-    "heading": "CATRODIS / ARTCODEX / SXSTX CALCULATOR"
+    "heading": "CATRODIS / ARTCODEX / CLUELESS / SXSTX CALCULATOR"
   },
   "aboutPage": {
     "eyebrow": "Feiya Studio",

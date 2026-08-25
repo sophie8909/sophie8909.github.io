@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { after, test } from 'node:test';
 
 import worker from '../worker/clueless-proxy.js';
@@ -54,6 +55,7 @@ test('keeps root assets and rewrites canonical, Open Graph, and Twitter metadata
   assert.match(html, /rel="canonical" href="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
   assert.match(html, /property="og:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
   assert.match(html, /name="twitter:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
+  assert.match(html, /<script defer src="\/feiya-integration\.js"><\/script>/);
   assert.doesNotMatch(html, /chatgpt\.site/);
   assert.doesNotMatch(html, /tracking=ignored/);
 });
@@ -193,4 +195,42 @@ test('rejects unrelated paths and unsupported methods without an upstream fetch'
   );
 
   assert.equal(fetchCount, 0);
+});
+
+test('serves a scoped BMC and privacy-conscious GA4 integration without an upstream fetch', async () => {
+  let fetchCount = 0;
+  const response = await withFetchStub(
+    async () => {
+      fetchCount += 1;
+      return new Response('unexpected');
+    },
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/feiya-integration.js')),
+  );
+  const script = await response.text();
+
+  assert.equal(fetchCount, 0);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('content-type'), 'text/javascript; charset=utf-8');
+  assert.equal(response.headers.get('x-content-type-options'), 'nosniff');
+  assert.doesNotThrow(() => new Function(script));
+  assert.match(script, /G-EPGN73HBMP/);
+  assert.match(script, /https:\/\/www\.buymeacoffee\.com\/feiyastudio/);
+  assert.match(script, /page_location: window\.location\.origin \+ window\.location\.pathname/);
+  assert.doesNotMatch(script, /window\.location\.search/);
+  assert.doesNotMatch(script, /guess|word|answer/i);
+});
+
+test('lists CLUELESS as a complete localized Feiya Studio creation', async () => {
+  const creations = JSON.parse(
+    await readFile(new URL('../src/data/creations.json', import.meta.url), 'utf8'),
+  );
+  const clueless = creations.find((creation) => creation.id === 'clueless');
+
+  assert.ok(clueless);
+  assert.deepEqual(Object.keys(clueless.title).sort(), ['en', 'zh-CN', 'zh-TW']);
+  assert.deepEqual(Object.keys(clueless.subtitle).sort(), ['en', 'zh-CN', 'zh-TW']);
+  assert.deepEqual(Object.keys(clueless.description).sort(), ['en', 'zh-CN', 'zh-TW']);
+  assert.equal(clueless.buttons[0].href, 'https://clueless.feiyastudio.com/');
+  assert.equal(clueless.buttons[0].clickable, true);
+  assert.equal(new Set(creations.map((creation) => creation.id)).size, creations.length);
 });

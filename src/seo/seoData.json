@@ -17,9 +17,9 @@
   },
   "routes": {
     "/": {
-      "title": "Feiya Studio | CatRodis, ArtCodex, and Calculator Tools",
-      "description": "Feiya Studio creates character worlds, creator workflow tools, and game progression calculators including CatRodis, ArtCodex, and Sword x Staff calculator utilities.",
-      "lastmod": "2026-07-07",
+      "title": "Feiya Studio | CatRodis, ArtCodex, CLUELESS, and Tools",
+      "description": "Feiya Studio creates character worlds, creator tools, semantic word games, and progression utilities including CatRodis, ArtCodex, CLUELESS, and SXSTX Calculator.",
+      "lastmod": "2026-08-25",
       "schemas": [
         "Organization",
         "WebSite"
@@ -27,8 +27,8 @@
     },
     "/projects": {
       "title": "Projects | Feiya Studio",
-      "description": "Explore Feiya Studio projects including CatRodis, ArtCodex, and progression calculator tools for creators and players.",
-      "lastmod": "2026-07-07",
+      "description": "Explore Feiya Studio projects including CatRodis, ArtCodex, CLUELESS, Where2Meet, and SXSTX Calculator.",
+      "lastmod": "2026-08-25",
       "schemas": [
         "WebSite"
       ]
