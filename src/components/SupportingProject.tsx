@@ -14,6 +14,7 @@ const getLocalizedText = (text: Creation['title'], language: string) =>
 export const SupportingProject = ({ project, index }: SupportingProjectProps) => {
   const { i18n, t } = useTranslation();
   const sequence = String(index + 1).padStart(2, '0');
+  const layoutClassName = index % 2 === 1 ? ' supporting-project-reverse' : '';
   const visualShape = visualShapes[index % visualShapes.length];
   const title = getLocalizedText(project.title, i18n.language);
   const subtitle = getLocalizedText(project.subtitle, i18n.language);
@@ -21,7 +22,7 @@ export const SupportingProject = ({ project, index }: SupportingProjectProps) =>
 
   return (
     <section
-      className={`supporting-project supporting-project-${project.id}`}
+      className={`supporting-project supporting-project-${project.id}${layoutClassName}`}
       id={project.id}
       aria-labelledby={`${project.id}-title`}
     >

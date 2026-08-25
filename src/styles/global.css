@@ -2659,15 +2659,15 @@ a.rilu-access-button {
     min-height: 360px;
   }
 
-  .supporting-project-sxstx-calculator {
+  .supporting-project-reverse {
     grid-template-columns: minmax(280px, 0.78fr) minmax(0, 0.72fr);
   }
 
-  .supporting-project-sxstx-calculator .tool-copy {
+  .supporting-project-reverse .tool-copy {
     order: 2;
   }
 
-  .supporting-project-sxstx-calculator .tool-visual {
+  .supporting-project-reverse .tool-visual {
     order: 1;
   }
 
