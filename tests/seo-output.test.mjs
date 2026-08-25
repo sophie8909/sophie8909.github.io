@@ -17,6 +17,7 @@ const expectedUrls = [
   'https://feiyastudio.com/xingque/',
   'https://feiyastudio.com/xingque/beichen/',
   'https://feiyastudio.com/about/',
+  'https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-19/',
   'https://feiyastudio.com/sxstx-calculator/blog/update/2026-07-08/'
 ];
 
