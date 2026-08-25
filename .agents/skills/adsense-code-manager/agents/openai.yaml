@@ -1,0 +1,4 @@
+interface:
+  display_name: "AdSense Code Manager"
+  short_description: "Audit and manage AdSense site-wide snippets"
+  default_prompt: "Use $adsense-code-manager to audit and reconcile this site's AdSense loader, account meta tag, and ads.txt entry."
