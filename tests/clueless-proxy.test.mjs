@@ -39,6 +39,8 @@ test('keeps root assets and rewrites canonical, Open Graph, and Twitter metadata
   const upstreamHtml = [
     '<!doctype html><html><head>',
     '<link rel="stylesheet" href="/assets/game.css">',
+    '<meta content="ca-pub-stale" name="google-adsense-account">',
+    '<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-stale"></script>',
     '<meta property="og:image" content="https://clueless-daily.sophielien09.chatgpt.site/og.png">',
     '</head><body><script src="/assets/game.js"></script></body></html>',
   ].join('');
@@ -56,8 +58,33 @@ test('keeps root assets and rewrites canonical, Open Graph, and Twitter metadata
   assert.match(html, /property="og:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
   assert.match(html, /name="twitter:url" content="https:\/\/clueless\.feiyastudio\.com\/?\?seed=my\+puzzle&amp;lang=zh"/);
   assert.match(html, /<script defer src="\/feiya-integration\.js"><\/script>/);
+  assert.equal((html.match(/name="google-adsense-account"/g) ?? []).length, 1);
+  assert.match(html, /name="google-adsense-account" content="ca-pub-2263683088830621"/);
+  assert.equal((html.match(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g) ?? []).length, 1);
+  assert.match(html, /adsbygoogle\.js\?client=ca-pub-2263683088830621" crossorigin="anonymous"/);
+  assert.doesNotMatch(html, /ca-pub-stale/);
   assert.doesNotMatch(html, /chatgpt\.site/);
   assert.doesNotMatch(html, /tracking=ignored/);
+});
+
+test('serves the canonical AdSense seller record at the CLUELESS root without an upstream fetch', async () => {
+  let fetchCount = 0;
+  const response = await withFetchStub(
+    async () => {
+      fetchCount += 1;
+      return new Response('unexpected');
+    },
+    () => worker.fetch(new Request('https://clueless.feiyastudio.com/ads.txt')),
+  );
+
+  assert.equal(fetchCount, 0);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('content-type'), 'text/plain; charset=utf-8');
+  assert.equal(response.headers.get('x-content-type-options'), 'nosniff');
+  assert.equal(
+    await response.text(),
+    'google.com, pub-2263683088830621, DIRECT, f08c47fec0942fa0\n',
+  );
 });
 
 test('keeps browser API and Vinext runtime paths at the subdomain root', async () => {

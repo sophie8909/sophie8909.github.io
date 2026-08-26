@@ -1,8 +1,13 @@
 const UPSTREAM_ORIGIN = 'https://clueless-daily.sophielien09.chatgpt.site';
 const PUBLIC_ORIGIN = 'https://clueless.feiyastudio.com';
 const FEIYA_INTEGRATION_PATH = '/feiya-integration.js';
+const ADS_TXT_PATH = '/ads.txt';
 const GA_MEASUREMENT_ID = 'G-EPGN73HBMP';
 const BUY_ME_A_COFFEE_URL = 'https://www.buymeacoffee.com/feiyastudio';
+const ADSENSE_ACCOUNT_ID = 'ca-pub-2263683088830621';
+const ADSENSE_PUBLISHER_RECORD = 'google.com, pub-2263683088830621, DIRECT, f08c47fec0942fa0';
+const ADSENSE_SCRIPT_URL =
+  `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ACCOUNT_ID}`;
 
 const FEIYA_INTEGRATION_SCRIPT = `
 (() => {
@@ -73,6 +78,7 @@ const STATIC_PATHS = new Set([
   '/__vite_rsc_findSourceMapURL',
   '/og.png',
   FEIYA_INTEGRATION_PATH,
+  ADS_TXT_PATH,
 ]);
 
 function classifyPath(pathname) {
@@ -104,8 +110,22 @@ function replacePublicOrigin(text) {
   return text.replaceAll(UPSTREAM_ORIGIN, PUBLIC_ORIGIN);
 }
 
+function injectAdSenseHead(html) {
+  const withoutManagedTags = html
+    .replace(/\s*<meta\b(?=[^>]*\bname=["']google-adsense-account["'])[^>]*>/gi, '')
+    .replace(
+      /\s*<script\b[^>]*\bsrc=["']https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js[^"']*["'][^>]*>\s*<\/script\s*>/gi,
+      '',
+    );
+  const adsenseTags =
+    `<meta name="google-adsense-account" content="${ADSENSE_ACCOUNT_ID}">` +
+    `<script async src="${ADSENSE_SCRIPT_URL}" crossorigin="anonymous"></script>`;
+
+  return withoutManagedTags.replace(/<\/head>/i, `${adsenseTags}</head>`);
+}
+
 function rewriteHtml(text, publicUrl) {
-  let rewritten = replacePublicOrigin(text);
+  let rewritten = injectAdSenseHead(replacePublicOrigin(text));
   const escapedUrl = escapeHtmlAttribute(publicUrl);
   const canonicalTag = `<link rel="canonical" href="${escapedUrl}"/>`;
   const openGraphUrlTag = `<meta property="og:url" content="${escapedUrl}"/>`;
@@ -145,6 +165,16 @@ function integrationResponse(method) {
     headers: {
       'cache-control': 'public, max-age=3600',
       'content-type': 'text/javascript; charset=utf-8',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+}
+
+function adsTxtResponse(method) {
+  return new Response(method === 'HEAD' ? null : `${ADSENSE_PUBLISHER_RECORD}\n`, {
+    headers: {
+      'cache-control': 'public, max-age=3600',
+      'content-type': 'text/plain; charset=utf-8',
       'x-content-type-options': 'nosniff',
     },
   });
@@ -215,6 +245,9 @@ async function proxyRequest(request) {
   }
   if (requestUrl.pathname === FEIYA_INTEGRATION_PATH) {
     return integrationResponse(request.method);
+  }
+  if (requestUrl.pathname === ADS_TXT_PATH) {
+    return adsTxtResponse(request.method);
   }
 
   const target = new URL(requestUrl.pathname, UPSTREAM_ORIGIN);
