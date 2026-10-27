@@ -123,5 +123,34 @@
         "clickable": true
       }
     ]
+  },
+  {
+    "id": "wizard-destiny",
+    "title": {
+      "zh-TW": "魔法命運：權力與深淵",
+      "zh-CN": "魔法命运：权力与深渊",
+      "en": "WIZARD DESTINY: POWER AND ABYSS"
+    },
+    "subtitle": {
+      "zh-TW": "高自由度魔法人生模擬",
+      "zh-CN": "高自由度魔法人生模拟",
+      "en": "OPEN-ENDED WIZARDING LIFE SIMULATION"
+    },
+    "description": {
+      "zh-TW": "從出生開始，探索魔法、學院與職涯，在逐年抉擇中走出自己的命運。",
+      "zh-CN": "从出生开始，探索魔法、学院与职业生涯，在逐年抉择中走出自己的命运。",
+      "en": "Begin at birth, explore magic, schools, and careers, and shape your destiny through choices year by year."
+    },
+    "buttons": [
+      {
+        "label": {
+          "zh-TW": "開始遊戲",
+          "zh-CN": "开始游戏",
+          "en": "PLAY WIZARD DESTINY"
+        },
+        "href": "https://wizard.feiyastudio.com/",
+        "clickable": true
+      }
+    ]
   }
 ]
