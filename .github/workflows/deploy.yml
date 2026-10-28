@@ -22,7 +22,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Checkout Beichen
+        id: checkout_beichen
         uses: actions/checkout@v4
+        continue-on-error: true
         with:
           repository: sophie8909/Beichen
           path: .beichen
@@ -45,14 +47,17 @@ jobs:
         continue-on-error: true
 
       - name: Install Beichen dependencies
+        if: steps.checkout_beichen.outcome == 'success'
         working-directory: .beichen
         run: npm ci
 
       - name: Build Beichen
+        if: steps.checkout_beichen.outcome == 'success'
         working-directory: .beichen
         run: npm run build
 
       - name: Merge Beichen into Pages artifact
+        if: steps.checkout_beichen.outcome == 'success'
         run: |
           mkdir -p dist/assets dist/Beichen
           cp -R .beichen/dist/assets/. dist/assets/
