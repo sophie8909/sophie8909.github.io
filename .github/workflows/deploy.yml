@@ -26,7 +26,7 @@ jobs:
         with:
           repository: sophie8909/Beichen
           path: .beichen
-          token: ${{ secrets.BEICHEN_REPO_TOKEN }}
+          token: ${{ secrets.BEICHEN_REPO_TOKEN || github.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
