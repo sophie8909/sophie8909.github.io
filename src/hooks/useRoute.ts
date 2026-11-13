@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export type AppRoute =
-  | '/'
+  | '/home'
   | '/projects'
   | '/sxstx-calculator'
   | '/sxstx-calculator/blog/update'
@@ -11,7 +11,7 @@ export type AppRoute =
   | '/about';
 
 const routeSet = new Set<AppRoute>([
-  '/',
+  '/home',
   '/projects',
   '/sxstx-calculator',
   '/sxstx-calculator/blog/update',
@@ -32,7 +32,7 @@ const normalizeRoute = (pathname: string): AppRoute => {
     return withoutTrailingSlash as AppRoute;
   }
 
-  return '/';
+  return '/home';
 };
 
 const restoreGitHubPagesRoute = (): AppRoute => {

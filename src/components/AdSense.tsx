@@ -55,7 +55,7 @@ export const AdSense = ({ route }: AdSenseProps) => {
   useEffect(() => {
     ensureAccountMeta();
 
-    if (route === '/') {
+    if (route === '/home') {
       const hasLoader = document.head.querySelector(ADSENSE_SCRIPT_SELECTOR) !== null;
 
       if (hasLoader) {

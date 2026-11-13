@@ -94,7 +94,7 @@ export const SxstxCalculatorPage = () => (
         </p>
         <p>
           The calculator itself is hosted at{' '}
-          <a href={calculatorUrl}>https://sxstx.feiyastudio.com/</a>, while this Feiya
+          <a href={calculatorUrl}>https://feiyastudio.com/</a>, while this Feiya
           Studio page keeps project context, update logs, and FAQ content easy to find.
         </p>
       </div>

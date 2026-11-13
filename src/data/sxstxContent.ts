@@ -2,7 +2,7 @@ interface FrontmatterData {
   [key: string]: string;
 }
 
-export const calculatorUrl = 'https://sxstx.feiyastudio.com/';
+export const calculatorUrl = 'https://feiyastudio.com/';
 export const sxstxUpdateArchiveRoute = '/sxstx-calculator/blog/update';
 
 export interface UpdatePost {

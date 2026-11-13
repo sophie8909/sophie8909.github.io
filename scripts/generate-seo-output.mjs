@@ -20,11 +20,11 @@ const escapeXml = (value) =>
 
 const escapeHtml = escapeXml;
 const canonicalUrl = (route) => {
-  const canonicalPath = route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
+  const canonicalPath = `${route.replace(/\/+$/, '')}/`;
   return `${seoData.siteUrl}${canonicalPath}`;
 };
 const localizedUrl = (route, language) => `${canonicalUrl(route)}?lang=${language}`;
-const calculatorUrl = 'https://sxstx.feiyastudio.com/';
+const calculatorUrl = 'https://feiyastudio.com/';
 const updateArchiveRoute = '/sxstx-calculator/blog/update';
 
 const parseMarkdownFile = (markdown) => {
@@ -113,7 +113,11 @@ const routeEntries = Object.entries(seoData.routes).map(([route, meta]) => {
 
   return [route, meta];
 });
-const sitemapEntries = routeEntries.concat(updateRouteEntries);
+const sitemapEntries = [
+  ['/', { lastmod: '2026-10-21' }],
+  ...routeEntries,
+  ...updateRouteEntries
+];
 
 const buildStructuredData = (route, meta) => {
   const graph = [];
@@ -121,7 +125,7 @@ const buildStructuredData = (route, meta) => {
   if (meta.schemas.includes('Organization')) {
     graph.push({
       '@type': 'Organization',
-      '@id': `${seoData.siteUrl}/#organization`,
+      '@id': `${seoData.siteUrl}/home/#organization`,
       name: seoData.organization.name,
       url: seoData.organization.url,
       logo: seoData.organization.logo,
@@ -132,11 +136,11 @@ const buildStructuredData = (route, meta) => {
   if (meta.schemas.includes('WebSite')) {
     graph.push({
       '@type': 'WebSite',
-      '@id': `${seoData.siteUrl}/#website`,
+      '@id': `${seoData.siteUrl}/home/#website`,
       name: seoData.siteName,
-      url: `${seoData.siteUrl}/`,
+      url: `${seoData.siteUrl}/home/`,
       publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
+        '@id': `${seoData.siteUrl}/home/#organization`
       },
       inLanguage: seoData.languages
     });
@@ -152,7 +156,7 @@ const buildStructuredData = (route, meta) => {
       url: calculatorUrl,
       description: meta.description,
       publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
+        '@id': `${seoData.siteUrl}/home/#organization`
       }
     });
   }
@@ -163,7 +167,7 @@ const buildStructuredData = (route, meta) => {
         '@type': 'ListItem',
         position: 1,
         name: 'Feiya Studio',
-        item: `${seoData.siteUrl}/`
+        item: `${seoData.siteUrl}/home/`
       },
       {
         '@type': 'ListItem',
@@ -325,7 +329,7 @@ const renderStaticPortal = () => `    <main class="main-content sxstx-static-con
         <div class="sxstx-section-copy">
           <p>SXSTX Calculator is developed by Feiya Studio.</p>
           <p>It provides practical tools for Sword x Staff players, including material calculators, equipment score calculators, and season score planning.</p>
-          <p>The calculator is hosted at <a href="${calculatorUrl}">https://sxstx.feiyastudio.com/</a>.</p>
+          <p>The calculator is hosted at <a href="${calculatorUrl}">https://feiyastudio.com/</a>.</p>
         </div>
       </section>
       <section class="sxstx-portal-section" aria-labelledby="sxstx-update-title">
@@ -442,10 +446,12 @@ ${sitemapEntries
 `;
 
 const baseHtml = await readFile(distIndexPath, 'utf8');
+const notFoundHtml = await readFile(join(root, '404.html'), 'utf8');
+await writeFile(join(distPath, '404.html'), notFoundHtml, 'utf8');
 
 for (const [route, meta] of routeEntries.concat(updateRouteEntries)) {
   const html = injectStaticContent(renderHead(baseHtml, route, meta), route);
-  const routePath = route === '/' ? distIndexPath : join(distPath, route.slice(1), 'index.html');
+  const routePath = join(distPath, route.slice(1), 'index.html');
 
   await mkdir(dirname(routePath), { recursive: true });
   await writeFile(routePath, html, 'utf8');

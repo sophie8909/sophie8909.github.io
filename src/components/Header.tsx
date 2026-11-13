@@ -33,8 +33,8 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
       window.history.replaceState(window.history.state, '', `#${anchor}`);
     };
 
-    if (route !== '/') {
-      onNavigate('/');
+    if (route !== '/home') {
+      onNavigate('/home');
       window.setTimeout(scroll, 80);
     } else {
       scroll();
@@ -49,7 +49,7 @@ export const Header = ({ route, onNavigate }: HeaderProps) => {
         {t('nav.skip')}
       </a>
       <nav className="nav-shell" aria-label={t('nav.label')}>
-        <button className="brand-link" type="button" onClick={() => navigate('/')}>
+        <button className="brand-link" type="button" onClick={() => navigate('/home')}>
           <span className="brand-glyph" aria-hidden="true">
             <img
               src="/assets/icons/feiya-studio-icon-transparent.png"

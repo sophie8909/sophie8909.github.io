@@ -21,6 +21,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout SXSTX Calculator
+        uses: actions/checkout@v4
+        with:
+          repository: sophie8909/sxstx_calculator
+          path: .sxstx
+          ref: dead81ad0c0932849857f4e7d98131c08e6aae0d
+
       - name: Checkout Beichen
         id: checkout_beichen
         uses: actions/checkout@v4
@@ -42,10 +49,6 @@ jobs:
       - name: Build main site
         run: npm run build
 
-      - name: Run SEO tests
-        run: npm run test:seo
-        continue-on-error: true
-
       - name: Install Beichen dependencies
         if: steps.checkout_beichen.outcome == 'success'
         working-directory: .beichen
@@ -64,8 +67,23 @@ jobs:
           cp -R .beichen/dist/index.html dist/Beichen/
           cp -R .beichen/dist/rilu .beichen/dist/chenxun dist/Beichen/
 
+      - name: Build SXSTX Calculator
+        working-directory: .sxstx
+        run: |
+          npm ci
+          npm run build
+          npm run test:seo
+
+      - name: Assemble the calculator at the root URL
+        run: node scripts/assemble-calculator.mjs .sxstx/dist
+
       - name: Apply AdSense tags to assembled child pages
         run: node scripts/inject-adsense-output.mjs
+
+      - name: Run SEO tests
+        env:
+          SXSTX_ASSEMBLED: 1
+        run: npm run test:seo
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -27,7 +27,7 @@ function App() {
       <SEO route={route} />
       <Header route={route} onNavigate={navigate} />
       <main className="main-content" id="main-content" ref={mainRef} tabIndex={-1}>
-        {route === '/' ? <HomePage /> : null}
+        {route === '/home' ? <HomePage /> : null}
         {route === '/projects' ? <ProjectsPage /> : null}
         {route === '/sxstx-calculator' ? <SxstxCalculatorPage /> : null}
         {route === '/sxstx-calculator/blog/update' ? <SxstxUpdateArchivePage /> : null}

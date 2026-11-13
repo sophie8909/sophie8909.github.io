@@ -5,4 +5,4 @@ order: 1
 
 The calculator is available at
 
-https://sxstx.feiyastudio.com/
+https://feiyastudio.com/

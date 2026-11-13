@@ -63,7 +63,7 @@ for (const htmlPath of htmlFiles) {
   }
 
   const html = await readFile(htmlPath, 'utf8');
-  const output = renderAdSenseHead(html, relativePath !== 'index.html');
+  const output = renderAdSenseHead(html, !['index.html', 'home/index.html', 'submit-target-time.html'].includes(relativePath));
 
   if (output !== html) {
     await writeFile(htmlPath, output, 'utf8');

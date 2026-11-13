@@ -15,13 +15,14 @@
     <meta name="robots" content="noindex" />
     <title>Feiya Studio</title>
     <script>
-      const target = `${window.location.origin}/?route=${encodeURIComponent(
-        window.location.pathname
-      )}${window.location.search}${window.location.hash}`;
+      const target = new URL('/home/', window.location.origin);
+      target.search = window.location.search;
+      target.searchParams.set('route', window.location.pathname);
+      target.hash = window.location.hash;
       window.location.replace(target);
     </script>
   </head>
   <body>
-    <a href="/">Feiya Studio</a>
+    <a href="/home/">Feiya Studio</a>
   </body>
 </html>

@@ -9,14 +9,14 @@
   ],
   "organization": {
     "name": "Feiya Studio",
-    "url": "https://feiyastudio.com/",
+    "url": "https://feiyastudio.com/home/",
     "logo": "https://feiyastudio.com/assets/icons/feiya-studio-icon.png",
     "sameAs": [
       "https://github.com/sophie8909"
     ]
   },
   "routes": {
-    "/": {
+    "/home": {
       "title": "Feiya Studio | CatRodis, ArtCodex, CLUELESS, and Tools",
       "description": "Feiya Studio creates character worlds, creator tools, semantic word games, and progression utilities including CatRodis, ArtCodex, CLUELESS, and SXSTX Calculator.",
       "lastmod": "2026-08-25",

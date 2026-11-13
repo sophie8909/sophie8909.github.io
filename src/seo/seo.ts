@@ -14,7 +14,7 @@ interface RouteSeo {
 export const siteSeo = seoData;
 export const routeSeo = seoData.routes as Partial<Record<AppRoute, RouteSeo>>;
 
-const defaultRouteSeo = routeSeo['/'] as RouteSeo;
+const defaultRouteSeo = routeSeo['/home'] as RouteSeo;
 
 export const getRouteSeo = (route: AppRoute): RouteSeo => {
   const exactMeta = routeSeo[route];
@@ -40,7 +40,7 @@ export const getRouteSeo = (route: AppRoute): RouteSeo => {
 };
 
 export const getCanonicalUrl = (route: AppRoute) => {
-  const canonicalPath = route === '/' ? '/' : `${route.replace(/\/+$/, '')}/`;
+  const canonicalPath = `${route.replace(/\/+$/, '')}/`;
   return `${seoData.siteUrl}${canonicalPath}`;
 };
 
@@ -56,7 +56,7 @@ export const buildStructuredData = (route: AppRoute) => {
   if (meta.schemas.includes('Organization')) {
     graph.push({
       '@type': 'Organization',
-      '@id': `${seoData.siteUrl}/#organization`,
+      '@id': `${seoData.siteUrl}/home/#organization`,
       name: seoData.organization.name,
       url: seoData.organization.url,
       logo: seoData.organization.logo,
@@ -67,11 +67,11 @@ export const buildStructuredData = (route: AppRoute) => {
   if (meta.schemas.includes('WebSite')) {
     graph.push({
       '@type': 'WebSite',
-      '@id': `${seoData.siteUrl}/#website`,
+      '@id': `${seoData.siteUrl}/home/#website`,
       name: seoData.siteName,
-      url: `${seoData.siteUrl}/`,
+      url: `${seoData.siteUrl}/home/`,
       publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
+        '@id': `${seoData.siteUrl}/home/#organization`
       },
       inLanguage: seoData.languages
     });
@@ -87,7 +87,7 @@ export const buildStructuredData = (route: AppRoute) => {
       url: calculatorUrl,
       description: meta.description,
       publisher: {
-        '@id': `${seoData.siteUrl}/#organization`
+        '@id': `${seoData.siteUrl}/home/#organization`
       }
     });
   }
@@ -98,7 +98,7 @@ export const buildStructuredData = (route: AppRoute) => {
         '@type': 'ListItem',
         position: 1,
         name: 'Feiya Studio',
-        item: `${seoData.siteUrl}/`
+        item: `${seoData.siteUrl}/home/`
       },
       {
         '@type': 'ListItem',

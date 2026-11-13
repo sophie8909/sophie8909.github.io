@@ -12,6 +12,7 @@ const adsTxtPath = join(distPath, 'ads.txt');
 
 const expectedUrls = [
   'https://feiyastudio.com/',
+  'https://feiyastudio.com/home/',
   'https://feiyastudio.com/projects/',
   'https://feiyastudio.com/sxstx-calculator/',
   'https://feiyastudio.com/sxstx-calculator/blog/update/',
@@ -60,12 +61,12 @@ test('production output serves the canonical AdSense seller record', async () =>
 });
 
 test('AdSense is excluded from the homepage and included once on every child page', async () => {
-  const homepageHtml = await readFile(join(distPath, 'index.html'), 'utf8');
+  const homepageHtml = await readFile(join(distPath, 'home', 'index.html'), 'utf8');
 
   assert.equal(countMatches(homepageHtml, adsenseScriptPattern), 0);
   assert.equal(countMatches(homepageHtml, adsenseMetaPattern), 1);
 
-  for (const url of expectedUrls.slice(1)) {
+  for (const url of expectedUrls.slice(2)) {
     const pathname = new URL(url).pathname.replace(/^\/+|\/+$/g, '');
     const html = await readFile(join(distPath, pathname, 'index.html'), 'utf8');
 
@@ -108,7 +109,7 @@ test('robots.txt points crawlers at the main-site sitemap', async () => {
 });
 
 test('generated HTML has the required canonicals and crawlable calculator link', async () => {
-  assert.equal(await readCanonical('/'), 'https://feiyastudio.com/');
+  assert.equal(await readCanonical('/home'), 'https://feiyastudio.com/home/');
   assert.equal(
     await readCanonical('/sxstx-calculator'),
     'https://feiyastudio.com/sxstx-calculator/'
@@ -117,6 +118,22 @@ test('generated HTML has the required canonicals and crawlable calculator link',
   const calculatorHtml = await readFile(join(distPath, 'sxstx-calculator', 'index.html'), 'utf8');
   assert.match(
     calculatorHtml,
-    /<a\b[^>]*href="https:\/\/sxstx\.feiyastudio\.com\/"[^>]*>https:\/\/sxstx\.feiyastudio\.com\/<\/a>/
+    /<a\b[^>]*href="https:\/\/feiyastudio\.com\/"[^>]*>https:\/\/feiyastudio\.com\/<\/a>/
   );
+});
+
+test('assembled root serves the calculator and keeps the contribution shortcut', { skip: !process.env.SXSTX_ASSEMBLED }, async () => {
+
+  assert.equal(await readCanonical('/'), 'https://feiyastudio.com/');
+  const html = await readFile(join(distPath, 'index.html'), 'utf8');
+  assert.match(html, /<title>[^<]*Sword x Staff Calculator/);
+  assert.match(html, /href="\/home\/"/);
+  assert.doesNotMatch(html, /sxstx\.feiyastudio\.com/);
+
+  for (const [, asset] of html.matchAll(/(?:src|href)="(\/assets\/[^"]+)"/g)) {
+    assert.ok((await stat(join(distPath, asset.slice(1)))).isFile(), asset);
+  }
+
+  const contribution = await readFile(join(distPath, 'submit-target-time.html'), 'utf8');
+  assert.match(contribution, /https:\/\/feiyastudio\.com\/\?tool=contribution/);
 });
